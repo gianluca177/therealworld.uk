@@ -1,5 +1,15 @@
-<!-- src/components/TopBar.astro -->
-<!-- This bar adds visual cohesion and is reused easily -->
-<div class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-dark text-center text-sm py-2 font-semibold tracking-wide text-black">
-  TRW 2.0 UPGRADE IN PROGRESS
+---
+// This top bar matches the TRW 2.0 Upgrade style seen on the checkout page.
+// You can later replace the placeholder icon with your real one.
+---
+
+<div class="banner-top flex items-center justify-center gap-2 text-sm font-semibold text-white relative z-50">
+  <!-- Placeholder icon (replace later) -->
+  <img 
+    src="/icon-placeholder.svg" 
+    alt="TRW Icon" 
+    class="w-5 h-5 object-contain inline-block align-middle" 
+  />
+  
+  <span class="tracking-wide uppercase">TRW 2.0 UPGRADE IN PROGRESS</span>
 </div>

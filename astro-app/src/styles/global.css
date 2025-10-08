@@ -1,6 +1,7 @@
 @import "./reference/colors.css";
 @import "./reference/base.css";
 @import "./reference/components.css";
+@import "./reference/topbar.css";
 
 /* === SATOSHI FONT SETUP === */
 @font-face {
