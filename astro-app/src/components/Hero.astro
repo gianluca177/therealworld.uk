@@ -1,20 +1,59 @@
 ---
-/* SECTION: HERO -- dark matrix header w/ CTA (placeholders) */
+/* HERO SECTION -- Updated to match checkout look */
 ---
-<section class="matrix-grid relative overflow-hidden">
-  <div class="max-w-6xl mx-auto px-4 py-24 text-center">
-    <h1 class="text-5xl md:text-7xl font-extrabold neon text-[#A7F3D0] tracking-widest">
-      THE REAL WORLD
+
+<section class="relative overflow-hidden bg-[var(--bg-dark)] text-[var(--text-light)]">
+  <!-- Optional looping background video -->
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="auto"
+    class="absolute inset-0 w-full h-full object-cover opacity-20"
+  >
+    <source src="https://iframe.videodelivery.net/yourvideoid" type="video/mp4" />
+  </video>
+
+  <!-- Gradient top bar -->
+  <div class="header-strip text-center text-sm py-2 font-semibold tracking-wide text-black">
+    TRW 2.0 UPGRADE IN PROGRESS
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-4 py-24 text-center">
+    <img
+      src="/placeholder-logo.png"
+      alt="The Real World Logo"
+      class="mx-auto h-20 w-20 mb-6 rounded-full border border-[var(--accent-gold)] object-cover"
+    />
+    <h1 class="text-5xl md:text-6xl font-extrabold glow">
+      CHOOSE YOUR PATH TO SUCCESS
     </h1>
-    <p class="mt-6 max-w-2xl mx-auto text-gray-300">
-      Watch the video and enter. Replace this with your original copy later.
+    <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+      Join thousands crushing their competition and building enemies.
     </p>
-    <div class="mt-8 flex justify-center gap-4">
-      <a href="#plan" class="px-6 py-3 rounded bg-[#00ffae] text-black font-semibold">WATCH NOW</a>
-      <a href="#cta" class="px-6 py-3 rounded border border-[#00ffae]">JOIN</a>
+
+    <!-- CTA Buttons -->
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a
+        href="#plans"
+        class="px-8 py-3 rounded bg-[var(--accent-orange)] hover:bg-[var(--accent-orange-dark)] text-black font-semibold shadow-md transition"
+      >
+        JOIN NOW
+      </a>
+      <a
+        href="#learn"
+        class="px-8 py-3 rounded border border-[var(--accent-orange)] text-[var(--accent-orange)] hover:bg-[var(--accent-orange-dark)] hover:text-black font-semibold transition"
+      >
+        LEARN MORE
+      </a>
     </div>
 
-    <!-- Placeholder hero video frame -->
-    <div class="mt-12 aspect-video max-w-3xl mx-auto rounded-lg border border-[#00ffae33] bg-black/40"></div>
+    <!-- Placeholder toggle mimic (Monthly / Yearly) -->
+    <div class="mt-10 inline-flex items-center gap-3 bg-[var(--panel-dark)] px-6 py-2 rounded-full text-sm">
+      <span>Monthly</span>
+      <span class="w-10 h-5 bg-[var(--accent-orange)] rounded-full"></span>
+      <span>Yearly</span>
+    </div>
   </div>
 </section>
