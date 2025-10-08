@@ -69,3 +69,47 @@ body {
 .glow {
   text-shadow: 0 0 6px rgba(246, 197, 103, 0.5), 0 0 12px rgba(246, 197, 103, 0.3);
 }
+
+/* ============================= */
+/* BASIC HERO ANIMATIONS         */
+/* ============================= */
+
+/* Smooth fade in */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideUp { animation: slideUp 1.2s ease-out forwards; }
+
+/* Delayed fade-ins for layering */
+.animate-fadeInDelay   { animation: fadeIn 1s ease-out 0.3s forwards; }
+.animate-fadeInDelay2  { animation: fadeIn 1s ease-out 0.6s forwards; }
+.animate-fadeInDelay3  { animation: fadeIn 1s ease-out 0.9s forwards; }
+.animate-fadeInDelay4  { animation: fadeIn 1s ease-out 1.2s forwards; }
+.animate-fadeInDelay5  { animation: fadeIn 1s ease-out 1.5s forwards; }
+
+/* Subtle glow text */
+.glow-text {
+  text-shadow:
+    0 0 5px rgba(255,140,42,0.5),
+    0 0 10px rgba(255,140,42,0.4),
+    0 0 20px rgba(255,140,42,0.3);
+}
+
+/* Slow bounce animation for scroll cue */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounceSlow {
+  animation: bounceSlow 2s infinite;
+}

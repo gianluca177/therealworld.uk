@@ -1,0 +1,23 @@
+<!-- src/components/NavBar.astro -->
+<!-- Clean, minimal navigation with left logo and right CTA -->
+<nav class="w-full flex items-center justify-between px-8 py-4 bg-transparent text-brand-text">
+  <!-- Left: Logo -->
+  <div class="flex items-center space-x-2">
+    <img src="/logo-placeholder.svg" alt="The Real World Logo" class="h-8 w-8" />
+    <span class="font-satoshi font-bold text-brand-gold text-lg">TheRealWorld.uk</span>
+  </div>
+
+  <!-- Center: Navigation Links -->
+  <ul class="hidden md:flex space-x-6 text-sm font-medium">
+    <li><a href="#hero" class="hover:text-brand-gold">Home</a></li>
+    <li><a href="#about" class="hover:text-brand-gold">About</a></li>
+    <li><a href="#plan" class="hover:text-brand-gold">Plan</a></li>
+    <li><a href="#philosophy" class="hover:text-brand-gold">Philosophy</a></li>
+    <li><a href="#teach" class="hover:text-brand-gold">Teach</a></li>
+    <li><a href="#instructors" class="hover:text-brand-gold">Instructors</a></li>
+    <li><a href="#faq" class="hover:text-brand-gold">FAQ</a></li>
+  </ul>
+
+  <!-- Right: CTA -->
+  <a href="#plans" class="btn btn-primary text-sm">Join Now</a>
+</nav>

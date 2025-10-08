@@ -1,9 +1,22 @@
 ---
-/* HERO SECTION -- Updated to match checkout look */
+import TopBar from "./TopBar.astro";
+import NavBar from "./NavBar.astro";
 ---
 
-<section class="relative overflow-hidden bg-[var(--bg-dark)] text-[var(--text-light)]">
-  <!-- Optional looping background video -->
+<!-- ===================================================== -->
+<!-- HERO SECTION -- Complete, Animated, and Modular -->
+<!-- ===================================================== -->
+<section
+  id="hero"
+  class="relative overflow-hidden bg-brand-bg text-brand-text min-h-screen flex flex-col"
+>
+  <!-- 🔸 1. Top Gradient Bar -->
+  <TopBar />
+
+  <!-- 🔸 2. Navigation Bar -->
+  <NavBar />
+
+  <!-- 🔸 3. Optional Background Video -->
   <video
     autoplay
     loop
@@ -15,45 +28,60 @@
     <source src="https://iframe.videodelivery.net/yourvideoid" type="video/mp4" />
   </video>
 
-  <!-- Gradient top bar -->
-  <div class="header-strip text-center text-sm py-2 font-semibold tracking-wide text-black">
-    TRW 2.0 UPGRADE IN PROGRESS
-  </div>
-
-  <div class="relative z-10 max-w-6xl mx-auto px-4 py-24 text-center">
+  <!-- 🔸 4. Hero Content -->
+  <div
+    class="relative z-10 flex flex-col items-center justify-center text-center flex-grow px-4 py-24 animate-fadeIn"
+  >
+    <!-- 🟠 Logo -->
     <img
       src="/placeholder-logo.png"
       alt="The Real World Logo"
-      class="mx-auto h-20 w-20 mb-6 rounded-full border border-[var(--accent-gold)] object-cover"
+      class="mx-auto h-20 w-20 mb-6 rounded-full border border-brand-gold object-cover animate-fadeInDelay"
     />
-    <h1 class="text-5xl md:text-6xl font-extrabold glow">
-      CHOOSE YOUR PATH TO SUCCESS
+
+    <!-- 🟠 Title -->
+    <h1
+      class="text-5xl md:text-6xl font-satoshi font-extrabold text-brand-gold drop-shadow-[0_0_25px_rgba(255,140,42,0.8)] glow-text animate-slideUp"
+    >
+      The Real World UK
     </h1>
-    <p class="mt-4 text-gray-300 max-w-xl mx-auto">
-      Join thousands crushing their competition and building enemies.
+
+    <!-- 🟠 Subtitle / Tagline -->
+    <p class="max-w-2xl mx-auto text-brand-muted text-lg mt-4 mb-8 animate-fadeInDelay2">
+      Learn directly from multimillionaires mastering AI, automation, and online business.
+      Escape the 9–5 and build your digital empire -- step by step.
     </p>
 
-    <!-- CTA Buttons -->
-    <div class="mt-8 flex flex-wrap justify-center gap-4">
-      <a
-        href="#plans"
-        class="px-8 py-3 rounded bg-[var(--accent-orange)] hover:bg-[var(--accent-orange-dark)] text-black font-semibold shadow-md transition"
-      >
-        JOIN NOW
-      </a>
-      <a
-        href="#learn"
-        class="px-8 py-3 rounded border border-[var(--accent-orange)] text-[var(--accent-orange)] hover:bg-[var(--accent-orange-dark)] hover:text-black font-semibold transition"
-      >
-        LEARN MORE
-      </a>
+    <!-- 🟠 Video Placeholder -->
+    <div
+      class="w-full max-w-3xl h-64 bg-brand-panel border border-brand-orange rounded-base mb-8 flex items-center justify-center animate-fadeInDelay3"
+    >
+      <span class="text-brand-muted italic">[ Video Placeholder ]</span>
     </div>
 
-    <!-- Placeholder toggle mimic (Monthly / Yearly) -->
-    <div class="mt-10 inline-flex items-center gap-3 bg-[var(--panel-dark)] px-6 py-2 rounded-full text-sm">
+    <!-- 🟠 CTA Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 animate-fadeInDelay4">
+      <a href="#plans" class="btn btn-primary">Join The Real World</a>
+      <a href="#about" class="btn btn-outline">Learn More</a>
+    </div>
+
+    <!-- 🟠 Toggle Placeholder -->
+    <div
+      class="mt-10 inline-flex items-center gap-3 bg-brand-panel px-6 py-2 rounded-full text-sm animate-fadeInDelay5"
+    >
       <span>Monthly</span>
-      <span class="w-10 h-5 bg-[var(--accent-orange)] rounded-full"></span>
+      <span class="w-10 h-5 bg-brand-orange rounded-full"></span>
       <span>Yearly</span>
     </div>
+  </div>
+
+  <!-- 🔸 5. Scroll Down Indicator -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 animate-bounceSlow">
+    <a href="#about" class="flex flex-col items-center text-brand-muted hover:text-brand-gold transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span class="text-xs uppercase tracking-wider font-medium">Scroll</span>
+    </a>
   </div>
 </section>
