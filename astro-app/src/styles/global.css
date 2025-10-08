@@ -1,3 +1,7 @@
+@import "reference/colors.css";
+@import "reference/base.css";
+@import "reference/components.css";
+
 /* === SATOSHI FONT SETUP === */
 @font-face {
   font-family: 'Satoshi';
