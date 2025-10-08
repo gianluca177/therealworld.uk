@@ -1,0 +1,22 @@
+---
+/* SECTION: WHAT DO WE TEACH -- 3 phases + icons placeholders */
+const items = [
+  { h: "Choose a Skill", p: "Copywriting, SMMA, eCom, etc. Placeholder." },
+  { h: "Multiply Your Income", p: "Systems, leverage, marketing. Placeholder." },
+  { h: "Scale Your Business", p: "Hiring, ops, ads. Placeholder." },
+];
+---
+<section id="teach" class="matrix-grid">
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center">WHAT DO WE TEACH?</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      {items.map((it) => (
+        <div class="p-6 rounded-lg border border-[#00ffae33] bg-black/40">
+          <div class="h-10 w-10 rounded bg-[#00ffae33]"></div>
+          <h3 class="mt-4 font-semibold">{it.h}</h3>
+          <p class="mt-2 text-gray-300">{it.p}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

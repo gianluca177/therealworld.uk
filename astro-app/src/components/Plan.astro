@@ -1,0 +1,22 @@
+---
+/* SECTION: OUR PLAN -- step layout */
+const steps = [
+  { n: "Step 1", title: "Create Hustler’s University", copy: "Legacy note / placeholder." },
+  { n: "Step 2", title: "The Real World", copy: "Explain transition and scale. Placeholder." },
+  { n: "Step 3", title: "Execution", copy: "Focus on results, community, accountability." },
+];
+---
+<section id="plan" class="matrix-grid">
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center">WHAT IS OUR PLAN?</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      {steps.map((s) => (
+        <div class="p-6 rounded-lg border border-[#00ffae33] bg-black/40">
+          <div class="text-[#00ffae] font-semibold">{s.n}</div>
+          <h3 class="mt-2 font-bold">{s.title}</h3>
+          <p class="mt-2 text-gray-300">{s.copy}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

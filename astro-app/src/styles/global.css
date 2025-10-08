@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+/* MATRIX BACKDROP (subtle) */
+body { background:#0a0f0d; color:#e5e7eb; }
+.matrix-grid {
+  background:
+    radial-gradient(ellipse at top, rgba(0,255,170,.06), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(0,255,170,.04), transparent 60%),
+    repeating-linear-gradient(
+      to bottom, rgba(0,255,170,.05), rgba(0,255,170,.05) 1px, transparent 1px, transparent 24px
+    ),
+    repeating-linear-gradient(
+      to right, rgba(0,255,170,.05), rgba(0,255,170,.05) 1px, transparent 1px, transparent 24px
+    );
+}
+.neon { text-shadow: 0 0 10px #00ffaa88, 0 0 20px #00ffaa55; }

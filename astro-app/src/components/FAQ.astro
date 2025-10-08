@@ -1,0 +1,25 @@
+---
+/* SECTION: FAQ -- simple accordions */
+const faqs = [
+  { q: "How quickly will I start making money?", a: "Depends on effort, skill, and offer. Placeholder." },
+  { q: "Can I cancel anytime?", a: "Yes. Placeholder terms." },
+  { q: "Do I keep my work?", a: "Yes, your assets remain yours." },
+  { q: "Is this for beginners?", a: "Yes--structured paths exist." },
+];
+---
+<section id="faq" class="bg-black">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold">FAQ</h2>
+    <div class="mt-6 space-y-3">
+      {faqs.map((f) => (
+        <details class="group border border-[#00ffae33] rounded p-4 bg-black/40">
+          <summary class="cursor-pointer font-semibold">{f.q}</summary>
+          <p class="mt-2 text-gray-300">{f.a}</p>
+        </details>
+      ))}
+    </div>
+    <div id="cta" class="mt-10 text-center">
+      <a href="#" class="px-8 py-3 rounded bg-[#00ffae] text-black font-semibold">APPLY NOW</a>
+    </div>
+  </div>
+</section>
