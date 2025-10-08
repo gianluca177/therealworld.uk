@@ -2,8 +2,103 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
+<!-- PAGE: TheRealWorld.uk -- Home -->
 <Layout>
-  <h1 class="text-4xl font-bold text-center text-blue-500">
-    TheRealWorld.uk
-  </h1>
+  <!-- SECTION 0: SEO / HEAD -->
+  <title>TheRealWorld.uk -- Fast, clean, no-bloat site</title>
+  <meta name="description" content="Learn, build, and ship faster. TheRealWorld.uk is a speed-first site powered by Astro + Tailwind.">
+
+  <!-- SECTION 1: HEADER / NAV -->
+  <header class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold">TheRealWorld.uk</a>
+    <nav class="hidden md:flex gap-6 text-sm">
+      <a href="#benefits" class="hover:underline">Benefits</a>
+      <a href="#proof" class="hover:underline">Proof</a>
+      <a href="#faq" class="hover:underline">FAQ</a>
+    </nav>
+    <a href="#cta" class="px-4 py-2 rounded bg-black text-white">Login</a>
+  </header>
+
+  <!-- SECTION 2: HERO -->
+  <section class="max-w-6xl mx-auto px-4 py-16 text-center">
+    <h1 class="text-5xl font-extrabold tracking-tight text-blue-600">TheRealWorld.uk</h1>
+    <p class="mt-4 text-lg text-gray-700">
+      Fast, usable, and clean. Built with Astro + Tailwind. No bloat. Just results.
+    </p>
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <a href="#cta" class="px-6 py-3 rounded bg-blue-600 text-white font-semibold">Get Started</a>
+      <a href="#benefits" class="px-6 py-3 rounded border border-gray-300">See How It Works</a>
+    </div>
+    <!-- (Optional) Drop a hero image/video later -->
+  </section>
+
+  <!-- SECTION 3: SOCIAL PROOF / LOGOS -->
+  <section id="proof" class="bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <p class="text-center text-gray-600">As featured by / used across:</p>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-6 opacity-70">
+        <div class="h-10 bg-gray-200 rounded" aria-hidden="true"></div>
+        <div class="h-10 bg-gray-200 rounded"></div>
+        <div class="h-10 bg-gray-200 rounded"></div>
+        <div class="h-10 bg-gray-200 rounded"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: BENEFITS -->
+  <section id="benefits" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center">Why this build?</h2>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="p-6 border rounded">
+        <h3 class="font-semibold">Ridiculously Fast</h3>
+        <p class="mt-2 text-gray-600">Astro ships almost zero JS by default. Pages feel instant.</p>
+      </div>
+      <div class="p-6 border rounded">
+        <h3 class="font-semibold">Clean Styling</h3>
+        <p class="mt-2 text-gray-600">Tailwind gives utility classes for precise, consistent design.</p>
+      </div>
+      <div class="p-6 border rounded">
+        <h3 class="font-semibold">Auto-Deploy</h3>
+        <p class="mt-2 text-gray-600">Push to GitHub → Cloudflare builds & ships in minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CTA -->
+  <section id="cta" class="bg-blue-50">
+    <div class="max-w-3xl mx-auto px-4 py-16 text-center">
+      <h2 class="text-3xl font-bold">Build it. Ship it. Improve it.</h2>
+      <p class="mt-3 text-gray-700">
+        Start with a fast foundation. Add sections as you go. Keep momentum.
+      </p>
+      <a href="#" class="mt-6 inline-block px-8 py-3 rounded bg-blue-600 text-white font-semibold">
+        Create Your Account
+      </a>
+      <p class="mt-3 text-sm text-gray-600">No fluff. Cancel anytime.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAQ -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold">FAQ</h2>
+    <details class="mt-4 border rounded p-4">
+      <summary class="font-semibold">How do updates go live?</summary>
+      <p class="mt-2 text-gray-700">Commit & push to <code>main</code>. Cloudflare auto-deploys.</p>
+    </details>
+    <details class="mt-3 border rounded p-4">
+      <summary class="font-semibold">Can I edit from my phone?</summary>
+      <p class="mt-2 text-gray-700">Yes -- Working Copy → push → deployed.</p>
+    </details>
+  </section>
+
+  <!-- SECTION 7: FOOTER -->
+  <footer class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-gray-600 flex items-center justify-between">
+      <p>© {new Date().getFullYear()} TheRealWorld.uk</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:underline">Privacy</a>
+        <a href="#" class="hover:underline">Terms</a>
+      </div>
+    </div>
+  </footer>
 </Layout>
