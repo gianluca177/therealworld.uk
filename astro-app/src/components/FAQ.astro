@@ -1,25 +1,55 @@
 ---
-/* SECTION: FAQ -- simple accordions */
+/* SECTION: FAQ -- TheRealWorld.uk MVP version */
 const faqs = [
-  { q: "How quickly will I start making money?", a: "Depends on effort, skill, and offer. Placeholder." },
-  { q: "Can I cancel anytime?", a: "Yes. Placeholder terms." },
-  { q: "Do I keep my work?", a: "Yes, your assets remain yours." },
-  { q: "Is this for beginners?", a: "Yes--structured paths exist." },
+  {
+    q: "How quickly will I start making money?",
+    a: "There’s no guaranteed timeframe. Some members see progress within weeks, others take longer depending on effort, consistency, and which skill path they follow. The Real World provides the tools and community -- results depend on your own execution.",
+  },
+  {
+    q: "Can I cancel anytime?",
+    a: "Yes. Membership is flexible -- you can cancel your subscription at any time from inside your account dashboard with no extra fees or obligations.",
+  },
+  {
+    q: "Do I keep my work?",
+    a: "Absolutely. Any projects, notes, or assets you create while learning are yours to keep and continue developing even after your membership ends.",
+  },
+  {
+    q: "Is this for beginners?",
+    a: "Yes. The Real World includes structured learning paths for total beginners and step-by-step guidance from instructors and the community. No prior experience is required -- just the willingness to learn and apply what you’re taught.",
+  },
+  {
+    q: "What exactly do I get inside?",
+    a: "You get access to interactive lessons, video tutorials, and a global community where you can ask questions, share progress, and learn from others who are building similar skills.",
+  },
+  {
+    q: "Is it available worldwide?",
+    a: "Yes. The Real World operates online -- you can join from anywhere with an internet connection. All content is in English.",
+  },
 ];
 ---
 <section id="faq" class="bg-black">
   <div class="max-w-3xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold">FAQ</h2>
+    <h2 class="text-3xl font-bold text-white">FAQ</h2>
     <div class="mt-6 space-y-3">
       {faqs.map((f) => (
         <details class="group border border-[#00ffae33] rounded p-4 bg-black/40">
-          <summary class="cursor-pointer font-semibold">{f.q}</summary>
+          <summary class="cursor-pointer font-semibold text-[#00ffae]">
+            {f.q}
+          </summary>
           <p class="mt-2 text-gray-300">{f.a}</p>
         </details>
       ))}
     </div>
     <div id="cta" class="mt-10 text-center">
-      <a href="#" class="px-8 py-3 rounded bg-[#00ffae] text-black font-semibold">APPLY NOW</a>
+      <a
+        href="https://jointherealworld.com/?a=7nrnndpb&utm_source=therealworlduk&utm_medium=cta_faq"
+        class="px-8 py-3 rounded bg-[#00ffae] text-black font-semibold transition hover:bg-[#00e29c]"
+      >
+        APPLY NOW
+      </a>
+      <p class="mt-3 text-xs text-gray-400">
+        Educational platform -- no guaranteed results. Cancel anytime.
+      </p>
     </div>
   </div>
 </section>

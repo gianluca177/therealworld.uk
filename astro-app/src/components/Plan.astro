@@ -1,22 +1,124 @@
 ---
-/* SECTION: OUR PLAN -- step layout */
+/* SECTION: OUR PLAN -- professional MVP */
 const steps = [
-  { n: "Step 1", title: "Create Hustler’s University", copy: "Legacy note / placeholder." },
-  { n: "Step 2", title: "The Real World", copy: "Explain transition and scale. Placeholder." },
-  { n: "Step 3", title: "Execution", copy: "Focus on results, community, accountability." },
+  {
+    n: "Step 1",
+    title: "Foundation",
+    copy:
+      "Ship a fast, compliant site on Cloudflare (Astro + Tailwind). Clear copy, simple structure, and live CTAs. No hype -- just what members get and how to start.",
+  },
+  {
+    n: "Step 2",
+    title: "Education First",
+    copy:
+      "Guide members through practical, modern skills: marketing, copywriting, e-commerce, AI-assisted workflows. Short lessons, clear checklists, and community Q&A.",
+  },
+  {
+    n: "Step 3",
+    title: "Execution & Feedback",
+    copy:
+      "Apply skills on small real tasks, gather feedback, iterate. Keep momentum with accountability, interviews, and updates as platforms change.",
+  },
 ];
 ---
-<section id="plan" class="matrix-grid">
+<section id="plans" class="bg-black">
   <div class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center">WHAT IS OUR PLAN?</h2>
+    <h2 class="text-3xl font-bold text-center text-white">WHAT IS OUR PLAN?</h2>
+
+    <p class="mt-3 text-center text-gray-400 max-w-3xl mx-auto">
+      Keep it simple: launch the platform, teach useful skills, and help members execute. No promises --
+      just a clear path from learning to applying.
+    </p>
+
     <div class="mt-10 grid md:grid-cols-3 gap-6">
       {steps.map((s) => (
-        <div class="p-6 rounded-lg border border-[#00ffae33] bg-black/40">
-          <div class="text-[#00ffae] font-semibold">{s.n}</div>
-          <h3 class="mt-2 font-bold">{s.title}</h3>
-          <p class="mt-2 text-gray-300">{s.copy}</p>
+        <div class="group p-6 rounded-lg border border-[#00ffae33] bg-black/40 transition hover:border-[#00ffae66] hover:bg-black/60">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#00ffae22] border border-[#00ffae55] text-[#00ffae] text-xs font-semibold">
+              {s.n}
+            </span>
+            <h3 class="font-bold text-white">{s.title}</h3>
+          </div>
+
+          <p class="mt-3 text-gray-300 text-sm leading-relaxed">
+            {s.copy}
+          </p>
+
+          <!-- tiny separator -->
+          <div class="mt-5 h-px bg-gradient-to-r from-transparent via-[#00ffae33] to-transparent"></div>
+
+          <!-- bullets -->
+          <ul class="mt-4 space-y-2 text-gray-300 text-sm">
+            {s.title === "Foundation" && (
+              <>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Pages: Home, About, Interviews, FAQ, Terms, Privacy, Contact.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Live CTAs linked to affiliate URL with clean UTM tags.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Policy-safe copy (no earnings claims, transparent disclaimers).</span>
+                </li>
+              </>
+            )}
+            {s.title === "Education First" && (
+              <>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Structured paths for beginners -- start executing day one.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Searchable library (1,000+ lessons & resources as it grows).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Mentor guidance + global community support.</span>
+                </li>
+              </>
+            )}
+            {s.title === "Execution & Feedback" && (
+              <>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Small real tasks → feedback → iteration → momentum.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Student interviews for social proof (no guaranteed outcomes).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-[#00ffae]"></span>
+                  <span>Updates as platforms and best practices evolve.</span>
+                </li>
+              </>
+            )}
+          </ul>
         </div>
       ))}
     </div>
+
+    <div class="mt-12 flex justify-center gap-4">
+      <a
+        href="https://jointherealworld.com/?a=7nrnndpb&utm_source=therealworlduk&utm_medium=cta_plans"
+        class="px-6 py-3 rounded bg-[#00ffae] text-black font-semibold hover:bg-[#00e29c] transition shadow-[0_0_12px_rgba(0,255,174,0.35)]"
+      >
+        Get Started
+      </a>
+      <a
+        href="#interviews"
+        class="px-6 py-3 rounded border border-[#00ffae] text-[#00ffae] font-semibold hover:bg-[#00ffae11] transition"
+      >
+        See Interviews
+      </a>
+    </div>
+
+    <p class="mt-4 text-center text-xs text-gray-500">
+      Educational platform -- we don’t guarantee earnings. Your results depend on your effort and circumstances.
+    </p>
   </div>
 </section>

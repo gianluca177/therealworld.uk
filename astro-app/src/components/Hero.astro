@@ -1,22 +1,28 @@
 ---
-import TopBar from "./TopBar.astro";
 import NavBar from "./NavBar.astro";
 ---
 
 <!-- ===================================================== -->
-<!-- HERO SECTION -- Complete, Animated, and Modular -->
+<!-- HERO SECTION -- Complete, Animated, and Modular (MVP-ready) -->
 <!-- ===================================================== -->
 <section
   id="hero"
   class="relative overflow-hidden bg-brand-bg text-brand-text min-h-screen flex flex-col"
 >
-  <!-- 🔸 1. Top Gradient Bar -->
-  <TopBar />
 
-  <!-- 🔸 2. Navigation Bar -->
+  <!-- 🔸 1. Navigation Bar -->
   <NavBar />
 
+<<<<<<< main
+<<<<<<< main
   <!-- 🔸 3. Optional Background Video -->
+  <!-- MVP DEFER: keep this for later; ship with low-opacity placeholder (no Cloudflare Stream setup today) -->
+=======
+  <!-- 🔸 2.  Optional Background Video -->
+>>>>>>> origin/main
+=======
+  <!-- 🔸 2.  Optional Background Video -->
+>>>>>>> origin/main
   <video
     autoplay
     loop
@@ -33,6 +39,7 @@ import NavBar from "./NavBar.astro";
     class="relative z-10 flex flex-col items-center justify-center text-center flex-grow px-4 py-24 animate-fadeIn"
   >
     <!-- 🟠 Logo -->
+    <!-- MVP DEFER: replace placeholder logo later with HD mark; keep for layout stability -->
     <img
       src="/placeholder-logo.png"
       alt="The Real World Logo"
@@ -46,13 +53,14 @@ import NavBar from "./NavBar.astro";
       The Real World UK
     </h1>
 
-    <!-- 🟠 Subtitle / Tagline -->
+    <!-- 🟠 Subtitle / Tagline (MVP-compliant) -->
     <p class="max-w-2xl mx-auto text-brand-muted text-lg mt-4 mb-8 animate-fadeInDelay2">
-      Learn directly from multimillionaires mastering AI, automation, and online business.
-      Escape the 9–5 and build your digital empire -- step by step.
+      A community of digital entrepreneurs learning contemporary online business skills --
+      with guidance from experienced mentors and peers. Educational platform; outcomes depend on your effort.
     </p>
 
     <!-- 🟠 Video Placeholder -->
+    <!-- MVP DEFER: real video embed later; keep the placeholder box -->
     <div
       class="w-full max-w-3xl h-64 bg-brand-panel border border-brand-orange rounded-base mb-8 flex items-center justify-center animate-fadeInDelay3"
     >
@@ -61,11 +69,17 @@ import NavBar from "./NavBar.astro";
 
     <!-- 🟠 CTA Buttons -->
     <div class="flex flex-wrap justify-center gap-4 animate-fadeInDelay4">
-      <a href="#plans" class="btn btn-primary">Join The Real World</a>
+      <a
+        href="https://jointherealworld.com/?a=7nrnndpb&utm_source=therealworlduk&utm_medium=cta_hero"
+        class="btn btn-primary"
+      >
+        Join The Real World
+      </a>
       <a href="#about" class="btn btn-outline">Learn More</a>
     </div>
 
     <!-- 🟠 Toggle Placeholder -->
+    <!-- MVP DEFER: non-functional plan toggle; wire up later -->
     <div
       class="mt-10 inline-flex items-center gap-3 bg-brand-panel px-6 py-2 rounded-full text-sm animate-fadeInDelay5"
     >

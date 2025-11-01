@@ -1,16 +1,39 @@
 ---
-/* SECTION: INSTRUCTORS -- circular avatars placeholders */
-const people = Array.from({ length: 6 }).map((_, i) => ({ name: `Instructor ${i+1}`, role: "Expert", }));
+/* SECTION: INTERVIEWS -- MVP version for sitelinks */
+const interviews = [
+  { name: "Student 1", age: "22", location: "London, UK", note: "Member for 6 months", video: "https://iframe.videodelivery.net/placeholder1" },
+  { name: "Student 2", age: "28", location: "Manchester, UK", note: "Joined after learning copywriting", video: "https://iframe.videodelivery.net/placeholder2" },
+  { name: "Student 3", age: "19", location: "Birmingham, UK", note: "Started with no experience", video: "https://iframe.videodelivery.net/placeholder3" },
+];
 ---
-<section id="instructors" class="bg-black">
+<section id="interviews" class="bg-black">
   <div class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center">OUR INSTRUCTORS</h2>
-    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-items-center">
-      {people.map((p) => (
-        <div class="text-center">
-          <div class="h-20 w-20 rounded-full bg-[#0b1f1a] border border-[#00ffae66]"></div>
-          <div class="mt-2 text-sm font-semibold">{p.name}</div>
-          <div class="text-xs text-gray-400">{p.role}</div>
+    <h2 class="text-3xl font-bold text-center text-white">TRISTAN’S INTERVIEWS WITH REAL STUDENTS</h2>
+    <p class="text-center text-gray-400 mt-2">
+      Genuine members sharing their experiences learning inside The Real World. 
+      Videos coming soon -- placeholders below for initial setup.
+    </p>
+
+    <div class="mt-10 space-y-10">
+      {interviews.map((s) => (
+        <div class="grid md:grid-cols-2 gap-6 items-center border border-[#00ffae33] rounded-lg p-6 bg-black/40">
+          <!-- 🧾 Student Details -->
+          <div>
+            <h3 class="text-xl font-semibold text-[#00ffae]">{s.name}</h3>
+            <ul class="mt-2 text-gray-300 text-sm space-y-1">
+              <li><strong>Age:</strong> {s.age}</li>
+              <li><strong>Location:</strong> {s.location}</li>
+              <li><strong>Note:</strong> {s.note}</li>
+            </ul>
+            <p class="mt-4 text-gray-400 text-xs italic">
+              Disclaimer: Individual experiences vary. No financial outcomes are guaranteed.
+            </p>
+          </div>
+
+          <!-- 🎥 Video Placeholder -->
+          <div class="aspect-video bg-[#0b1f1a] border border-[#00ffae33] rounded-lg flex items-center justify-center">
+            <span class="text-gray-500 text-sm italic">[ Video Placeholder -- replace with embed later ]</span>
+          </div>
         </div>
       ))}
     </div>
