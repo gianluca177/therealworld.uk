@@ -1,38 +1,40 @@
 ---
-/* SECTION: INTERVIEWS -- MVP version for sitelinks */
+/* SECTION: INTERVIEWS -- Black + Gold/Orange Palette */
 const interviews = [
   { name: "Student 1", age: "22", location: "London, UK", note: "Member for 6 months", video: "https://iframe.videodelivery.net/placeholder1" },
   { name: "Student 2", age: "28", location: "Manchester, UK", note: "Joined after learning copywriting", video: "https://iframe.videodelivery.net/placeholder2" },
   { name: "Student 3", age: "19", location: "Birmingham, UK", note: "Started with no experience", video: "https://iframe.videodelivery.net/placeholder3" },
 ];
 ---
-<section id="interviews" class="bg-black">
+<section id="interviews" class="bg-[#000000] text-white">
   <div class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center text-white">TRISTAN’S INTERVIEWS WITH REAL STUDENTS</h2>
-    <p class="text-center text-gray-400 mt-2">
+    <h2 class="text-3xl font-bold text-center text-[#FF8C2A]">
+      TRISTAN’S INTERVIEWS WITH REAL STUDENTS
+    </h2>
+    <p class="text-center text-[#B3B3B3] mt-2">
       Genuine members sharing their experiences learning inside The Real World. 
       Videos coming soon -- placeholders below for initial setup.
     </p>
 
     <div class="mt-10 space-y-10">
       {interviews.map((s) => (
-        <div class="grid md:grid-cols-2 gap-6 items-center border border-[#00ffae33] rounded-lg p-6 bg-black/40">
+        <div class="grid md:grid-cols-2 gap-6 items-center border border-[#FF8C2A33] rounded-lg p-6 bg-[#1A1A1A] hover:border-[#FF8C2A66] transition">
           <!-- 🧾 Student Details -->
           <div>
-            <h3 class="text-xl font-semibold text-[#00ffae]">{s.name}</h3>
-            <ul class="mt-2 text-gray-300 text-sm space-y-1">
+            <h3 class="text-xl font-semibold text-[#FF8C2A]">{s.name}</h3>
+            <ul class="mt-2 text-[#B3B3B3] text-sm space-y-1">
               <li><strong>Age:</strong> {s.age}</li>
               <li><strong>Location:</strong> {s.location}</li>
               <li><strong>Note:</strong> {s.note}</li>
             </ul>
-            <p class="mt-4 text-gray-400 text-xs italic">
+            <p class="mt-4 text-[#777777] text-xs italic">
               Disclaimer: Individual experiences vary. No financial outcomes are guaranteed.
             </p>
           </div>
 
           <!-- 🎥 Video Placeholder -->
-          <div class="aspect-video bg-[#0b1f1a] border border-[#00ffae33] rounded-lg flex items-center justify-center">
-            <span class="text-gray-500 text-sm italic">[ Video Placeholder -- replace with embed later ]</span>
+          <div class="aspect-video bg-[#1A1A1A] border border-[#FF8C2A33] rounded-lg flex items-center justify-center">
+            <span class="text-[#B3B3B3] text-sm italic">[ Video Placeholder -- replace with embed later ]</span>
           </div>
         </div>
       ))}
