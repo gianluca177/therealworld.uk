@@ -49,31 +49,35 @@ import NavBar from "./NavBar.astro";
       with guidance from experienced mentors and peers. Educational platform; outcomes depend on your effort.
     </p>
 
-<!-- 🟠Video Placeholder (Wistia) -->
-<div style="background:black;border-radius:16px;overflow:hidden;">
-  <!-- wistia embed here -->
+<!-- Video Placeholder (Wistia) -->
 <div
-  class="wistia_responsive_padding"
-  style="padding:56.25% 0 0 0;position:relative;"
+  style="
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    background: black;
+    border-radius: 16px;
+    overflow: hidden;
+  "
 >
-  <div
-    class="wistia_responsive_wrapper"
-    style="height:100%;left:0;position:absolute;top:0;width:100%;"
-  >
+  <div style="position: relative; padding-top: 56.25%;">
     <iframe
       src="https://fast.wistia.net/embed/iframe/qkkqo44eoi?seo=false"
       title="Hustlers University Introduction Video"
       allow="autoplay; fullscreen"
       frameborder="0"
       scrolling="no"
-      class="wistia_embed"
-      name="wistia_embed"
-      width="100%"
-      height="100%"
       loading="lazy"
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      "
     ></iframe>
   </div>
-</div>
 </div>
 
     <!-- 🟠 CTA Buttons -->
