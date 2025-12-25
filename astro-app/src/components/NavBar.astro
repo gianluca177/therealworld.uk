@@ -7,14 +7,7 @@
       <img
         src="/hu-logo-300.png"
         alt="Hustlers University UK Logo"
-        class="
-          h-11 w-11
-          md:h-12 md:w-12
-          rounded-full
-          border border-brand-gold
-          transition-transform duration-200
-          group-hover:scale-110
-        "
+        class="h-11 w-11 md:h-12 md:w-12 rounded-full border border-brand-gold transition-transform duration-200 group-hover:scale-110"
       />
     </a>
 
@@ -32,43 +25,22 @@
     <!-- Right: CTA + Mobile Menu -->
     <div class="flex items-center gap-3">
 
-      <!-- CTA -->
+      <!-- CTA (uses existing .btn but overridden for mobile sizing) -->
       <a
         href="https://jointherealworld.com/checkout?a=7nrnndpb"
         class="
-          inline-flex items-center justify-center
-          rounded-full
-          bg-[#FF8C2A] text-black font-semibold
-          transition-all duration-200
-
-          /* Mobile */
-          px-4 py-2 text-xs shadow-none
-
-          /* Desktop */
-          md:px-6 md:py-3 md:text-sm md:shadow-lg
+          btn
+          !px-4 !py-2 !text-xs !leading-none
+          md:!px-6 md:!py-3 md:!text-sm md:!leading-none
         "
       >
         JOIN NOW
       </a>
 
       <!-- Mobile Menu Placeholder (MVP defer) -->
-      <button
-        class="md:hidden text-[#FF8C2A] focus:outline-none"
-        aria-label="Open menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
+      <button class="md:hidden text-[#FF8C2A] focus:outline-none" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
 
