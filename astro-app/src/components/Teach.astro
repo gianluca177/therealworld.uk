@@ -71,7 +71,7 @@ const tracks = [
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {tracks.map((t) => (
         <div class="group h-full rounded-2xl border border-white/10 bg-[#121212] overflow-hidden transition hover:border-[#FF8C2A33] hover:bg-[#141414]">
-          
+
           {/* Image */}
           <div class="relative h-40 overflow-hidden bg-[#0f0f0f]">
             {/* Accent line */}
@@ -84,11 +84,11 @@ const tracks = [
               class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.05]"
             />
 
-            {/* Dark gradient overlay */}
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10"></div>
+            {/* Preferred: dark overlay for contrast */}
+            <div class="absolute inset-0 bg-black/35"></div>
 
             {/* Tag */}
-            <div class="absolute left-4 top-4">
+            <div class="absolute left-4 top-4 z-10">
               <span class="inline-flex items-center rounded-full border border-[#FF8C2A33] bg-[#FF8C2A14] px-3 py-1 text-xs font-semibold text-[#FF8C2A]">
                 {t.tag}
               </span>
