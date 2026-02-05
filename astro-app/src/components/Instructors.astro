@@ -1,41 +1,69 @@
 ---
 /* SECTION: INTERVIEWS -- Black + Gold/Orange Palette */
 const interviews = [
-  { name: "Student 1", age: "22", location: "London, UK", note: "Member for 6 months", video: "https://iframe.videodelivery.net/placeholder1" },
-  { name: "Student 2", age: "28", location: "Manchester, UK", note: "Joined after learning copywriting", video: "https://iframe.videodelivery.net/placeholder2" },
-  { name: "Student 3", age: "19", location: "Birmingham, UK", note: "Started with no experience", video: "https://iframe.videodelivery.net/placeholder3" },
+  {
+    name: "Luke",
+    age: "19",
+    location: "United States",
+    note: "Member for 12 months",
+    summary:
+      "Luke joined The Real World at a young age and followed the step-by-step lessons while actively engaging with mentors and the community. In this interview, he shares his experience, mindset, and what he learned during his time inside the platform.",
+    video:
+      "https://customer-29d3r31yjz332bf4.cloudflarestream.com/de951a6359bed8df49031d7ae2c2acb1/iframe",
+  },
 ];
 ---
-<section id="interviews" class="bg-[#000000] text-white">
-  <div class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center text-[#FF8C2A]">
-      TRISTAN’S INTERVIEWS WITH REAL STUDENTS
+
+<section id="interviews" class="bg-[#000000] text-white scroll-mt-28">
+  <div class="max-w-6xl mx-auto px-4 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-orange)] tracking-tight">
+      Interviews with Real Members
     </h2>
-    <p class="text-center text-[#B3B3B3] mt-2">
-      Genuine members sharing their experiences learning inside The Real World. 
-      Videos coming soon -- placeholders below for initial setup.
+
+    <p class="mt-3 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+      Real members of The Real World discussing their experiences, lessons learned,
+      and personal development inside the platform.
     </p>
 
-    <div class="mt-10 space-y-10">
+    <div class="mt-14 space-y-12">
       {interviews.map((s) => (
-        <div class="grid md:grid-cols-2 gap-6 items-center border border-[#FF8C2A33] rounded-lg p-6 bg-[#1A1A1A] hover:border-[#FF8C2A66] transition">
-          <!-- 🧾 Student Details -->
-          <div>
-            <h3 class="text-xl font-semibold text-[#FF8C2A]">{s.name}</h3>
-            <ul class="mt-2 text-[#B3B3B3] text-sm space-y-1">
-              <li><strong>Age:</strong> {s.age}</li>
-              <li><strong>Location:</strong> {s.location}</li>
-              <li><strong>Note:</strong> {s.note}</li>
-            </ul>
-            <p class="mt-4 text-[#777777] text-xs italic">
-              Disclaimer: Individual experiences vary. No financial outcomes are guaranteed.
+        <div class="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-white/10 bg-[#121212] p-6 md:p-8 transition hover:border-[#FF8C2A33]">
+          
+          <!-- 🧾 Member Details -->
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-2xl font-semibold text-[var(--color-text-light)]">
+                {s.name}
+              </h3>
+              <p class="mt-1 text-sm text-white/50">
+                Age {s.age} • {s.location} • {s.note}
+              </p>
+            </div>
+
+            <p class="text-[var(--color-text-muted)] leading-relaxed">
+              {s.summary}
+            </p>
+
+            <p class="text-xs text-white/40">
+              Educational discussion only. Individual experiences vary and no financial
+              outcomes are guaranteed.
             </p>
           </div>
 
-          <!-- 🎥 Video Placeholder -->
-          <div class="aspect-video bg-[#1A1A1A] border border-[#FF8C2A33] rounded-lg flex items-center justify-center">
-            <span class="text-[#B3B3B3] text-sm italic">[ Video Placeholder -- replace with embed later ]</span>
+          <!-- 🎥 Video -->
+          <div class="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black">
+            <iframe
+              id="luke-iframe"
+              src={s.video}
+              title={`Interview with ${s.name}`}
+              class="absolute inset-0 h-full w-full"
+              style="border: none;"
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
           </div>
+
         </div>
       ))}
     </div>
