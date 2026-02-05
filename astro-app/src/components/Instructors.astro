@@ -1,16 +1,38 @@
 ---
-/* SECTION: INTERVIEWS -- Premium dark + orange accents (Luke) */
+/* SECTION: INTERVIEWS -- Premium dark + orange accents */
 const interviews = [
+  {
+    name: "Nox",
+    age: "35",
+    location: "United States",
+    note: "Member for 6+ months",
+    summary:
+      "Nox joined The Real World to sharpen his business acumen and surround himself with other serious entrepreneurs. With over a decade in the consulting industry, he uses the platform to refine strategy, stay current with modern tools, and exchange insights with a driven community.",
+    video:
+      "https://customer-29d3r31yjz332bf4.cloudflarestream.com/fa000d1c470b3067b73ec15f64ae8caf/iframe",
+    iframeId: "nox-iframe",
+  },
+  {
+    name: "Jacob",
+    age: "29",
+    location: "United Kingdom",
+    note: "E-commerce focus",
+    summary:
+      "Jacob entered The Real World with no prior e-commerce experience. Drawn to the platform’s clear structure and scalable business models, he followed the step-by-step lessons and applied what he learned, progressing quickly by learning from both mentors and other members.",
+    video:
+      "https://customer-29d3r31yjz332bf4.cloudflarestream.com/c875e003caec4fd53d2e6816ed2a5e08/iframe",
+    iframeId: "jacob-iframe",
+  },
   {
     name: "Luke",
     age: "19",
     location: "United States",
-    flag: "🇺🇸", // easy to remove later if you want
     note: "Member for 12 months",
     summary:
-      "Luke joined The Real World, picked a skill, and followed the step-by-step lessons while staying active in the community. In this interview, he shares what changed for him over the last 12 months.",
+      "Luke joined The Real World at a young age and committed to following the structured lessons while staying active in the community. In this interview, he reflects on the skills he developed and how consistent execution shaped his growth over the past year.",
     video:
       "https://customer-29d3r31yjz332bf4.cloudflarestream.com/de951a6359bed8df49031d7ae2c2acb1/iframe",
+    iframeId: "luke-iframe",
   },
 ];
 ---
@@ -22,10 +44,10 @@ const interviews = [
     </h2>
 
     <p class="mt-3 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
-      Short interviews with members discussing their experience inside The Real World.
+      Members of The Real World sharing their experiences, lessons learned, and personal development inside the platform.
     </p>
 
-    <div class="mt-14 space-y-12">
+    <div class="mt-14 space-y-14">
       {interviews.map((s) => (
         <div
           class="
@@ -42,7 +64,7 @@ const interviews = [
             <div class="space-y-4">
               <div>
                 <h3 class="text-2xl font-semibold text-[var(--color-text-light)]">
-                  {s.name} <span class="ml-1">{s.flag}</span>
+                  {s.name}
                 </h3>
                 <p class="mt-2 text-sm text-white/60">
                   Age {s.age} • {s.location} • {s.note}
@@ -69,7 +91,7 @@ const interviews = [
                 "
               >
                 <iframe
-                  id="luke-iframe"
+                  id={s.iframeId}
                   src={s.video}
                   title={`Interview with ${s.name}`}
                   class="absolute inset-0 h-full w-full"
