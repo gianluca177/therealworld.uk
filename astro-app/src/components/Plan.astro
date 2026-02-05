@@ -1,123 +1,114 @@
 ---
-/* SECTION: OUR PLAN -- Black + Gold/Orange Palette */
+/* SECTION: OUR PLAN -- Premium dark + orange accents */
 const steps = [
   {
-    n: "Step 1",
+    n: 1,
     title: "Foundation",
     copy:
-      "Ship a fast, compliant site on Cloudflare (Astro + Tailwind). Clear copy, simple structure, and live CTAs. No hype -- just what members get and how to start.",
+      "Launch a fast, compliant site with clear structure, simple messaging, and live CTAs -- built to stay stable under ads.",
+    bullets: [
+      "Pages: Home, About, Interviews, FAQ, Terms, Privacy, Contact.",
+      "Live CTAs linked to affiliate URL with clean UTM tags.",
+      "Policy-safe copy (no earnings claims, transparent disclaimers).",
+    ],
   },
   {
-    n: "Step 2",
+    n: 2,
     title: "Education First",
     copy:
-      "Guide members through practical, modern skills: marketing, copywriting, e-commerce, AI-assisted workflows. Short lessons, clear checklists, and community Q&A.",
+      "Teach practical modern skills with short lessons, clear checklists, and community support -- designed for execution.",
+    bullets: [
+      "Structured paths for beginners -- start executing day one.",
+      "Searchable library (1,000+ lessons & resources as it grows).",
+      "Mentor guidance + global community support.",
+    ],
   },
   {
-    n: "Step 3",
+    n: 3,
     title: "Execution & Feedback",
     copy:
-      "Apply skills on small real tasks, gather feedback, iterate. Keep momentum with accountability, interviews, and updates as platforms change.",
+      "Apply what you learn on real tasks, gather feedback, iterate, and build momentum -- with accountability built in.",
+    bullets: [
+      "Small real tasks → feedback → iteration → momentum.",
+      "Student interviews for social proof (no guaranteed outcomes).",
+      "Updates as platforms and best practices evolve.",
+    ],
   },
 ];
 ---
-<section id="plans" class="bg-[#000000] text-white">
-  <div class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center text-[#FF8C2A]">WHAT IS OUR PLAN?</h2>
 
-    <p class="mt-3 text-center text-[#B3B3B3] max-w-3xl mx-auto">
-      Keep it simple: launch the platform, teach useful skills, and help members execute. No promises --
-      just a clear path from learning to applying.
+<section id="plans" class="bg-[#000000] text-white scroll-mt-28">
+  <div class="max-w-6xl mx-auto px-4 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-orange)] tracking-tight">
+      What is our plan?
+    </h2>
+
+    <p class="mt-4 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+      Keep it simple: teach useful skills, help members execute, and improve through feedback.
+      No promises -- just a clear path from learning to applying.
     </p>
 
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
       {steps.map((s) => (
-        <div class="group p-6 rounded-lg border border-[#FF8C2A33] bg-[#1A1A1A] transition hover:border-[#FF8C2A66] hover:bg-[#1A1A1A]/80">
-          <div class="flex items-center gap-3">
-            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FF8C2A22] border border-[#FF8C2A55] text-[#FF8C2A] text-xs font-semibold">
-              {s.n}
-            </span>
-            <h3 class="font-bold text-white">{s.title}</h3>
+        <div class="h-full rounded-2xl border border-white/10 bg-[#121212] p-6 md:p-7 transition hover:border-[#FF8C2A33] hover:bg-[#141414]">
+          <div class="flex h-full flex-col">
+            {/* Header */}
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center justify-center h-9 w-9 rounded-full bg-[#FF8C2A14] border border-[#FF8C2A33] text-[var(--color-orange)] text-sm font-semibold">
+                  {s.n}
+                </span>
+                <div class="leading-tight">
+                  <p class="text-xs uppercase tracking-wide text-white/50">Step {s.n}</p>
+                  <h3 class="text-lg font-semibold text-[var(--color-text-light)]">
+                    {s.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* small accent */}
+              <span class="h-2 w-2 rounded-full bg-[#FF8C2A] opacity-70"></span>
+            </div>
+
+            {/* Copy */}
+            <p class="mt-5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+              {s.copy}
+            </p>
+
+            {/* Separator */}
+            <div class="mt-6 h-px bg-white/10"></div>
+
+            {/* Bullets (push to bottom for consistent card feel) */}
+            <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
+              {s.bullets.map((b) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF8C2A]"></span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Spacer to ensure equal feel on all cards */}
+            <div class="mt-auto"></div>
           </div>
-
-          <p class="mt-3 text-[#B3B3B3] text-sm leading-relaxed">
-            {s.copy}
-          </p>
-
-          <!-- tiny separator -->
-          <div class="mt-5 h-px bg-gradient-to-r from-transparent via-[#FF8C2A33] to-transparent"></div>
-
-          <!-- bullets -->
-          <ul class="mt-4 space-y-2 text-[#B3B3B3] text-sm">
-            {s.title === "Foundation" && (
-              <>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Pages: Home, About, Interviews, FAQ, Terms, Privacy, Contact.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Live CTAs linked to affiliate URL with clean UTM tags.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Policy-safe copy (no earnings claims, transparent disclaimers).</span>
-                </li>
-              </>
-            )}
-            {s.title === "Education First" && (
-              <>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Structured paths for beginners -- start executing day one.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Searchable library (1,000+ lessons & resources as it grows).</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Mentor guidance + global community support.</span>
-                </li>
-              </>
-            )}
-            {s.title === "Execution & Feedback" && (
-              <>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Small real tasks → feedback → iteration → momentum.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Student interviews for social proof (no guaranteed outcomes).</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="mt-1 h-2 w-2 rounded-full bg-[#FF8C2A]"></span>
-                  <span>Updates as platforms and best practices evolve.</span>
-                </li>
-              </>
-            )}
-          </ul>
         </div>
       ))}
     </div>
 
-    <div class="mt-12 flex justify-center gap-4">
-      <a
-        href="https://jointherealworld.com/checkout?a=7nrnndpb"
-        class="btn"
-      >
+    <div class="mt-14 flex flex-col sm:flex-row justify-center gap-4">
+      <a href="https://jointherealworld.com/checkout?a=7nrnndpb" class="btn">
         Get Started
       </a>
+
       <a
         href="#interviews"
-        class="px-6 py-3 rounded border border-[#FF8C2A] text-[#FF8C2A] font-semibold hover:bg-[#FF8C2A11] transition"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white/15 text-white/80 font-semibold hover:border-[#FF8C2A33] hover:text-white transition"
       >
         See Interviews
       </a>
     </div>
 
-    <p class="mt-4 text-center text-xs text-[#777777]">
+    <p class="mt-5 text-center text-xs text-white/40">
       Educational platform -- we don’t guarantee earnings. Your results depend on your effort and circumstances.
     </p>
   </div>
