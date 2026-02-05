@@ -1,46 +1,109 @@
 ---
-/* SECTION: WHAT DO WE TEACH -- Black + Gold/Orange Palette */
-const items = [
+/* SECTION: WHAT DO WE TEACH? -- 3x3 Skill Tracks (Premium dark + orange accents) */
+const tracks = [
   {
-    h: "Choose a Skill",
-    p: "Start with a focused path -- copywriting, marketing, freelancing, e-commerce, or AI-assisted digital services. Beginner-friendly lessons with practical exercises.",
+    h: "Client Acquisition",
+    p: "Get clients consistently using outreach, offers, and repeatable lead systems.",
+    tag: "Services",
   },
   {
-    h: "Multiply Your Income",
-    p: "Position your skills, attract clients, and use simple systems for consistent delivery. Build leverage with automation, templates, and tested workflows.",
+    h: "Content Creation + AI",
+    p: "Build modern content systems using AI tools, video, and distribution frameworks.",
+    tag: "AI",
   },
   {
-    h: "Scale Your Business",
-    p: "Turn what works into an operation -- hiring, delegation, paid ads, and process improvement. Grow sustainably and adapt as platforms evolve.",
+    h: "E-commerce",
+    p: "Learn product research, store setup, and performance basics to sell online.",
+    tag: "Commerce",
+  },
+  {
+    h: "Copywriting",
+    p: "Write clear conversion copy for ads, landing pages, emails, and offers.",
+    tag: "Marketing",
+  },
+  {
+    h: "Sales Systems",
+    p: "Improve closing, communication, and deal flow with simple sales processes.",
+    tag: "Sales",
+  },
+  {
+    h: "Freelancing",
+    p: "Turn skills into income with positioning, pricing, and delivery standards.",
+    tag: "Income",
+  },
+  {
+    h: "Business Fundamentals",
+    p: "Learn how to think in systems: offers, operations, and decision-making basics.",
+    tag: "Ops",
+  },
+  {
+    h: "Automation Workflows",
+    p: "Use tools and automation to save time, reduce errors, and scale output.",
+    tag: "Systems",
+  },
+  {
+    h: "Mindset & Execution",
+    p: "Consistency, focus, and execution habits that compound over time.",
+    tag: "Discipline",
   },
 ];
 ---
 
-<section id="teach" class="bg-[#000000] text-white">
-  <div class="max-w-6xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center text-[#FF8C2A]">WHAT DO WE TEACH?</h2>
-    <p class="mt-3 text-center text-[#B3B3B3] max-w-2xl mx-auto">
-      Step-by-step education for modern entrepreneurs -- from your first skill to a scalable online business.
+<section id="teach" class="bg-[#000000] text-white scroll-mt-28">
+  <div class="max-w-6xl mx-auto px-4 py-20">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-orange)] tracking-tight">
+      What do we teach?
+    </h2>
+
+    <p class="mt-4 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+      Inside The Real World you can choose from multiple skill tracks. Pick one path, go deep, and execute alongside other members.
     </p>
 
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      {items.map((it, i) => (
-        <div class="group p-6 rounded-lg border border-[#FF8C2A33] bg-[#1A1A1A] hover:border-[#FF8C2A66] hover:bg-[#1A1A1A]/80 transition">
-          <!-- Icon Placeholder -->
-          <div class="h-12 w-12 rounded-full bg-[#FF8C2A22] border border-[#FF8C2A55] flex items-center justify-center text-[#FF8C2A] font-bold text-sm">
-            {i + 1}
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {tracks.map((t) => (
+        <div class="group h-full rounded-2xl border border-white/10 bg-[#121212] overflow-hidden transition hover:border-[#FF8C2A33] hover:bg-[#141414]">
+          {/* Image placeholder (swap for real images later if you want) */}
+          <div class="relative h-36 bg-[#0f0f0f]">
+            {/* subtle gradient + accent line */}
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#000000] via-[#101010] to-[#1a1a1a] opacity-90"></div>
+            <div class="absolute left-0 top-0 h-full w-[3px] bg-[#FF8C2A] opacity-0 transition group-hover:opacity-80"></div>
+
+            {/* Tag pill */}
+            <div class="absolute left-4 top-4">
+              <span class="inline-flex items-center rounded-full border border-[#FF8C2A33] bg-[#FF8C2A14] px-3 py-1 text-xs font-semibold text-[#FF8C2A]">
+                {t.tag}
+              </span>
+            </div>
+
+            {/* Placeholder label (remove when you add images) */}
+            <div class="absolute right-4 bottom-4 text-xs text-white/40">
+              Image placeholder
+            </div>
           </div>
 
-          <!-- Heading -->
-          <h3 class="mt-4 font-semibold text-white text-lg">{it.h}</h3>
+          {/* Copy */}
+          <div class="p-6">
+            <h3 class="text-lg font-semibold text-[var(--color-text-light)] transition group-hover:text-white">
+              {t.h}
+            </h3>
 
-          <!-- Description -->
-          <p class="mt-2 text-[#B3B3B3] text-sm leading-relaxed">{it.p}</p>
+            <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+              {t.p}
+            </p>
+
+            {/* tiny divider for structure */}
+            <div class="mt-5 h-px bg-white/10"></div>
+
+            {/* micro note keeps it "real" and not hype */}
+            <p class="mt-4 text-xs text-white/45">
+              Step-by-step lessons + community discussion.
+            </p>
+          </div>
         </div>
       ))}
     </div>
 
-    <div class="mt-12 flex justify-center">
+    <div class="mt-14 flex justify-center">
       <a
         href="https://jointherealworld.com/checkout?a=7nrnndpb"
         class="btn"
@@ -49,8 +112,8 @@ const items = [
       </a>
     </div>
 
-    <p class="mt-4 text-center text-xs text-[#777777]">
-      Educational platform -- results depend on your effort and circumstances. No financial outcomes are guaranteed.
+    <p class="mt-5 text-center text-xs text-white/40">
+      Educational platform -- results depend on effort and circumstances. No financial outcomes are guaranteed.
     </p>
   </div>
 </section>
