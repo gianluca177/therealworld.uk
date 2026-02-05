@@ -5,20 +5,24 @@
 <section id="philosophy" class="bg-[#000000] text-white scroll-mt-24">
   <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
 
-    <!-- Visual -->
-    <!-- NOTE:
-      - To change the image later, ONLY replace the src URL below.
-      - To adjust framing, tweak the translate-x value on the img.
-      - aspect-video keeps the visual controlled in a 2-col grid.
-    -->
-    <div class="aspect-video rounded-lg bg-[#1A1A1A] border border-[#FF8C2A33] overflow-hidden">
-      <img
-        src="https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/d7bbcb14-c112-4486-fcd6-e174f32b3400/public"
-        alt="Teaching dashboard preview"
-        class="w-full h-full object-cover -translate-x-[6%]"
-        loading="lazy"
-      />
-    </div>
+<!-- Visual -->
+<!-- NOTE:
+  - Enlarged visual for stronger presence.
+  - Slight zoom to reduce dead space.
+  - Adjust scale / translate values only if needed.
+-->
+<div class="aspect-video rounded-xl bg-[#1A1A1A] border border-[#FF8C2A33] overflow-hidden md:-ml-4">
+  <img
+    src="https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/d7bbcb14-c112-4486-fcd6-e174f32b3400/public"
+    alt="Teaching dashboard preview"
+    class="w-full h-full object-cover scale-[1.08] -translate-x-[6%]"
+    loading="lazy"
+  />
+</div>
+
+<p class="mt-2 text-xs text-[#777777]">
+  Member dashboard preview. Interface shown for illustration.
+</p>
 
     <!-- Copy -->
     <div class="space-y-5">
