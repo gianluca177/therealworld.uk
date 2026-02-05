@@ -3,35 +3,35 @@
 const steps = [
   {
     n: 1,
-    title: "Foundation",
+    title: "Choose a Skill",
     copy:
-      "Launch a fast, compliant site with clear structure, simple messaging, and live CTAs -- built to stay stable under ads.",
+      "Once inside The Real World, you choose a single skill to focus on. Members get full access to all courses, but progress is fastest when you commit to one clear path.",
     bullets: [
-      "Pages: Home, About, Interviews, FAQ, Terms, Privacy, Contact.",
-      "Live CTAs linked to affiliate URL with clean UTM tags.",
-      "Policy-safe copy (no earnings claims, transparent disclaimers).",
+      "Access 10+ modern skill tracks, including AI, e-commerce, marketing, and copywriting.",
+      "1,000+ professionally produced lessons, updated as strategies evolve.",
+      "Direct access to community chats and mentors inside each skill campus.",
     ],
   },
   {
     n: 2,
-    title: "Education First",
+    title: "Learn & Apply",
     copy:
-      "Teach practical modern skills with short lessons, clear checklists, and community support -- designed for execution.",
+      "You don’t just watch videos. You apply what you learn immediately, using proven frameworks, examples from other members, and real-time feedback.",
     bullets: [
-      "Structured paths for beginners -- start executing day one.",
-      "Searchable library (1,000+ lessons & resources as it grows).",
-      "Mentor guidance + global community support.",
+      "Step-by-step learning paths designed for execution, not theory.",
+      "See how other members build, test, and improve real projects.",
+      "Ask questions, share progress, and learn best practices from active operators.",
     ],
   },
   {
     n: 3,
-    title: "Execution & Feedback",
+    title: "Execution & Accountability",
     copy:
-      "Apply what you learn on real tasks, gather feedback, iterate, and build momentum -- with accountability built in.",
+      "Progress compounds through consistent execution, feedback, and accountability. You track wins, refine strategy, and stay focused through community pressure and momentum.",
     bullets: [
-      "Small real tasks → feedback → iteration → momentum.",
-      "Student interviews for social proof (no guaranteed outcomes).",
-      "Updates as platforms and best practices evolve.",
+      "Execution-first culture with visible progress and shared wins.",
+      "Accountability through leaderboards, challenges, and peer discussion.",
+      "Guidance from experienced mentors on improving systems and decision-making.",
     ],
   },
 ];
@@ -44,8 +44,8 @@ const steps = [
     </h2>
 
     <p class="mt-4 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
-      Keep it simple: teach useful skills, help members execute, and improve through feedback.
-      No promises -- just a clear path from learning to applying.
+      The Real World follows a simple execution loop: choose a skill, apply it in the real world,
+      then improve through feedback and accountability. No shortcuts -- just a clear system for progress.
     </p>
 
     <div class="mt-12 grid gap-8 md:grid-cols-3">
@@ -66,7 +66,6 @@ const steps = [
                 </div>
               </div>
 
-              {/* small accent */}
               <span class="h-2 w-2 rounded-full bg-[#FF8C2A] opacity-70"></span>
             </div>
 
@@ -78,7 +77,7 @@ const steps = [
             {/* Separator */}
             <div class="mt-6 h-px bg-white/10"></div>
 
-            {/* Bullets (push to bottom for consistent card feel) */}
+            {/* Bullets */}
             <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
               {s.bullets.map((b) => (
                 <li class="flex items-start gap-3">
@@ -88,7 +87,6 @@ const steps = [
               ))}
             </ul>
 
-            {/* Spacer to ensure equal feel on all cards */}
             <div class="mt-auto"></div>
           </div>
         </div>
@@ -109,7 +107,7 @@ const steps = [
     </div>
 
     <p class="mt-5 text-center text-xs text-white/40">
-      Educational platform -- we don’t guarantee earnings. Your results depend on your effort and circumstances.
+      Educational platform -- results depend on effort, consistency, and execution.
     </p>
   </div>
 </section>
