@@ -1,13 +1,14 @@
 ---
-/* SECTION: INTERVIEWS -- Black + Gold/Orange Palette */
+/* SECTION: INTERVIEWS -- Premium dark + orange accents (Luke) */
 const interviews = [
   {
     name: "Luke",
     age: "19",
     location: "United States",
+    flag: "🇺🇸", // easy to remove later if you want
     note: "Member for 12 months",
     summary:
-      "Luke joined The Real World at a young age and followed the step-by-step lessons while actively engaging with mentors and the community. In this interview, he shares his experience, mindset, and what he learned during his time inside the platform.",
+      "Luke joined The Real World, picked a skill, and followed the step-by-step lessons while staying active in the community. In this interview, he shares what changed for him over the last 12 months.",
     video:
       "https://customer-29d3r31yjz332bf4.cloudflarestream.com/de951a6359bed8df49031d7ae2c2acb1/iframe",
   },
@@ -21,49 +22,69 @@ const interviews = [
     </h2>
 
     <p class="mt-3 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
-      Real members of The Real World discussing their experiences, lessons learned,
-      and personal development inside the platform.
+      Short interviews with members discussing their experience inside The Real World.
     </p>
 
     <div class="mt-14 space-y-12">
       {interviews.map((s) => (
-        <div class="grid md:grid-cols-2 gap-8 items-center rounded-2xl border border-white/10 bg-[#121212] p-6 md:p-8 transition hover:border-[#FF8C2A33]">
-          
-          <!-- 🧾 Member Details -->
-          <div class="space-y-4">
-            <div>
-              <h3 class="text-2xl font-semibold text-[var(--color-text-light)]">
-                {s.name}
-              </h3>
-              <p class="mt-1 text-sm text-white/50">
-                Age {s.age} • {s.location} • {s.note}
+        <div
+          class="
+            rounded-3xl
+            border border-[#FF8C2A33]
+            bg-[#121212]
+            p-6 md:p-10
+            transition
+            hover:border-[#FF8C2A66]
+          "
+        >
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <!-- 🧾 Member Details -->
+            <div class="space-y-4">
+              <div>
+                <h3 class="text-2xl font-semibold text-[var(--color-text-light)]">
+                  {s.name} <span class="ml-1">{s.flag}</span>
+                </h3>
+                <p class="mt-2 text-sm text-white/60">
+                  Age {s.age} • {s.location} • {s.note}
+                </p>
+              </div>
+
+              <p class="text-[var(--color-text-muted)] leading-relaxed">
+                {s.summary}
+              </p>
+
+              <p class="text-xs text-white/45">
+                Educational discussion only. Individual experiences vary and no financial outcomes are guaranteed.
               </p>
             </div>
 
-            <p class="text-[var(--color-text-muted)] leading-relaxed">
-              {s.summary}
-            </p>
+            <!-- 🎥 Video -->
+            <div class="space-y-3">
+              <div
+                class="
+                  relative aspect-video overflow-hidden rounded-2xl
+                  bg-black
+                  border border-[#FF8C2A55]
+                  shadow-[0_0_0_1px_rgba(255,140,42,0.12),0_0_34px_rgba(255,140,42,0.18)]
+                "
+              >
+                <iframe
+                  id="luke-iframe"
+                  src={s.video}
+                  title={`Interview with ${s.name}`}
+                  class="absolute inset-0 h-full w-full"
+                  style="border:none;"
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
 
-            <p class="text-xs text-white/40">
-              Educational discussion only. Individual experiences vary and no financial
-              outcomes are guaranteed.
-            </p>
+              <p class="text-xs text-white/40">
+                Member interview -- shown for informational purposes.
+              </p>
+            </div>
           </div>
-
-          <!-- 🎥 Video -->
-          <div class="relative aspect-video overflow-hidden rounded-xl border border-white/10 bg-black">
-            <iframe
-              id="luke-iframe"
-              src={s.video}
-              title={`Interview with ${s.name}`}
-              class="absolute inset-0 h-full w-full"
-              style="border: none;"
-              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-
         </div>
       ))}
     </div>
