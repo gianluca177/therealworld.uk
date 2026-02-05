@@ -5,46 +5,55 @@ const tracks = [
     h: "Client Acquisition",
     p: "Get clients consistently using outreach, offers, and repeatable lead systems.",
     tag: "Services",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/dba649d8-e873-4118-30f4-e9b8e5861400/public",
   },
   {
     h: "Content Creation + AI",
     p: "Build modern content systems using AI tools, video, and distribution frameworks.",
     tag: "AI",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/0f47b103-c4fa-4a9d-fbd7-df2918057900/public",
   },
   {
     h: "E-commerce",
     p: "Learn product research, store setup, and performance basics to sell online.",
     tag: "Commerce",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/6161fb36-a8fc-4c1e-6307-4284f75f5600/public",
   },
   {
     h: "Copywriting",
     p: "Write clear conversion copy for ads, landing pages, emails, and offers.",
     tag: "Marketing",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/37b1c69a-7c12-4409-c801-032396630a00/public",
   },
   {
     h: "Sales Systems",
     p: "Improve closing, communication, and deal flow with simple sales processes.",
     tag: "Sales",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/c520ea59-7feb-4477-4fef-f8876bcd8900/public",
   },
   {
     h: "Freelancing",
     p: "Turn skills into income with positioning, pricing, and delivery standards.",
     tag: "Income",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/ef18f0cb-99d8-4fdb-a7af-72982ee7ac00/public",
   },
   {
     h: "Business Fundamentals",
     p: "Learn how to think in systems: offers, operations, and decision-making basics.",
     tag: "Ops",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/ef18f0cb-99d8-4fdb-a7af-72982ee7ac00/public",
   },
   {
     h: "Automation Workflows",
     p: "Use tools and automation to save time, reduce errors, and scale output.",
     tag: "Systems",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/10965743-8ea8-4402-5987-4ae3183b1100/public",
   },
   {
     h: "Mindset & Execution",
     p: "Consistency, focus, and execution habits that compound over time.",
     tag: "Discipline",
+    img: "https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/f618eaf9-1955-4857-f7ae-f51a0fcf9800/public",
   },
 ];
 ---
@@ -62,22 +71,27 @@ const tracks = [
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {tracks.map((t) => (
         <div class="group h-full rounded-2xl border border-white/10 bg-[#121212] overflow-hidden transition hover:border-[#FF8C2A33] hover:bg-[#141414]">
-          {/* Image placeholder (swap for real images later if you want) */}
-          <div class="relative h-36 bg-[#0f0f0f]">
-            {/* subtle gradient + accent line */}
-            <div class="absolute inset-0 bg-gradient-to-tr from-[#000000] via-[#101010] to-[#1a1a1a] opacity-90"></div>
+          
+          {/* Image */}
+          <div class="relative h-40 overflow-hidden bg-[#0f0f0f]">
+            {/* Accent line */}
             <div class="absolute left-0 top-0 h-full w-[3px] bg-[#FF8C2A] opacity-0 transition group-hover:opacity-80"></div>
 
-            {/* Tag pill */}
+            <img
+              src={t.img}
+              alt={`${t.h} track preview`}
+              loading="lazy"
+              class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.05]"
+            />
+
+            {/* Dark gradient overlay */}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10"></div>
+
+            {/* Tag */}
             <div class="absolute left-4 top-4">
               <span class="inline-flex items-center rounded-full border border-[#FF8C2A33] bg-[#FF8C2A14] px-3 py-1 text-xs font-semibold text-[#FF8C2A]">
                 {t.tag}
               </span>
-            </div>
-
-            {/* Placeholder label (remove when you add images) */}
-            <div class="absolute right-4 bottom-4 text-xs text-white/40">
-              Image placeholder
             </div>
           </div>
 
@@ -91,12 +105,10 @@ const tracks = [
               {t.p}
             </p>
 
-            {/* tiny divider for structure */}
             <div class="mt-5 h-px bg-white/10"></div>
 
-            {/* micro note keeps it "real" and not hype */}
             <p class="mt-4 text-xs text-white/45">
-              Step-by-step lessons + community discussion.
+              Step-by-step lessons + community execution.
             </p>
           </div>
         </div>
