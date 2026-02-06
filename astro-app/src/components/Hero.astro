@@ -2,143 +2,91 @@
 import NavBar from "./NavBar.astro";
 ---
 
-<!-- ===================================================== -->
-<!-- HERO SECTION -- Complete, Animated, and Modular (MVP-ready) -->
-<!-- ===================================================== -->
 <section
   id="hero"
-  class="relative overflow-hidden bg-brand-bg text-brand-text min-h-screen flex flex-col"
+  class="relative bg-[#000000] text-white min-h-screen flex flex-col overflow-hidden"
 >
-
-  <!-- 🔸 1. Navigation Bar -->
+  <!-- Navigation -->
   <NavBar />
 
-  <!-- 🔸 2. Optional Background Video -->
-  <!-- MVP DEFER: keep this for later; ship with low-opacity placeholder (no Cloudflare Stream setup today) -->
-  <video
-    autoplay
-    loop
-    muted
-    playsinline
-    preload="auto"
-    class="absolute inset-0 w-full h-full object-cover opacity-20"
-  >
-    <source src="https://iframe.videodelivery.net/yourvideoid" type="video/mp4" />
-  </video>
+  <!-- Hero Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center text-center flex-grow px-4 pt-28 pb-20">
+    
+    <!-- Logo -->
+    <img
+      src="/hu-logo-512.png"
+      alt="Hustlers University UK Logo"
+      class="mx-auto h-20 w-20 mb-6 rounded-full border border-[#FF8C2A55]"
+      loading="eager"
+    />
 
-  <!-- 🔸 3. Hero Content -->
-  <div
-    class="relative z-10 flex flex-col items-center justify-center text-center flex-grow px-4 py-24 animate-fadeIn"
-  >
-   <!-- 🟠 Logo -->
-<img
-  src="/hu-logo-512.png"
-  alt="Huslters University UK Logo"
-  class="mx-auto h-20 w-20 mb-6 rounded-full border border-brand-gold object-cover animate-fadeInDelay"
-/>
-    <!-- 🟠 Title -->
-    <h1
-      class="text-5xl md:text-6xl font-satoshi font-extrabold text-brand-gold drop-shadow-[0_0_25px_rgba(255,140,42,0.8)] glow-text animate-slideUp"
-    >
+    <!-- Headline -->
+    <h1 class="text-4xl md:text-6xl font-extrabold text-[#FF8C2A] tracking-tight">
       Hustlers University UK
     </h1>
 
-    <!-- 🟠 Subtitle / Tagline (MVP-compliant) -->
-    <p class="max-w-2xl mx-auto text-brand-muted text-lg mt-4 mb-8 animate-fadeInDelay2">
-      A community of digital entrepreneurs learning contemporary online business skills --
-      with guidance from experienced mentors and peers. Educational platform; outcomes depend on your effort.
+    <!-- Subheading -->
+    <p class="max-w-2xl mx-auto text-[#B3B3B3] text-lg mt-4 mb-10 leading-relaxed">
+      A modern education platform and community focused on practical online business skills.
+      Learn step by step, apply in real time, and grow alongside other driven members.
     </p>
 
-<!-- Hero Video Container (Wistia) -->
-<section
-  style="
-    width: 100%;
-    padding: clamp(2rem, 5vw, 4rem) 0;
-  "
->
-  <div
-    style="
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 4vw, 2rem);
-    "
-  >
-    <div
-      style="
-        position: relative;
-        background: radial-gradient(
-          circle at center,
-          rgba(255, 140, 42, 0.25) 0%,
-          rgba(0, 0, 0, 0.85) 55%,
-          #000 100%
-        );
-        border-radius: 18px;
-        padding: 12px;
-      "
-    >
+    <!-- Hero Video (Cloudflare Stream) -->
+    <div class="w-full max-w-5xl mx-auto mb-10">
       <div
-        style="
-          background: #000;
-          border-radius: 14px;
-          overflow: hidden;
+        class="
+          relative aspect-video
+          rounded-2xl overflow-hidden
+          bg-black
+          border border-[#FF8C2A55]
+          shadow-[0_0_0_1px_rgba(255,140,42,0.12),0_0_40px_rgba(255,140,42,0.25)]
         "
       >
-        <div style="position: relative; padding-top: 56.25%;">
-          <iframe
-            src="https://fast.wistia.net/embed/iframe/qkkqo44eoi?seo=false"
-            title="Hustlers University Introduction Video"
-            allow="autoplay; fullscreen"
-            frameborder="0"
-            scrolling="no"
-            loading="lazy"
-            style="
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              border: 0;
-            "
-          ></iframe>
-        </div>
+        <iframe
+          src="https://customer-2tp30j9wazosgmgv.cloudflarestream.com/893a87f9dd7d8a6de34978eb3fc3a655/iframe"
+          title="Hustlers University Introduction"
+          class="absolute inset-0 h-full w-full"
+          style="border:none;"
+          loading="lazy"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
-  </div>
-</section>
 
-    <!-- 🟠 CTA Buttons -->
-    <div class="flex flex-wrap justify-center gap-4 animate-fadeInDelay4">
+    <!-- CTAs -->
+    <div class="flex flex-wrap justify-center gap-4">
       <a
         href="https://jointherealworld.com/checkout?a=7nrnndpb"
         class="btn"
       >
         Join Hustlers University
       </a>
-      <a href="#about" class="btn btn-outline">Learn More</a>
+
+      <a
+        href="#about"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#FF8C2A55] text-[#FF8C2A] font-semibold hover:bg-[#FF8C2A11] transition"
+      >
+        Learn More
+      </a>
     </div>
 
-    <!-- 🟠 Toggle Placeholder -->
-    <!-- MVP DEFER: non-functional plan toggle; wire up later -->
- 
- 
-    <!--<div
-      class="mt-10 inline-flex items-center gap-3 bg-brand-panel px-6 py-2 rounded-full text-sm animate-fadeInDelay5"
-    >
-      <span>Monthly</span>
-      <span class="w-10 h-5 bg-brand-orange rounded-full"></span>
-      <span>Yearly</span>
-    </div>
+    <!-- Compliance Line -->
+    <p class="mt-6 text-xs text-[#777777]">
+      Educational platform. No earnings are promised. Results depend on individual effort.
+    </p>
   </div>
-  -->
 
-  <!-- 🔸 4. Scroll Down Indicator -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 animate-bounceSlow">
-    <a href="#about" class="flex flex-col items-center text-brand-muted hover:text-brand-gold transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+    <a
+      href="#about"
+      class="flex flex-col items-center text-[#777777] hover:text-[#FF8C2A] transition"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
-      <span class="text-xs uppercase tracking-wider font-medium">Scroll</span>
+      <span class="text-xs uppercase tracking-wider">Scroll</span>
     </a>
   </div>
-</section>
 </section>
