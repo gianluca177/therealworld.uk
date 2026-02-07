@@ -1,0 +1,139 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const plans = [
+  {
+    name: "Conquer",
+    tag: "Available",
+    priceLine: "From $99/month",
+    desc:
+      "Full access to The Real World. Choose a skill path, follow step-by-step lessons, and stay accountable inside the community.",
+    bullets: [
+      "Access all skill campuses",
+      "Step-by-step lessons + templates",
+      "Community chats + mentor guidance",
+      "Cancel anytime via the official provider",
+    ],
+    cta: "Continue to official checkout",
+    href: "https://jointherealworld.com/checkout?a=7nrnndpb",
+    featured: true,
+    disabled: false,
+  },
+  {
+    name: "Champion",
+    tag: "Limited",
+    priceLine: "Availability varies",
+    desc:
+      "Some plans may be limited or closed depending on official availability. View the latest options on the official checkout.",
+    bullets: [
+      "Official plan availability can change",
+      "Always confirm details on checkout",
+      "No payments processed on this website",
+    ],
+    cta: "View official plans",
+    href: "https://jointherealworld.com/checkout?a=7nrnndpb",
+    featured: false,
+    disabled: true,
+  },
+  {
+    name: "Vanguard",
+    tag: "Sold out",
+    priceLine: "Not currently available",
+    desc:
+      "If a plan is sold out or closed, you’ll see the latest status on the official checkout page.",
+    bullets: [
+      "Status shown on official checkout",
+      "No guarantees of availability",
+      "See current options instantly",
+    ],
+    cta: "View official plans",
+    href: "https://jointherealworld.com/checkout?a=7nrnndpb",
+    featured: false,
+    disabled: true,
+  },
+];
+---
+
+<Layout
+  title="Plans | Hustlers University UK"
+  description="View plan options and continue to the official checkout for The Real World (the updated platform)."
+>
+  <section class="bg-[#000000] text-white">
+    <div class="max-w-6xl mx-auto px-4 py-20">
+      <p class="text-xs font-semibold tracking-widest text-[#FF8C2A] uppercase text-center">
+        Plans
+      </p>
+
+      <h1 class="mt-3 text-3xl md:text-5xl font-bold text-center text-[var(--color-text-light)]">
+        Choose a plan. Continue to the official checkout.
+      </h1>
+
+      <p class="mt-4 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+        The Real World is the updated platform (successor to Hustlers University).
+        This website is an independent marketing site and may contain affiliate links.
+        Plan details, pricing, and payments are handled on the official checkout.
+      </p>
+
+      <div class="mt-12 grid gap-8 md:grid-cols-3">
+        {plans.map((p) => (
+          <div
+            class={[
+              "rounded-3xl p-7 md:p-8 bg-[#121212] border transition h-full",
+              p.featured ? "border-[#FF8C2A66] shadow-[0_0_0_1px_rgba(255,140,42,0.12),0_0_34px_rgba(255,140,42,0.18)]" : "border-white/10 hover:border-[#FF8C2A33]",
+              p.disabled ? "opacity-80" : "",
+            ].join(" ")}
+          >
+            <div class="flex items-center justify-between">
+              <h2 class="text-xl font-semibold text-[var(--color-text-light)]">{p.name}</h2>
+              <span class="text-[10px] px-3 py-1 rounded-full border border-white/10 text-white/70">
+                {p.tag}
+              </span>
+            </div>
+
+            <p class="mt-3 text-sm text-white/60">{p.priceLine}</p>
+
+            <p class="mt-5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+              {p.desc}
+            </p>
+
+            <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
+              {p.bullets.map((b) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF8C2A]"></span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-7">
+              <a
+                href={p.href}
+                class={[
+                  "inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-semibold transition",
+                  p.featured
+                    ? "bg-[#FF8C2A] text-black hover:opacity-90"
+                    : "border border-white/15 text-white/85 hover:border-[#FF8C2A33] hover:text-white",
+                  p.disabled ? "pointer-events-auto" : "",
+                ].join(" ")}
+              >
+                {p.cta}
+              </a>
+
+              {p.disabled && (
+                <p class="mt-3 text-xs text-white/40">
+                  Note: This card is informational. Availability is shown on the official checkout.
+                </p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-xs text-white/40">
+          Educational marketing site. No earnings or outcomes are promised. Membership terms are defined by the official provider.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
