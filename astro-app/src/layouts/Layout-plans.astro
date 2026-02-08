@@ -1,0 +1,121 @@
+---
+import "../styles/plans.css";
+const { title = "Hustlers University UK", description = "Welcome to Hustlers University UK" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- 🟧 FAVICONS – HU UK -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TMX746Z4");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Analytics / Tracking -->
+    <script src="/scripts/analytics.js" defer></script>
+    <script src="/scripts/clicky-loader.js" defer></script>
+    <script src="/scripts/clicky-extras.js" defer></script>
+    <script src="/scripts/clicky-actions.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TMX746Z4"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <slot />
+
+    <footer class="mt-24 border-t border-white/10 bg-[var(--color-bg)]">
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <div class="grid gap-8 md:grid-cols-2">
+          <!-- Left: Company / Address -->
+          <div class="space-y-3 text-sm text-[var(--color-text-muted)]">
+            <p class="font-semibold text-[var(--color-text-light)]">
+              Hustlers University UK
+            </p>
+
+            <p>
+              Operated by <span class="font-medium">New Era Endeavour Ltd</span><br />
+              18 Bellevue Street<br />
+              Dumfries, DG1 3EJ<br />
+              United Kingdom
+            </p>
+
+            <p>
+              Support:
+              <a
+                href="mailto:support@hustlersuniversity.uk"
+                class="text-[var(--color-orange)] hover:text-[var(--color-orange-dark)] transition"
+              >
+                support@hustlersuniversity.uk
+              </a>
+            </p>
+          </div>
+
+          <!-- Right: Credibility / Disclosure -->
+          <div class="space-y-3 text-sm text-[var(--color-text-muted)]">
+            <p class="font-semibold text-[var(--color-text-light)]">
+              About This Platform
+            </p>
+
+            <p>
+              Hustlers University UK is an online education and mentorship platform
+              focused on practical skills, execution, and disciplined self-development.
+            </p>
+
+            <p>
+              This website may contain affiliate links. We do not guarantee income,
+              results, or financial outcomes. Success depends on individual effort,
+              consistency, and execution.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div
+          class="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-[var(--color-text-muted)] md:flex-row md:items-center md:justify-between"
+        >
+          <!-- Left: Copyright -->
+          <p>© {new Date().getFullYear()} Hustlers University UK. All rights reserved.</p>
+
+          <!-- Center: Legal Links -->
+          <div class="flex gap-6">
+            <a href="/terms/" class="hover:text-[var(--color-orange)] transition">Terms</a>
+            <a href="/privacy/" class="hover:text-[var(--color-orange)] transition">Privacy</a>
+          </div>
+
+          <!-- Right: Disclaimer -->
+          <p class="opacity-70">Educational content only -- not financial advice.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
