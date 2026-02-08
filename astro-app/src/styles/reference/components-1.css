@@ -1,0 +1,111 @@
+/* ============================= */
+/* GLOBAL RESETS (MINIMAL)       */
+/* ============================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================= */
+/* TYPOGRAPHY                    */
+/* ============================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin: 0 0 0.5em 0;
+  color: var(--text-primary);
+}
+
+p {
+  margin-bottom: 1em;
+  color: var(--text-muted);
+}
+
+/* ============================= */
+/* BUTTONS                       */
+/* ============================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  background: var(--brand-orange);
+  color: #000;
+  box-shadow: 0 6px 16px rgba(255,140,42,0.25);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--brand-gold);
+  box-shadow: 0 8px 20px rgba(246,197,103,0.35);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--brand-orange);
+  color: var(--brand-orange);
+}
+
+.btn-outline:hover {
+  background: var(--brand-orange);
+  color: #000;
+}
+
+/* ============================= */
+/* CARDS / PANELS                */
+/* ============================= */
+
+.card {
+  background: var(--bg-panel);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-strong);
+}
+
+/* ============================= */
+/* BADGES                        */
+/* ============================= */
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--brand-orange);
+  color: #000;
+}
+
+/* ============================= */
+/* INPUTS                        */
+/* ============================= */
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-panel);
+  border: 1px solid #333;
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand-orange);
+}
