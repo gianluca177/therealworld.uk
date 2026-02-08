@@ -1,75 +1,103 @@
-/* ============================= */
-/* GLOBAL RESETS (MINIMAL)       */
-/* ============================= */
+/* =========================================================
+   COMPONENTS-1.CSS
+   Purpose:
+   - Reusable UI building blocks (buttons, cards, inputs, badges)
+   - Keep this file "pure components" (no global tokens here)
 
-html {
-  scroll-behavior: smooth;
-}
+   Where to edit what:
+   - Button look:         .btn, .btn-outline, .btn-primary
+   - Cards/panels:        .card, .panel
+   - Forms:               .input
+   - Nav CTA button:      .nav-cta
+========================================================= */
 
-body {
-  background: var(--bg-main);
-  color: var(--text-primary);
-  font-family: var(--font-main);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ============================= */
-/* TYPOGRAPHY                    */
-/* ============================= */
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  margin: 0 0 0.5em 0;
-  color: var(--text-primary);
-}
-
-p {
-  margin-bottom: 1em;
-  color: var(--text-muted);
-}
-
-/* ============================= */
-/* BUTTONS                       */
-/* ============================= */
-
+/* =======================
+   Buttons
+   ======================= */
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  background-color: var(--color-orange);
+  color: #000;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 6px 16px rgba(255, 140, 42, 0.25);
+}
+
+.btn:hover {
+  background-color: var(--color-gold);
+  box-shadow: 0 8px 20px rgba(246, 197, 103, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  background-color: var(--color-orange-dark);
+  box-shadow: 0 4px 10px rgba(196, 106, 10, 0.3);
+  transform: translateY(0);
+}
+
+/* Optional explicit variants */
+.btn-primary {
+  background-color: var(--color-orange);
+  color: #000;
+  box-shadow: 0 0 10px rgba(255, 140, 42, 0.25);
+}
+.btn-primary:hover {
+  background-color: var(--color-orange-dark);
+  color: #000;
+  box-shadow: 0 0 14px rgba(255, 140, 42, 0.35);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-orange);
+  color: var(--color-orange);
+  background: transparent;
+}
+.btn-outline:hover {
+  background-color: var(--color-orange);
+  color: #000;
+}
+
+/* =======================
+   Nav CTA (wins against global <a> styles)
+   ======================= */
+.nav-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   font-weight: 700;
-  background: var(--brand-orange);
-  color: #000;
-  box-shadow: 0 6px 16px rgba(255,140,42,0.25);
-  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+
+  background-color: var(--color-orange);
+  color: #000 !important;
+
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+  box-shadow: 0 0 10px rgba(255, 140, 42, 0.4);
 }
 
-.btn:hover {
-  background: var(--brand-gold);
-  box-shadow: 0 8px 20px rgba(246,197,103,0.35);
+.nav-cta:hover {
+  background-color: var(--color-orange-dark);
+  color: #000 !important;
+  box-shadow: 0 0 14px rgba(255, 140, 42, 0.55);
   transform: translateY(-1px);
 }
 
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--brand-orange);
-  color: var(--brand-orange);
+.nav-cta:active {
+  transform: translateY(0);
 }
 
-.btn-outline:hover {
-  background: var(--brand-orange);
-  color: #000;
-}
-
-/* ============================= */
-/* CARDS / PANELS                */
-/* ============================= */
-
+/* =======================
+   Cards / Panels
+   ======================= */
 .card {
-  background: var(--bg-panel);
-  border-radius: var(--radius-lg);
+  background-color: var(--color-panel);
+  border-radius: var(--radius-base);
   box-shadow: var(--shadow-soft);
   padding: 1.5rem;
 }
@@ -78,34 +106,43 @@ p {
   box-shadow: var(--shadow-strong);
 }
 
-/* ============================= */
-/* BADGES                        */
-/* ============================= */
-
-.badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: var(--brand-orange);
-  color: #000;
+/* A simple neutral panel utility */
+.panel {
+  background-color: var(--color-panel);
+  border-radius: 0.5rem;
 }
 
-/* ============================= */
-/* INPUTS                        */
-/* ============================= */
+/* Gradient strip (if you want that "checkout header" feel) */
+.header-strip {
+  background: linear-gradient(90deg, var(--color-orange), var(--color-orange-dark));
+}
 
+/* =======================
+   Inputs
+   ======================= */
 .input {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: var(--bg-panel);
+  background-color: var(--color-panel);
   border: 1px solid #333;
-  border-radius: var(--radius-md);
-  color: var(--text-primary);
+  border-radius: var(--radius-base);
+  color: var(--color-text-light);
 }
 
 .input:focus {
   outline: none;
-  border-color: var(--brand-orange);
+  border-color: var(--color-orange);
+}
+
+/* =======================
+   Badges
+   ======================= */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  background-color: var(--color-orange);
+  color: #000;
+  font-weight: 600;
 }
