@@ -292,3 +292,449 @@ a:hover {
   50% { transform: translateY(-10px); }
 }
 .animate-bounceSlow { animation: bounceSlow 2s infinite; }
+
+/* =======================
+   NAVBAR
+   ======================= */
+.navbar-fixed {
+  @apply fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/60 border-b text-white transition-all duration-300;
+  border-color: rgba(255, 140, 42, 0.13);
+}
+
+.navbar-links {
+  color: var(--color-text-muted);
+}
+
+.navbar-link {
+  @apply transition-colors;
+  color: var(--color-text-muted);
+}
+
+.navbar-link:hover {
+  color: var(--color-orange);
+}
+
+.navbar-menu-btn {
+  @apply transition-colors;
+  color: var(--color-orange);
+}
+
+.navbar-menu-btn:hover {
+  @apply opacity-80;
+}
+
+.btn-navbar {
+  @apply !px-4 !py-2 !text-xs !leading-none md:!px-6 md:!py-3 md:!text-sm md:!leading-none;
+}
+
+/* =======================
+   HERO SECTION
+   ======================= */
+.hero-section {
+  @apply relative bg-black text-white min-h-screen flex flex-col overflow-hidden;
+}
+
+.hero-content {
+  @apply relative z-10 flex flex-col items-center justify-center text-center flex-grow px-4 pt-28 pb-20;
+}
+
+.hero-logo {
+  @apply mx-auto h-20 w-20 mb-6 rounded-full border;
+  border-color: rgba(255, 140, 42, 0.33);
+}
+
+.hero-title {
+  @apply text-4xl md:text-6xl font-extrabold tracking-tight;
+  color: var(--color-orange);
+}
+
+.hero-subtitle {
+  @apply max-w-2xl mx-auto text-lg mt-4 mb-10 leading-relaxed;
+  color: var(--color-text-muted);
+}
+
+.hero-video-wrapper {
+  @apply w-full max-w-5xl mx-auto mb-10;
+}
+
+.hero-video-container {
+  @apply relative aspect-video rounded-2xl overflow-hidden bg-black border;
+  border-color: rgba(255, 140, 42, 0.33);
+  box-shadow: 0 0 0 1px rgba(255, 140, 42, 0.12), 0 0 40px rgba(255, 140, 42, 0.25);
+}
+
+.hero-ctas {
+  @apply flex flex-wrap justify-center gap-4;
+}
+
+.btn-secondary {
+  @apply border font-semibold hover:opacity-90 transition;
+  border-color: rgba(255, 140, 42, 0.33);
+  color: var(--color-orange);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 140, 42, 0.07);
+}
+
+.hero-compliance {
+  @apply mt-6 text-xs;
+  color: #777777;
+}
+
+.hero-scroll-indicator {
+  @apply absolute bottom-6 left-1/2 -translate-x-1/2 z-20;
+}
+
+.hero-scroll-link {
+  @apply flex flex-col items-center transition;
+  color: #777777;
+}
+
+.hero-scroll-link:hover {
+  color: var(--color-orange);
+}
+
+/* =======================
+   ABOUT SECTION
+   ======================= */
+.about-section {
+  @apply bg-black text-white scroll-mt-24;
+}
+
+.about-label {
+  @apply text-xs font-semibold tracking-widest uppercase;
+  color: var(--color-orange);
+}
+
+.about-title {
+  @apply text-3xl md:text-4xl font-bold leading-tight;
+  color: var(--color-text-light);
+}
+
+.about-text {
+  @apply leading-relaxed;
+  color: var(--color-text-muted);
+}
+
+.about-features {
+  @apply mt-2 space-y-3;
+  color: var(--color-text-muted);
+}
+
+.about-feature-item {
+  @apply flex gap-3;
+}
+
+.about-feature-dot {
+  @apply mt-2 h-2 w-2 shrink-0 rounded-full;
+  background-color: var(--color-orange);
+}
+
+.about-preview {
+  @apply aspect-video rounded-lg overflow-hidden border;
+  background-color: var(--color-panel);
+  border-color: rgba(255, 140, 42, 0.2);
+}
+
+.about-compliance {
+  @apply text-xs;
+  color: #777777;
+}
+
+/* =======================
+   CHOICE SECTION
+   ======================= */
+.choice-section {
+  @apply bg-black text-white scroll-mt-28;
+}
+
+.choice-title {
+  @apply text-4xl md:text-5xl font-extrabold tracking-wide;
+  color: var(--color-orange);
+}
+
+.choice-text {
+  @apply max-w-3xl mx-auto leading-relaxed;
+  color: var(--color-text-muted);
+}
+
+.choice-video-wrapper {
+  @apply mx-auto max-w-4xl;
+}
+
+.choice-video-container {
+  @apply relative aspect-video overflow-hidden rounded-2xl border bg-black;
+  border-color: rgba(255, 140, 42, 0.33);
+  box-shadow: 0 0 40px rgba(255, 140, 42, 0.15);
+}
+
+.choice-disclaimer {
+  @apply pt-4 text-xs;
+  color: #777777;
+}
+
+/* =======================
+   FAQ SECTION
+   ======================= */
+.faq-section {
+  @apply bg-black text-white;
+}
+
+.faq-title {
+  @apply text-3xl font-bold;
+  color: var(--color-orange);
+}
+
+.faq-item {
+  @apply group border rounded p-4 transition;
+  border-color: rgba(255, 140, 42, 0.2);
+  background-color: var(--color-panel);
+}
+
+.faq-item:hover {
+  border-color: rgba(255, 140, 42, 0.4);
+}
+
+.faq-question {
+  @apply cursor-pointer font-semibold;
+  color: var(--color-orange);
+}
+
+.faq-answer {
+  @apply mt-2;
+  color: var(--color-text-muted);
+}
+
+.faq-disclaimer {
+  @apply mt-3 text-xs;
+  color: #777777;
+}
+
+/* =======================
+   PHILOSOPHY SECTION
+   ======================= */
+.philosophy-section {
+  @apply bg-black text-white scroll-mt-24;
+}
+
+.philosophy-image {
+  @apply aspect-video rounded-xl overflow-hidden border md:-ml-4;
+  background-color: var(--color-panel);
+  border-color: rgba(255, 140, 42, 0.2);
+}
+
+.philosophy-caption {
+  @apply text-xs;
+  color: #777777;
+}
+
+.philosophy-disclaimer {
+  @apply text-xs;
+  color: #777777;
+}
+
+/* =======================
+   PLAN SECTION
+   ======================= */
+.plan-section {
+  @apply bg-black text-white scroll-mt-28;
+}
+
+.plan-title {
+  @apply text-3xl md:text-4xl font-bold text-center tracking-tight;
+  color: var(--color-orange);
+}
+
+.plan-subtitle {
+  @apply mt-4 text-center max-w-3xl mx-auto leading-relaxed;
+  color: var(--color-text-muted);
+}
+
+.plan-card {
+  @apply h-full rounded-2xl border p-6 md:p-7 transition;
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: #121212;
+}
+
+.plan-card:hover {
+  border-color: rgba(255, 140, 42, 0.2);
+  background-color: #141414;
+}
+
+.plan-step-badge {
+  @apply inline-flex items-center justify-center h-9 w-9 rounded-full border text-sm font-semibold;
+  background-color: rgba(255, 140, 42, 0.08);
+  border-color: rgba(255, 140, 42, 0.2);
+  color: var(--color-orange);
+}
+
+.plan-step-label {
+  @apply text-xs uppercase tracking-wide;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.plan-step-title {
+  @apply text-lg font-semibold;
+  color: var(--color-text-light);
+}
+
+.plan-step-dot {
+  @apply h-2 w-2 rounded-full;
+  background-color: var(--color-orange);
+  opacity: 0.7;
+}
+
+.plan-bullet {
+  @apply mt-2 h-1.5 w-1.5 rounded-full shrink-0;
+  background-color: var(--color-orange);
+}
+
+.btn-secondary-outline {
+  @apply border font-semibold hover:opacity-90 transition;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-secondary-outline:hover {
+  border-color: rgba(255, 140, 42, 0.2);
+  color: white;
+}
+
+.plan-disclaimer {
+  @apply mt-5 text-center text-xs;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* =======================
+   TEACH SECTION
+   ======================= */
+.teach-section {
+  @apply bg-black text-white scroll-mt-28;
+}
+
+.teach-title {
+  @apply text-3xl md:text-4xl font-bold text-center tracking-tight;
+  color: var(--color-orange);
+}
+
+.teach-subtitle {
+  @apply mt-4 text-center max-w-3xl mx-auto leading-relaxed;
+  color: var(--color-text-muted);
+}
+
+.teach-card {
+  @apply group h-full rounded-2xl border overflow-hidden transition;
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: #121212;
+}
+
+.teach-card:hover {
+  border-color: rgba(255, 140, 42, 0.2);
+  background-color: #141414;
+}
+
+.teach-card-image {
+  @apply relative h-40 overflow-hidden;
+  background-color: #0f0f0f;
+}
+
+.teach-card-image::before {
+  content: '';
+  @apply absolute left-0 top-0 h-full w-[3px] opacity-0 transition;
+  background-color: var(--color-orange);
+}
+
+.teach-card:hover .teach-card-image::before {
+  opacity: 0.8;
+}
+
+.teach-card-image img {
+  @apply absolute inset-0;
+}
+
+.teach-card-image::after {
+  content: '';
+  @apply absolute inset-0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.teach-card-tag {
+  @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold relative z-10;
+  border-color: rgba(255, 140, 42, 0.2);
+  background-color: rgba(255, 140, 42, 0.08);
+  color: var(--color-orange);
+}
+
+.teach-card-title {
+  @apply text-lg font-semibold transition;
+  color: var(--color-text-light);
+}
+
+.teach-card:hover .teach-card-title {
+  color: white;
+}
+
+.teach-card-caption {
+  @apply mt-4 text-xs;
+  color: rgba(255, 255, 255, 0.27);
+}
+
+/* =======================
+   INTERVIEWS SECTION
+   ======================= */
+.interviews-section {
+  @apply bg-black text-white scroll-mt-28;
+}
+
+.interviews-title {
+  @apply text-3xl md:text-4xl font-bold text-center tracking-tight;
+  color: var(--color-orange);
+}
+
+.interviews-subtitle {
+  @apply mt-3 text-center max-w-3xl mx-auto leading-relaxed;
+  color: var(--color-text-muted);
+}
+
+.interview-card {
+  @apply rounded-3xl border p-6 md:p-10 transition;
+  border-color: rgba(255, 140, 42, 0.2);
+  background-color: #121212;
+}
+
+.interview-card:hover {
+  border-color: rgba(255, 140, 42, 0.4);
+}
+
+.interview-member-name {
+  @apply text-2xl font-semibold;
+  color: var(--color-text-light);
+}
+
+.interview-member-meta {
+  @apply mt-2 text-sm;
+  color: rgba(255, 255, 255, 0.375);
+}
+
+.interview-summary {
+  @apply leading-relaxed;
+  color: var(--color-text-muted);
+}
+
+.interview-disclaimer {
+  @apply text-xs;
+  color: rgba(255, 255, 255, 0.27);
+}
+
+.interview-video-container {
+  @apply relative aspect-video overflow-hidden rounded-2xl bg-black border;
+  border-color: rgba(255, 140, 42, 0.33);
+  box-shadow: 0 0 0 1px rgba(255, 140, 42, 0.12), 0 0 34px rgba(255, 140, 42, 0.18);
+}
+
+.interview-video-caption {
+  @apply text-xs;
+  color: rgba(255, 255, 255, 0.25);
+}

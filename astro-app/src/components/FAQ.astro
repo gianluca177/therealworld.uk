@@ -27,28 +27,25 @@ const faqs = [
   },
 ];
 ---
-<section id="faq" class="bg-[#000000] text-white">
+<section id="faq" class="faq-section">
   <div class="max-w-3xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-[#FF8C2A]">FAQ</h2>
+    <h2 class="faq-title">FAQ</h2>
     <div class="mt-6 space-y-3">
       {faqs.map((f) => (
-        <details class="group border border-[#FF8C2A33] rounded p-4 bg-[#1A1A1A] hover:border-[#FF8C2A66] transition">
-          <summary class="cursor-pointer font-semibold text-[#FF8C2A]">
+        <details class="faq-item">
+          <summary class="faq-question">
             {f.q}
           </summary>
-          <p class="mt-2 text-[#B3B3B3]">{f.a}</p>
+          <p class="faq-answer">{f.a}</p>
         </details>
       ))}
     </div>
 
     <div id="cta" class="mt-10 text-center">
-      <a
-        href="https://jointherealworld.com/checkout?a=7nrnndpb"
-        class="btn"
-      >
+      <a href="https://jointherealworld.com/checkout?a=7nrnndpb" class="btn">
         JOIN NOW
       </a>
-      <p class="mt-3 text-xs text-[#777777]">
+      <p class="faq-disclaimer">
         Educational platform -- no guaranteed results. Cancel anytime.
       </p>
     </div>

@@ -58,25 +58,22 @@ const tracks = [
 ];
 ---
 
-<section id="teach" class="bg-[#000000] text-white scroll-mt-28">
+<section id="teach" class="teach-section">
   <div class="max-w-6xl mx-auto px-4 py-20">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-orange)] tracking-tight">
+    <h2 class="teach-title">
       What do we teach?
     </h2>
 
-    <p class="mt-4 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+    <p class="teach-subtitle">
       Inside The Real World you can choose from multiple skill tracks. Pick one path, go deep, and execute alongside other members.
     </p>
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {tracks.map((t) => (
-        <div class="group h-full rounded-2xl border border-white/10 bg-[#121212] overflow-hidden transition hover:border-[#FF8C2A33] hover:bg-[#141414]">
+        <div class="teach-card">
 
           {/* Image */}
-          <div class="relative h-40 overflow-hidden bg-[#0f0f0f]">
-            {/* Accent line */}
-            <div class="absolute left-0 top-0 h-full w-[3px] bg-[#FF8C2A] opacity-0 transition group-hover:opacity-80"></div>
-
+          <div class="teach-card-image">
             <img
               src={t.img}
               alt={`${t.h} track preview`}
@@ -84,12 +81,9 @@ const tracks = [
               class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.05]"
             />
 
-            {/* Preferred: dark overlay for contrast */}
-            <div class="absolute inset-0 bg-black/35"></div>
-
             {/* Tag */}
             <div class="absolute left-4 top-4 z-10">
-              <span class="inline-flex items-center rounded-full border border-[#FF8C2A33] bg-[#FF8C2A14] px-3 py-1 text-xs font-semibold text-[#FF8C2A]">
+              <span class="teach-card-tag">
                 {t.tag}
               </span>
             </div>
@@ -97,7 +91,7 @@ const tracks = [
 
           {/* Copy */}
           <div class="p-6">
-            <h3 class="text-lg font-semibold text-[var(--color-text-light)] transition group-hover:text-white">
+            <h3 class="teach-card-title">
               {t.h}
             </h3>
 
@@ -107,7 +101,7 @@ const tracks = [
 
             <div class="mt-5 h-px bg-white/10"></div>
 
-            <p class="mt-4 text-xs text-white/45">
+            <p class="teach-card-caption">
               Step-by-step lessons + community execution.
             </p>
           </div>

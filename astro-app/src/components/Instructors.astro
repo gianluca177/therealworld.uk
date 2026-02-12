@@ -37,58 +37,44 @@ const interviews = [
 ];
 ---
 
-<section id="interviews" class="bg-[#000000] text-white scroll-mt-28">
+<section id="interviews" class="interviews-section">
   <div class="max-w-6xl mx-auto px-4 py-20">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-orange)] tracking-tight">
+    <h2 class="interviews-title">
       Interviews with Real Members
     </h2>
 
-    <p class="mt-3 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+    <p class="interviews-subtitle">
       Members of The Real World sharing their experiences, lessons learned, and personal development inside the platform.
     </p>
 
     <div class="mt-14 space-y-14">
       {interviews.map((s) => (
-        <div
-          class="
-            rounded-3xl
-            border border-[#FF8C2A33]
-            bg-[#121212]
-            p-6 md:p-10
-            transition
-            hover:border-[#FF8C2A66]
-          "
+        <div class="interview-card">
         >
           <div class="grid md:grid-cols-2 gap-10 items-center">
-            <!-- 🧾 Member Details -->
+            {/* Member Details */}
             <div class="space-y-4">
               <div>
-                <h3 class="text-2xl font-semibold text-[var(--color-text-light)]">
+                <h3 class="interview-member-name">
                   {s.name}
                 </h3>
-                <p class="mt-2 text-sm text-white/60">
+                <p class="interview-member-meta">
                   Age {s.age} • {s.location} • {s.note}
                 </p>
               </div>
 
-              <p class="text-[var(--color-text-muted)] leading-relaxed">
+              <p class="interview-summary">
                 {s.summary}
               </p>
 
-              <p class="text-xs text-white/45">
+              <p class="interview-disclaimer">
                 Educational discussion only. Individual experiences vary and no financial outcomes are guaranteed.
               </p>
             </div>
 
-            <!-- 🎥 Video -->
+            {/* Video */}
             <div class="space-y-3">
-              <div
-                class="
-                  relative aspect-video overflow-hidden rounded-2xl
-                  bg-black
-                  border border-[#FF8C2A55]
-                  shadow-[0_0_0_1px_rgba(255,140,42,0.12),0_0_34px_rgba(255,140,42,0.18)]
-                "
+              <div class="interview-video-container">
               >
                 <iframe
                   id={s.iframeId}
@@ -102,7 +88,7 @@ const interviews = [
                 ></iframe>
               </div>
 
-              <p class="text-xs text-white/40">
+              <p class="interview-video-caption">
                 Member interview -- shown for informational purposes.
               </p>
             </div>

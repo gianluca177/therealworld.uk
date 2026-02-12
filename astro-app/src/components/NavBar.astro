@@ -1,5 +1,5 @@
 <!-- src/components/NavBar.astro -->
-<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/60 border-b border-[#FF8C2A22] text-white transition-all duration-300">
+<nav class="navbar-fixed">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-3 md:py-4">
 
     <!-- Left: Logo -->
@@ -12,38 +12,28 @@
     </a>
 
     <!-- Center: Nav Links (Desktop Only) -->
-    <ul class="hidden md:flex space-x-8 text-sm font-medium text-[#B3B3B3]">
-      <li><a href="#hero" class="hover:text-[#FF8C2A] transition-colors">Home</a></li>
-      <li><a href="#about" class="hover:text-[#FF8C2A] transition-colors">About</a></li>
-      <li><a href="#plans" class="hover:text-[#FF8C2A] transition-colors">Plans</a></li>
-      <li><a href="#philosophy" class="hover:text-[#FF8C2A] transition-colors">Philosophy</a></li>
-      <li><a href="#teach" class="hover:text-[#FF8C2A] transition-colors">Teach</a></li>
-      <li><a href="#interviews" class="hover:text-[#FF8C2A] transition-colors">Interviews</a></li>
-      <li><a href="#faq" class="hover:text-[#FF8C2A] transition-colors">FAQ</a></li>
+    <ul class="hidden md:flex space-x-8 text-sm font-medium navbar-links">
+      <li><a href="#hero" class="navbar-link">Home</a></li>
+      <li><a href="#about" class="navbar-link">About</a></li>
+      <li><a href="#plans" class="navbar-link">Plans</a></li>
+      <li><a href="#philosophy" class="navbar-link">Philosophy</a></li>
+      <li><a href="#teach" class="navbar-link">Teach</a></li>
+      <li><a href="#interviews" class="navbar-link">Interviews</a></li>
+      <li><a href="#faq" class="navbar-link">FAQ</a></li>
     </ul>
 
     <!-- Right: CTA + Mobile Menu -->
     <div class="flex items-center gap-3">
-
-      <!-- CTA (uses existing .btn but overridden for mobile sizing) -->
-      <a
-        href="https://jointherealworld.com/checkout?a=7nrnndpb"
-        class="
-          btn
-          !px-4 !py-2 !text-xs !leading-none
-          md:!px-6 md:!py-3 md:!text-sm md:!leading-none
-        "
-      >
+      <a href="https://jointherealworld.com/checkout?a=7nrnndpb" class="btn btn-navbar">
         JOIN NOW
       </a>
 
       <!-- Mobile Menu Placeholder (MVP defer) -->
-      <button class="md:hidden text-[#FF8C2A] focus:outline-none" aria-label="Open menu">
+      <button class="md:hidden navbar-menu-btn" aria-label="Open menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-
     </div>
 
   </div>

@@ -37,36 +37,36 @@ const steps = [
 ];
 ---
 
-<section id="plans" class="bg-[#000000] text-white scroll-mt-28">
+<section id="plans" class="plan-section">
   <div class="max-w-6xl mx-auto px-4 py-20">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-orange)] tracking-tight">
+    <h2 class="plan-title">
       What is our plan?
     </h2>
 
-    <p class="mt-4 text-center text-[var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
+    <p class="plan-subtitle">
       The Real World follows a simple execution loop: choose a skill, apply it in the real world,
       then improve through feedback and accountability. No shortcuts -- just a clear system for progress.
     </p>
 
     <div class="mt-12 grid gap-8 md:grid-cols-3">
       {steps.map((s) => (
-        <div class="h-full rounded-2xl border border-white/10 bg-[#121212] p-6 md:p-7 transition hover:border-[#FF8C2A33] hover:bg-[#141414]">
+        <div class="plan-card">
           <div class="flex h-full flex-col">
             {/* Header */}
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
-                <span class="inline-flex items-center justify-center h-9 w-9 rounded-full bg-[#FF8C2A14] border border-[#FF8C2A33] text-[var(--color-orange)] text-sm font-semibold">
+                <span class="plan-step-badge">
                   {s.n}
                 </span>
                 <div class="leading-tight">
-                  <p class="text-xs uppercase tracking-wide text-white/50">Step {s.n}</p>
-                  <h3 class="text-lg font-semibold text-[var(--color-text-light)]">
+                  <p class="plan-step-label">Step {s.n}</p>
+                  <h3 class="plan-step-title">
                     {s.title}
                   </h3>
                 </div>
               </div>
 
-              <span class="h-2 w-2 rounded-full bg-[#FF8C2A] opacity-70"></span>
+              <span class="plan-step-dot"></span>
             </div>
 
             {/* Copy */}
@@ -81,7 +81,7 @@ const steps = [
             <ul class="mt-6 space-y-3 text-sm text-[var(--color-text-muted)]">
               {s.bullets.map((b) => (
                 <li class="flex items-start gap-3">
-                  <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF8C2A]"></span>
+                  <span class="plan-bullet"></span>
                   <span>{b}</span>
                 </li>
               ))}
@@ -98,15 +98,12 @@ const steps = [
         Get Started
       </a>
 
-      <a
-        href="#interviews"
-        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-white/15 text-white/80 font-semibold hover:border-[#FF8C2A33] hover:text-white transition"
-      >
+      <a href="#interviews" class="btn btn-secondary-outline">
         See Interviews
       </a>
     </div>
 
-    <p class="mt-5 text-center text-xs text-white/40">
+    <p class="plan-disclaimer">
       Educational platform -- results depend on effort, consistency, and execution.
     </p>
   </div>
