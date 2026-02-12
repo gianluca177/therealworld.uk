@@ -63,7 +63,7 @@
 
 /* =======================
    FONTS (3-Font System)
-   Primary: General Sans | Accent: Outfit | UI: Montserrat
+   Primary: General Sans | UI: Montserrat
    ======================= */
 
 /* PRIMARY FONT - General Sans (Body, Headings) */
@@ -98,19 +98,8 @@
   font-display: swap;
 }
 
-/* ACCENT FONT - Outfit (Card titles, Interview names, Course titles) */
-@font-face {
-  font-family: "Outfit";
-  src: url("/fonts/outfit-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Outfit";
-  src: url("/fonts/outfit-bold.woff2") format("woff2");
-  font-weight: 700;
-  font-display: swap;
-}
+/* ACCENT FONT - General Sans (Card titles, Interview names, Course titles) */
+/* Using General Sans for consistency across all text elements */
 
 /* UI FONT - Montserrat (Navbar, Buttons) */
 @font-face {
@@ -388,9 +377,9 @@ a:hover {
   box-shadow: 0 6px 16px rgba(255, 140, 42, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Card title - Outfit weight and style */
+/* Card title - General Sans weight and style */
 .card-title {
-  font-family: "Outfit";
+  font-family: "General Sans";
   font-weight: 700;
   font-size: 1.125rem;
   color: var(--color-text-light);
@@ -1008,7 +997,7 @@ a:hover {
 
 .teach-card-title {
   @apply text-lg font-semibold transition;
-  font-family: "Outfit";
+  font-family: "General Sans";
   font-weight: 700;
   color: var(--color-text-light);
 }
@@ -1058,7 +1047,7 @@ a:hover {
 
 .interview-member-name {
   @apply text-2xl font-bold;
-  font-family: "Outfit";
+  font-family: "General Sans";
   font-weight: 700;
   color: var(--color-text-light);
 }
@@ -1108,7 +1097,7 @@ a:hover {
 
 .footer-section-title {
   @apply font-semibold;
-  font-family: "Outfit";
+  font-family: "General Sans";
   color: var(--color-text-light);
 }
 

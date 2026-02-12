@@ -59,8 +59,8 @@ export default {
         body: ['"General Sans"', 'ui-sans-serif', 'system-ui'],
         heading: ['"General Sans"', 'ui-sans-serif', 'system-ui'],
 
-        // Cards / accent titles
-        accent: ['Outfit', 'ui-sans-serif', 'system-ui'],
+        // Unified font system - all using General Sans
+        accent: ['"General Sans"', 'ui-sans-serif', 'system-ui'],
 
         // Navbar + buttons
         ui: ['Montserrat', 'ui-sans-serif', 'system-ui'],
