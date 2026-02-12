@@ -10,9 +10,11 @@ export default {
          COLOR SYSTEM
       ------------------------- */
       colors: {
-        // Brand accents
-        'brand-gold': '#f6c567',
-        'brand-orange': '#ff8c2a',
+        // Brand accents - Premium Gold → Orange Gradient
+        'brand-gold': '#FFCF23',
+        'brand-orange': '#FF8D3A',
+
+        // Legacy accents (maintained for compatibility)
         'brand-orange-dark': '#c46a0a',
 
         // Background / surfaces (navy-black premium)
