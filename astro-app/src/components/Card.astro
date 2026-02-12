@@ -1,0 +1,56 @@
+---
+// Card.astro - Unified Card Component
+// Purpose: Reusable card wrapper with variants and glow effects
+// Props:
+//   as: 'div' | 'article' | 'section' (default: 'div')
+//   href?: string (makes it a clickable link wrapper)
+//   variant?: 'base' | 'hover' | 'featured' (default: 'hover')
+//   glow?: boolean (adds glow effect layer on hover)
+//   class?: string (additional classes to apply)
+
+interface Props {
+  as?: 'div' | 'article' | 'section' | 'a';
+  href?: string;
+  variant?: 'base' | 'hover' | 'featured';
+  glow?: boolean;
+  class?: string;
+}
+
+const {
+  as: Element = 'div',
+  href,
+  variant = 'hover',
+  glow = false,
+  class: className = '',
+} = Astro.props;
+
+// Build class list based on variant
+let cardClasses = 'ui-card';
+if (variant === 'hover') {
+  cardClasses += ' ui-card--hover';
+} else if (variant === 'featured') {
+  cardClasses += ' ui-card--featured';
+}
+if (glow) {
+  cardClasses += ' ui-card--glow';
+}
+if (className) {
+  cardClasses += ` ${className}`;
+}
+
+// Determine if we're rendering a link or regular element
+const isLink = Element === 'a' || href;
+const FinalElement = isLink ? 'a' : Element;
+---
+
+{isLink ? (
+  <a href={href} class={cardClasses}>
+    {glow && <div class="ui-card-glow"></div>}
+    <slot />
+  </a>
+) : (
+  <Element class={cardClasses}>
+    {glow && <div class="ui-card-glow"></div>}
+    <slot />
+  </Element>
+)}

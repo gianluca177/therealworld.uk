@@ -353,9 +353,57 @@ a:hover {
 }
 
 /* =======================
-   CARDS & PANELS (Premium matte gradient)
+   CARD SYSTEM (Unified)
    ======================= */
-/* Base card - matte gradient with thin border */
+/* Base card - matte gradient with thin border, soft shadow */
+.ui-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
+  transition: all 0.3s ease;
+}
+
+/* Glow wrapper - positioned behind card content */
+.ui-card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--card-radius);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Card with hover effect - slight lift + border brightening + shadow increase */
+.ui-card--hover:hover {
+  border-color: rgba(255, 141, 58, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Card with glow effect on hover */
+.ui-card--glow:hover .ui-card-glow {
+  opacity: 1;
+  background: radial-gradient(circle at center, rgba(255, 141, 58, 0.15) 0%, transparent 70%);
+}
+
+/* Featured card - stronger presence */
+.ui-card--featured {
+  border: 1px solid rgba(255, 207, 35, 0.3);
+  background: linear-gradient(180deg, rgba(255, 207, 35, 0.08) 0%, rgba(255, 207, 35, 0.04) 100%);
+  box-shadow: 0 0 0 1px rgba(255, 141, 58, 0.16), 0 0 42px rgba(255, 141, 58, 0.20);
+}
+
+.ui-card--featured:hover {
+  border-color: rgba(255, 207, 35, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(255, 141, 58, 0.22), 0 0 50px rgba(255, 141, 58, 0.28);
+}
+
+/* Backwards-compatible aliases - map old classes to new system */
 .card,
 .plan-card,
 .teach-card,
@@ -366,15 +414,24 @@ a:hover {
   box-shadow: var(--card-shadow);
   padding: var(--card-padding);
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .card:hover,
 .plan-card:hover,
 .teach-card:hover,
 .interview-card:hover {
-  border-color: rgba(255, 140, 42, 0.22);
+  border-color: rgba(255, 141, 58, 0.22);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 140, 42, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.panel {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--card-padding);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 /* Card title - General Sans weight and style */
@@ -384,6 +441,8 @@ a:hover {
   font-size: 1.125rem;
   color: var(--color-text-light);
   margin: 0 0 0.75rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Card body text */
@@ -391,18 +450,13 @@ a:hover {
   color: var(--color-text-muted);
   font-size: 0.9375rem;
   line-height: 1.6;
-}
-
-/* Standard panel without hover effect */
-.panel {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--card-padding);
+  position: relative;
+  z-index: 1;
 }
 
 /* Header strip with gradient */
 .header-strip {
-  background: linear-gradient(90deg, var(--color-orange), var(--color-gold));
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold));
   opacity: 0.15;
 }
 
