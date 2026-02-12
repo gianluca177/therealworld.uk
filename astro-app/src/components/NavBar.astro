@@ -5,7 +5,7 @@
     <!-- Left: Logo -->
     <a href="#hero" class="flex items-center group" aria-label="Go to top">
       <img
-        src="/hu-logo-300.png"
+        src="/Hustlers-University-therealworld-logo.png"
         alt="Hustlers University UK Logo"
         class="h-11 w-11 md:h-12 md:w-12 rounded-full border border-brand-gold transition-transform duration-200 group-hover:scale-110"
       />
@@ -13,12 +13,12 @@
 
     <!-- Center: Nav Links (Desktop Only) -->
     <ul class="hidden md:flex space-x-8 text-sm font-medium navbar-links">
-      <li><a href="#hero" class="navbar-link">Home</a></li>
-      <li><a href="#about" class="navbar-link">About</a></li>
-      <li><a href="#plans" class="navbar-link">Plans</a></li>
-      <li><a href="#philosophy" class="navbar-link">Philosophy</a></li>
-      <li><a href="#teach" class="navbar-link">Teach</a></li>
-      <li><a href="#interviews" class="navbar-link">Interviews</a></li>
+      <li><a href="#hero" class="navbar-link">HOME</a></li>
+      <li><a href="#about" class="navbar-link">ABOUT</a></li>
+      <li><a href="#plans" class="navbar-link">PLANS</a></li>
+      <li><a href="#philosophy" class="navbar-link">PHILOSOPHY</a></li>
+      <li><a href="#teach" class="navbar-link">TEACH</a></li>
+      <li><a href="#interviews" class="navbar-link">INTERVIEWS</a></li>
       <li><a href="#faq" class="navbar-link">FAQ</a></li>
     </ul>
 
@@ -66,8 +66,8 @@
 
   if (btn && menu) {
     btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-      btn.setAttribute('aria-expanded', !expanded);
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
       menu.classList.toggle('hidden');
     });
 
