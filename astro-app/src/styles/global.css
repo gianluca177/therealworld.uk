@@ -496,6 +496,11 @@ a:hover {
   border-color: rgba(255, 140, 42, 0.1);
 }
 
+/* Navbar logo - no border, smooth scale transition */
+.navbar-fixed img {
+  border: none !important;
+}
+
 .navbar-links,
 .navbar-link {
   font-family: "Montserrat";
