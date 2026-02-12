@@ -461,6 +461,58 @@ a:hover {
 }
 
 /* =======================
+   CARD GLOW SYSTEM
+   ======================= */
+/* Wrapper for cards with glow effect - maintains relative positioning and visible overflow */
+.card-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+/* Glow layer - sits behind content, never blocks clicks */
+.card-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle at 50% 10%,
+    rgba(255, 160, 35, 0.35),
+    rgba(255, 160, 35, 0) 65%
+  );
+  filter: blur(16px);
+  box-shadow:
+    0 0 20px rgba(255, 160, 35, 0.45),
+    0 0 60px rgba(255, 160, 35, 0.22),
+    0 0 140px rgba(255, 160, 35, 0.12);
+}
+
+/* Backwards compatibility aliases for existing conquer/plan styles */
+.conquer-card-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.plan-glow-conquer {
+  position: absolute;
+  inset: -12px;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle at 50% 10%,
+    rgba(255, 160, 35, 0.35),
+    rgba(255, 160, 35, 0) 65%
+  );
+  filter: blur(16px);
+  box-shadow:
+    0 0 20px rgba(255, 160, 35, 0.45),
+    0 0 60px rgba(255, 160, 35, 0.22),
+    0 0 140px rgba(255, 160, 35, 0.12);
+}
+
+/* =======================
    INPUTS
    ======================= */
 .input {

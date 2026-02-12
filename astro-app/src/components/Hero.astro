@@ -33,22 +33,26 @@ import NavBar from "./NavBar.astro";
 
     <!-- Hero Video (Cloudflare Stream) -->
     <div class="w-full max-w-5xl mx-auto mb-10">
-      <div
-        class="
-          relative aspect-video
-          rounded-2xl overflow-hidden
-          bg-black
-          border border-[#FF8C2A55]
-          shadow-[0_0_0_1px_rgba(255,140,42,0.12),0_0_40px_rgba(255,140,42,0.25)]
-        "
-      >
-  <iframe
-    src="https://customer-2tp30j9wazosgmgv.cloudflarestream.com/893a87f9dd7d8a6de34978eb3fc3a655/iframe?preload=true&poster=https%3A%2F%2Fcustomer-2tp30j9wazosgmgv.cloudflarestream.com%2F893a87f9dd7d8a6de34978eb3fc3a655%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-    loading="lazy"
-    style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
-    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-    allowfullscreen="true"
-  ></iframe>
+      <div class="card-wrapper">
+        <div class="card-glow"></div>
+        <div
+          class="
+            relative z-10
+            aspect-video
+            rounded-2xl overflow-hidden
+            bg-black
+            border border-[#FF8C2A55]
+            shadow-[0_0_0_1px_rgba(255,140,42,0.12),0_0_40px_rgba(255,140,42,0.25)]
+          "
+        >
+    <iframe
+      src="https://customer-2tp30j9wazosgmgv.cloudflarestream.com/893a87f9dd7d8a6de34978eb3fc3a655/iframe?preload=true&poster=https%3A%2F%2Fcustomer-2tp30j9wazosgmgv.cloudflarestream.com%2F893a87f9dd7d8a6de34978eb3fc3a655%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+      loading="lazy"
+      style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+      allowfullscreen="true"
+    ></iframe>
+        </div>
       </div>
     </div>
 
