@@ -35,6 +35,18 @@
   --radius-base: 8px;
   --shadow-soft: rgba(0, 0, 0, 0.3) 0px 2px 10px;
   --shadow-strong: rgba(0, 0, 0, 0.5) 0px 4px 20px;
+
+  /* Button Base */
+  --btn-padding: 0.75rem 1.5rem;
+  --btn-radius: 9999px;
+  --btn-font-weight: 700;
+  --btn-transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+
+  /* Card Base */
+  --card-bg: var(--color-panel);
+  --card-radius: var(--radius-base);
+  --card-shadow: var(--shadow-soft);
+  --card-padding: 1.5rem;
 }
 
 /* =======================
@@ -106,16 +118,23 @@ a:hover {
 /* =======================
    BUTTONS
    ======================= */
-.btn {
+/* Base button styles - shared by all button variants */
+.btn,
+.btn-primary,
+.nav-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  border-radius: 9999px;
+  padding: var(--btn-padding);
+  font-weight: var(--btn-font-weight);
+  border-radius: var(--btn-radius);
+  transition: var(--btn-transition);
+}
+
+/* Default .btn styling */
+.btn {
   background-color: var(--color-orange);
   color: #000;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
   box-shadow: 0 6px 16px rgba(255, 140, 42, 0.25);
 }
 
@@ -131,6 +150,7 @@ a:hover {
   transform: translateY(0);
 }
 
+/* .btn-primary variant - inherits .btn base */
 .btn-primary {
   background-color: var(--color-orange);
   color: #000;
@@ -143,10 +163,15 @@ a:hover {
   box-shadow: 0 0 14px rgba(255, 140, 42, 0.35);
 }
 
+/* .btn-outline variant */
 .btn-outline {
   border: 1px solid var(--color-orange);
   color: var(--color-orange);
   background: transparent;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: var(--btn-transition);
 }
 
 .btn-outline:hover {
@@ -154,22 +179,13 @@ a:hover {
   color: #000;
 }
 
-/* =======================
-   NAV CTA
-   ======================= */
+/* .nav-cta variant - reuses button base with nav-specific tweaks */
 .nav-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
   background-color: var(--color-orange);
   color: #000 !important;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
   box-shadow: 0 0 10px rgba(255, 140, 42, 0.4);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
 }
 
 .nav-cta:hover {
@@ -183,18 +199,72 @@ a:hover {
   transform: translateY(0);
 }
 
+/* .btn-navbar - size variant for navbar buttons */
+.btn-navbar {
+  @apply !px-4 !py-2 !text-xs !leading-none md:!px-6 md:!py-3 md:!text-sm md:!leading-none;
+}
+
 /* =======================
    CARDS / PANELS
    ======================= */
+/* Base card styles - shared foundation for all card types */
+.card,
+.plan-card,
+.teach-card,
+.interview-card {
+  border-radius: var(--card-radius);
+  transition: all 0.2s ease;
+}
+
+/* Standard .card base */
 .card {
-  background-color: var(--color-panel);
-  border-radius: var(--radius-base);
-  box-shadow: var(--shadow-soft);
-  padding: 1.5rem;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding);
 }
 
 .card:hover {
   box-shadow: var(--shadow-strong);
+}
+
+/* .plan-card variant - inherits from card base with overrides */
+.plan-card {
+  height: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  padding-right: 1.75rem;
+  background-color: #121212;
+}
+
+.plan-card:hover {
+  border-color: rgba(255, 140, 42, 0.2);
+  background-color: #141414;
+}
+
+/* .teach-card variant - inherits from card base with overrides */
+.teach-card {
+  height: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.teach-card:hover {
+  border-color: rgba(255, 140, 42, 0.2);
+  background-color: #141414;
+}
+
+/* .interview-card variant - inherits from card base with overrides */
+.interview-card {
+  border: 1px solid rgba(255, 140, 42, 0.2);
+  padding: 1.5rem;
+  background-color: #121212;
+}
+
+.interview-card:hover {
+  border-color: rgba(255, 140, 42, 0.4);
 }
 
 .panel {
@@ -301,13 +371,10 @@ a:hover {
   border-color: rgba(255, 140, 42, 0.13);
 }
 
-.navbar-links {
-  color: var(--color-text-muted);
-}
-
+.navbar-links,
 .navbar-link {
-  @apply transition-colors;
   color: var(--color-text-muted);
+  @apply transition-colors;
 }
 
 .navbar-link:hover {
@@ -562,6 +629,39 @@ a:hover {
   background-color: #141414;
 }
 
+/* Shared button variant for plan section */
+.btn-secondary,
+.btn-secondary-outline {
+  border: 1px solid;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-secondary {
+  border-color: rgba(255, 140, 42, 0.33);
+  color: var(--color-orange);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 140, 42, 0.07);
+  opacity: 0.9;
+}
+
+.btn-secondary-outline {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-secondary-outline:hover {
+  border-color: rgba(255, 140, 42, 0.2);
+  color: white;
+}
+
 .plan-step-badge {
   @apply inline-flex items-center justify-center h-9 w-9 rounded-full border text-sm font-semibold;
   background-color: rgba(255, 140, 42, 0.08);
@@ -588,17 +688,6 @@ a:hover {
 .plan-bullet {
   @apply mt-2 h-1.5 w-1.5 rounded-full shrink-0;
   background-color: var(--color-orange);
-}
-
-.btn-secondary-outline {
-  @apply border font-semibold hover:opacity-90 transition;
-  border-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.btn-secondary-outline:hover {
-  border-color: rgba(255, 140, 42, 0.2);
-  color: white;
 }
 
 .plan-disclaimer {
