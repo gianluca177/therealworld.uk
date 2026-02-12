@@ -641,7 +641,13 @@ a:hover {
 
 .teach-card-image::before {
   content: '';
-  @apply absolute left-0 top-0 h-full w-[3px] opacity-0 transition;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
   background-color: var(--color-orange);
 }
 
@@ -655,7 +661,8 @@ a:hover {
 
 .teach-card-image::after {
   content: '';
-  @apply absolute inset-0;
+  position: absolute;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.35);
   z-index: 1;
 }
