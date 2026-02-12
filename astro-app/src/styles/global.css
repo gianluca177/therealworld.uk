@@ -50,29 +50,72 @@
 }
 
 /* =======================
-   FONTS (Satoshi)
+   FONTS (3-Font System)
+   Primary: General Sans | Accent: Outfit | UI: Montserrat
    ======================= */
+
+/* PRIMARY FONT - General Sans (Body, Headings) */
 @font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Light.woff2") format("woff2");
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Light.woff2") format("woff2");
   font-weight: 300;
   font-display: swap;
 }
 @font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 @font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Medium.woff2") format("woff2");
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* ACCENT FONT - Outfit (Card titles, Interview names, Course titles) */
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/outfit-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* UI FONT - Montserrat (Navbar, Buttons) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat-bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
 }
@@ -87,17 +130,33 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text-light);
-  font-family: "Satoshi", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  font-family: "General Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-family: "General Sans";
   color: var(--color-text-light);
   margin-top: 0;
   margin-bottom: 0.5em;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+h4, h5, h6 {
+  font-weight: 600;
 }
 
 p {
@@ -126,6 +185,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: var(--btn-padding);
+  font-family: "Montserrat";
   font-weight: var(--btn-font-weight);
   border-radius: var(--btn-radius);
   transition: var(--btn-transition);
@@ -136,6 +196,7 @@ a:hover {
   background-color: var(--color-orange);
   color: #000;
   box-shadow: 0 6px 16px rgba(255, 140, 42, 0.25);
+  font-weight: 600;
 }
 
 .btn:hover {
@@ -155,6 +216,7 @@ a:hover {
   background-color: var(--color-orange);
   color: #000;
   box-shadow: 0 0 10px rgba(255, 140, 42, 0.25);
+  font-weight: 700;
 }
 
 .btn-primary:hover {
@@ -169,7 +231,8 @@ a:hover {
   color: var(--color-orange);
   background: transparent;
   padding: 0.75rem 1.5rem;
-  font-weight: 700;
+  font-family: "Montserrat";
+  font-weight: 600;
   border-radius: 9999px;
   transition: var(--btn-transition);
 }
@@ -186,6 +249,7 @@ a:hover {
   box-shadow: 0 0 10px rgba(255, 140, 42, 0.4);
   font-size: 0.875rem;
   letter-spacing: 0.04em;
+  font-weight: 400;
 }
 
 .nav-cta:hover {
@@ -373,6 +437,8 @@ a:hover {
 
 .navbar-links,
 .navbar-link {
+  font-family: "Montserrat";
+  font-weight: 400;
   color: var(--color-text-muted);
   @apply transition-colors;
 }
@@ -392,6 +458,8 @@ a:hover {
 
 .btn-navbar {
   @apply !px-4 !py-2 !text-xs !leading-none md:!px-6 md:!py-3 md:!text-sm md:!leading-none;
+  font-family: "Montserrat";
+  font-weight: 600;
 }
 
 /* =======================
@@ -633,6 +701,7 @@ a:hover {
 .btn-secondary,
 .btn-secondary-outline {
   border: 1px solid;
+  font-family: "Montserrat";
   font-weight: 600;
   transition: all 0.2s ease;
   border-radius: 9999px;
@@ -676,6 +745,7 @@ a:hover {
 
 .plan-step-title {
   @apply text-lg font-semibold;
+  font-family: "Outfit";
   color: var(--color-text-light);
 }
 
@@ -765,6 +835,7 @@ a:hover {
 
 .teach-card-title {
   @apply text-lg font-semibold transition;
+  font-family: "Outfit";
   color: var(--color-text-light);
 }
 
@@ -806,6 +877,7 @@ a:hover {
 
 .interview-member-name {
   @apply text-2xl font-semibold;
+  font-family: "Outfit";
   color: var(--color-text-light);
 }
 
@@ -851,6 +923,7 @@ a:hover {
 
 .footer-section-title {
   @apply font-semibold;
+  font-family: "Outfit";
   color: var(--color-text-light);
 }
 
