@@ -1,0 +1,31 @@
+---
+/**
+ * Button.astro — Standardised gradient glow button
+ *
+ * Renders the global .btn class as an <a> or <button> element.
+ *
+ * Usage:
+ *   <Button href="/checkout">Join Now</Button>
+ *   <Button>Submit</Button>
+ *   <Button class="btn-navbar" href="/go">Go</Button>
+ */
+
+interface Props {
+  href?: string;
+  class?: string;
+}
+
+const {
+  href,
+  class: className = '',
+} = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  {...(href ? { href } : {})}
+  class:list={['btn', className]}
+>
+  <slot />
+</Tag>

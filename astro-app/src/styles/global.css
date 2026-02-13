@@ -169,7 +169,7 @@ a {
   transition: color 0.25s ease;
 }
 
-a:hover {
+a:not(.btn):hover {
   color: var(--color-accent-hover);
 }
 
@@ -196,113 +196,42 @@ a:hover {
 /* =======================
    BUTTONS (Premium system with subtle glow)
    ======================= */
-/* Base button - shared properties */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: "Montserrat";
+
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
+
   border-radius: var(--btn-radius);
   transition: var(--btn-transition);
-  border: 1px solid transparent;
+
+  border: 1px solid rgba(255, 207, 35, 0.25);
   text-decoration: none;
   cursor: pointer;
+
   padding: var(--btn-padding);
+
   background: var(--accent-gradient);
-  color: #000;
-  border: 1px solid rgba(255, 207, 35, 0.25);
+  color: #000 !important;
+
   box-shadow: var(--accent-glow);
 }
 
 .btn:hover {
   filter: brightness(1.05);
   transform: translateY(-1px);
+  color: #000 !important;
 }
 
 .btn:active {
   filter: brightness(0.98);
   transform: translateY(0);
+  color: #000 !important;
 }
 
-/* Button variants */
-.btn-primary {
-  background: var(--accent-gradient);
-  color: #000;
-  border: 1px solid rgba(255, 207, 35, 0.25);
-  box-shadow: var(--accent-glow);
-  transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-}
-
-.btn-primary:active {
-  filter: brightness(0.98);
-  transform: translateY(0);
-}
-
-/* Outline button - subtle border, minimal fill on hover */
-.btn-outline {
-  background-color: transparent;
-  color: var(--color-accent);
-  border: 1px solid rgba(255, 207, 35, 0.4);
-  box-shadow: none;
-}
-
-.btn-outline:hover {
-  background-color: rgba(255, 207, 35, 0.08);
-  border-color: rgba(255, 207, 35, 0.6);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.1), 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-outline:active {
-  background-color: rgba(255, 207, 35, 0.05);
-  border-color: rgba(255, 207, 35, 0.5);
-}
-
-/* Secondary button - subtle styling for secondary CTAs */
-.btn-secondary {
-  background-color: rgba(255, 207, 35, 0.15);
-  color: var(--color-accent);
-  border: 1px solid rgba(255, 207, 35, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 207, 35, 0.25);
-  border-color: rgba(255, 207, 35, 0.45);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.12), 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary:active {
-  background-color: rgba(255, 141, 58, 0.12);
-  border-color: rgba(255, 141, 58, 0.25);
-}
-
-/* Secondary outline button */
-.btn-secondary-outline {
-  background-color: transparent;
-  color: var(--color-accent);
-  border: 1px solid rgba(255, 141, 58, 0.25);
-  box-shadow: none;
-}
-
-.btn-secondary-outline:hover {
-  background-color: rgba(255, 141, 58, 0.08);
-  border-color: rgba(255, 141, 58, 0.4);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 141, 58, 0.1), 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary-outline:active {
-  background-color: rgba(255, 141, 58, 0.05);
-  border-color: rgba(255, 141, 58, 0.3);
-}
+/* Secondary & secondary-outline variants — defined once in the plan section below */
 
 /* Navbar button - compact pill button with premium styling */
 .btn-navbar {
@@ -577,22 +506,7 @@ a:hover {
   @apply flex flex-col sm:flex-row justify-center gap-4 items-center;
 }
 
-.btn-secondary {
-  padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 141, 58, 0.3);
-  color: var(--color-accent);
-  background: transparent;
-  font-family: "Montserrat";
-  font-weight: 600;
-  border-radius: 9999px;
-  transition: var(--btn-transition);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 141, 58, 0.08);
-  border-color: rgba(255, 141, 58, 0.5);
-  transform: translateY(-1px);
-}
+/* btn-secondary — consolidated into plan section below */
 
 .hero-compliance {
   @apply mt-6 text-xs;
