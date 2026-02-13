@@ -4,7 +4,7 @@ import NavBar from "./NavBar.astro";
 
 <section
   id="hero"
-  class="relative bg-[#000000] text-white min-h-screen flex flex-col overflow-hidden"
+  class="relative bg-bg text-white min-h-screen flex flex-col overflow-hidden"
 >
   <!-- Navigation -->
   <NavBar />
@@ -21,12 +21,12 @@ import NavBar from "./NavBar.astro";
     />
 
     <!-- Headline -->
-    <h1 class="text-4xl md:text-6xl font-extrabold text-[#FF8C2A] tracking-tight">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-accent tracking-tight">
       HUSTLERS UNIVERSITY
     </h1>
 
     <!-- Subheading -->
-    <p class="max-w-2xl mx-auto text-[#B3B3B3] text-lg mt-4 mb-10 leading-relaxed">
+    <p class="max-w-2xl mx-auto text-muted text-lg mt-4 mb-10 leading-relaxed">
       A modern education platform and community focused on practical online business skills.
       Learn step by step, apply in real time, and grow alongside other driven members.
     </p>
@@ -41,8 +41,8 @@ import NavBar from "./NavBar.astro";
             aspect-video
             rounded-2xl overflow-hidden
             bg-black
-            border border-[#FF8C2A55]
-            shadow-[0_0_0_1px_rgba(255,140,42,0.12),0_0_40px_rgba(255,140,42,0.25)]
+            border border-accent/30
+            shadow-glow
           "
         >
     <iframe
@@ -67,14 +67,14 @@ import NavBar from "./NavBar.astro";
 
       <a
         href="#about"
-        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-[#FF8C2A55] text-[#FF8C2A] font-semibold hover:bg-[#FF8C2A11] transition"
+        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-accent/30 text-accent font-semibold hover:bg-accent/5 transition"
       >
         Learn More
       </a>
     </div>
 
     <!-- Compliance Line -->
-    <p class="mt-6 text-xs text-[#777777]">
+    <p class="mt-6 text-xs text-white/45">
       Educational platform. No earnings are promised. Results depend on individual effort.
     </p>
   </div>
@@ -83,7 +83,7 @@ import NavBar from "./NavBar.astro";
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
     <a
       href="#about"
-      class="flex flex-col items-center text-[#777777] hover:text-[#FF8C2A] transition"
+      class="flex flex-col items-center text-white/45 hover:text-accent transition"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />

@@ -19,10 +19,9 @@
   --accent-gradient: linear-gradient(90deg, var(--accent-gold), var(--accent-orange));
   --accent-glow: 0 0 14px rgba(255, 141, 58, 0.25), 0 0 26px rgba(255, 207, 35, 0.18);
 
-  /* Legacy accent tokens (maintained for compatibility) */
-  --color-gold: #f6c567;
-  --color-orange: #ff8c2a;
-  --color-orange-dark: #c46a0a;
+  /* Accent aliases — map to Tailwind tokens */
+  --color-accent: #FF8D3A;
+  --color-accent-hover: #FFCF23;
 
   /* Background / Surfaces - Premium Navy/Blue */
   --color-bg: #070d18;
@@ -45,7 +44,7 @@
   --radius-lg: 12px;
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.2);
   --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-premium: 0 10px 30px rgba(255, 140, 42, 0.12), 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-premium: 0 10px 30px rgba(255, 141, 58, 0.12), 0 2px 10px rgba(0, 0, 0, 0.35);
 
   /* Button Base */
   --btn-padding: 0.75rem 1.5rem;
@@ -171,13 +170,13 @@ p {
 }
 
 a {
-  color: var(--color-orange);
+  color: var(--color-accent);
   text-decoration: none;
   transition: color 0.25s ease;
 }
 
 a:hover {
-  color: var(--color-gold);
+  color: var(--color-accent-hover);
 }
 
 /* =======================
@@ -254,7 +253,7 @@ a:hover {
 /* Outline button - subtle border, minimal fill on hover */
 .btn-outline {
   background-color: transparent;
-  color: var(--accent-orange);
+  color: var(--color-accent);
   border: 1px solid rgba(255, 207, 35, 0.4);
   box-shadow: none;
 }
@@ -274,7 +273,7 @@ a:hover {
 /* Secondary button - subtle styling for secondary CTAs */
 .btn-secondary {
   background-color: rgba(255, 207, 35, 0.15);
-  color: var(--accent-orange);
+  color: var(--color-accent);
   border: 1px solid rgba(255, 207, 35, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -287,47 +286,47 @@ a:hover {
 }
 
 .btn-secondary:active {
-  background-color: rgba(255, 140, 42, 0.12);
-  border-color: rgba(255, 140, 42, 0.25);
+  background-color: rgba(255, 141, 58, 0.12);
+  border-color: rgba(255, 141, 58, 0.25);
 }
 
 /* Secondary outline button */
 .btn-secondary-outline {
   background-color: transparent;
-  color: var(--color-orange);
-  border: 1px solid rgba(255, 140, 42, 0.25);
+  color: var(--color-accent);
+  border: 1px solid rgba(255, 141, 58, 0.25);
   box-shadow: none;
 }
 
 .btn-secondary-outline:hover {
-  background-color: rgba(255, 140, 42, 0.08);
-  border-color: rgba(255, 140, 42, 0.4);
+  background-color: rgba(255, 141, 58, 0.08);
+  border-color: rgba(255, 141, 58, 0.4);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 140, 42, 0.1), 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(255, 141, 58, 0.1), 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary-outline:active {
-  background-color: rgba(255, 140, 42, 0.05);
-  border-color: rgba(255, 140, 42, 0.3);
+  background-color: rgba(255, 141, 58, 0.05);
+  border-color: rgba(255, 141, 58, 0.3);
 }
 
 /* Navbar button - compact pill button with premium styling */
 .btn-navbar {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  background-color: var(--color-orange);
+  background-color: var(--color-accent);
   color: #000;
-  box-shadow: 0 6px 16px rgba(255, 140, 42, 0.14), 0 1px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.14), 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .btn-navbar:hover {
-  background-color: var(--color-gold);
+  background-color: var(--color-accent-hover);
   transform: translateY(-0.5px);
-  box-shadow: 0 8px 20px rgba(255, 140, 42, 0.18), 0 2px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(255, 141, 58, 0.18), 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .btn-navbar:active {
-  background-color: var(--color-orange);
+  background-color: var(--color-accent);
   transform: translateY(0);
 }
 
@@ -456,7 +455,7 @@ a:hover {
 
 /* Header strip with gradient */
 .header-strip {
-  background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold));
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
   opacity: 0.15;
 }
 
@@ -478,14 +477,14 @@ a:hover {
   z-index: 0;
   background: radial-gradient(
     circle at 50% 10%,
-    rgba(255, 160, 35, 0.35),
-    rgba(255, 160, 35, 0) 65%
+    rgba(255, 141, 58, 0.35),
+    rgba(255, 141, 58, 0) 65%
   );
   filter: blur(16px);
   box-shadow:
-    0 0 20px rgba(255, 160, 35, 0.45),
-    0 0 60px rgba(255, 160, 35, 0.22),
-    0 0 140px rgba(255, 160, 35, 0.12);
+    0 0 20px rgba(255, 141, 58, 0.45),
+    0 0 60px rgba(255, 141, 58, 0.22),
+    0 0 140px rgba(255, 141, 58, 0.12);
 }
 
 /* Backwards compatibility aliases for existing conquer/plan styles */
@@ -502,14 +501,14 @@ a:hover {
   z-index: 0;
   background: radial-gradient(
     circle at 50% 10%,
-    rgba(255, 160, 35, 0.35),
-    rgba(255, 160, 35, 0) 65%
+    rgba(255, 141, 58, 0.35),
+    rgba(255, 141, 58, 0) 65%
   );
   filter: blur(16px);
   box-shadow:
-    0 0 20px rgba(255, 160, 35, 0.45),
-    0 0 60px rgba(255, 160, 35, 0.22),
-    0 0 140px rgba(255, 160, 35, 0.12);
+    0 0 20px rgba(255, 141, 58, 0.45),
+    0 0 60px rgba(255, 141, 58, 0.22),
+    0 0 140px rgba(255, 141, 58, 0.12);
 }
 
 /* =======================
@@ -526,7 +525,7 @@ a:hover {
 
 .input:focus {
   outline: none;
-  border-color: var(--color-orange);
+  border-color: var(--color-accent);
 }
 
 /* =======================
@@ -537,7 +536,7 @@ a:hover {
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
-  background-color: var(--color-orange);
+  background-color: var(--color-accent);
   color: #000;
   font-weight: 600;
 }
@@ -557,7 +556,7 @@ a:hover {
   left: 50%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle at center, rgba(255, 140, 42, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(255, 141, 58, 0.08) 0%, transparent 70%);
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 0;
@@ -565,29 +564,29 @@ a:hover {
 
 /* Text glow effects */
 .glow {
-  text-shadow: 0 0 8px rgba(246, 197, 103, 0.4), 0 0 16px rgba(246, 197, 103, 0.2);
+  text-shadow: 0 0 8px rgba(255, 141, 58, 0.4), 0 0 16px rgba(255, 141, 58, 0.2);
 }
 
 .glow-text {
   text-shadow:
-    0 0 6px rgba(255, 140, 42, 0.4),
-    0 0 12px rgba(255, 140, 42, 0.25),
-    0 0 20px rgba(255, 140, 42, 0.15);
+    0 0 6px rgba(255, 141, 58, 0.4),
+    0 0 12px rgba(255, 141, 58, 0.25),
+    0 0 20px rgba(255, 141, 58, 0.15);
 }
 
 /* Premium banner at top */
 .banner-top {
   background: linear-gradient(
     90deg,
-    rgba(255, 140, 42, 0.06) 0%,
-    rgba(255, 140, 42, 0.12) 25%,
-    rgba(255, 140, 42, 0.18) 50%,
-    rgba(255, 140, 42, 0.12) 75%,
-    rgba(255, 140, 42, 0.06) 100%
+    rgba(255, 141, 58, 0.06) 0%,
+    rgba(255, 141, 58, 0.12) 25%,
+    rgba(255, 141, 58, 0.18) 50%,
+    rgba(255, 141, 58, 0.12) 75%,
+    rgba(255, 141, 58, 0.06) 100%
   );
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 140, 42, 0.15);
+  border-bottom: 1px solid rgba(255, 141, 58, 0.15);
   padding: 12px 0;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -627,7 +626,7 @@ a:hover {
   background: linear-gradient(180deg, rgba(7, 13, 24, 0.85) 0%, rgba(11, 18, 32, 0.8) 100%);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-color: rgba(255, 140, 42, 0.1);
+  border-color: rgba(255, 141, 58, 0.1);
 }
 
 /* Navbar logo - no border, smooth scale transition */
@@ -645,12 +644,12 @@ a:hover {
 }
 
 .navbar-link:hover {
-  color: var(--color-orange);
+  color: var(--color-accent);
 }
 
 .navbar-menu-btn {
   @apply transition-colors;
-  color: var(--color-orange);
+  color: var(--color-accent);
 }
 
 .navbar-menu-btn:hover {
@@ -682,7 +681,7 @@ a:hover {
   left: 50%;
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle at center, rgba(255, 140, 42, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(255, 141, 58, 0.1) 0%, transparent 70%);
   transform: translateX(-50%);
   pointer-events: none;
   z-index: -1;
@@ -690,8 +689,8 @@ a:hover {
 
 .hero-logo {
   @apply mx-auto h-20 w-20 mb-6 rounded-full border;
-  border-color: rgba(255, 140, 42, 0.3);
-  background: linear-gradient(135deg, rgba(255, 140, 42, 0.1), rgba(255, 140, 42, 0.05));
+  border-color: rgba(255, 141, 58, 0.3);
+  background: linear-gradient(135deg, rgba(255, 141, 58, 0.1), rgba(255, 141, 58, 0.05));
 }
 
 .hero-title {
@@ -712,8 +711,8 @@ a:hover {
 
 .hero-video-container {
   @apply relative aspect-video rounded-xl overflow-hidden bg-black border;
-  border-color: rgba(255, 140, 42, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 140, 42, 0.1);
+  border-color: rgba(255, 141, 58, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 141, 58, 0.1);
 }
 
 .hero-ctas {
@@ -722,8 +721,8 @@ a:hover {
 
 .btn-secondary {
   padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 140, 42, 0.3);
-  color: var(--color-orange);
+  border: 1px solid rgba(255, 141, 58, 0.3);
+  color: var(--color-accent);
   background: transparent;
   font-family: "Montserrat";
   font-weight: 600;
@@ -732,8 +731,8 @@ a:hover {
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 140, 42, 0.08);
-  border-color: rgba(255, 140, 42, 0.5);
+  background-color: rgba(255, 141, 58, 0.08);
+  border-color: rgba(255, 141, 58, 0.5);
   transform: translateY(-1px);
 }
 
@@ -752,7 +751,7 @@ a:hover {
 }
 
 .hero-scroll-link:hover {
-  color: var(--color-orange);
+  color: var(--color-accent);
 }
 
 /* =======================
@@ -766,7 +765,7 @@ a:hover {
 
 .about-label {
   @apply text-xs font-semibold tracking-widest uppercase;
-  color: var(--color-orange);
+  color: var(--color-accent);
   letter-spacing: 0.08em;
 }
 
@@ -795,13 +794,13 @@ a:hover {
 
 .about-feature-dot {
   @apply mt-2 h-2 w-2 shrink-0 rounded-full;
-  background-color: var(--color-orange);
+  background-color: var(--color-accent);
 }
 
 .about-preview {
   @apply aspect-video rounded-xl overflow-hidden border;
   background-color: var(--color-surface);
-  border-color: rgba(255, 140, 42, 0.2);
+  border-color: rgba(255, 141, 58, 0.2);
 }
 
 .about-compliance {
@@ -838,8 +837,8 @@ a:hover {
 
 .choice-video-container {
   @apply relative aspect-video overflow-hidden rounded-xl border bg-black;
-  border-color: rgba(255, 140, 42, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 140, 42, 0.08);
+  border-color: rgba(255, 141, 58, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 141, 58, 0.08);
 }
 
 .choice-disclaimer {
@@ -865,13 +864,13 @@ a:hover {
 
 .faq-item {
   @apply border rounded-lg p-5 transition;
-  border-color: rgba(255, 140, 42, 0.15);
+  border-color: rgba(255, 141, 58, 0.15);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 .faq-item:hover {
-  border-color: rgba(255, 140, 42, 0.25);
-  background: linear-gradient(180deg, rgba(255, 140, 42, 0.05) 0%, rgba(255, 140, 42, 0.02) 100%);
+  border-color: rgba(255, 141, 58, 0.25);
+  background: linear-gradient(180deg, rgba(255, 141, 58, 0.05) 0%, rgba(255, 141, 58, 0.02) 100%);
 }
 
 .faq-question {
@@ -905,7 +904,7 @@ a:hover {
 .philosophy-image {
   @apply aspect-video rounded-xl overflow-hidden border md:-ml-4;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border-color: rgba(255, 140, 42, 0.2);
+  border-color: rgba(255, 141, 58, 0.2);
 }
 
 .philosophy-caption {
@@ -945,13 +944,13 @@ a:hover {
 .plan-card {
   @apply h-full rounded-xl border p-6 md:p-7 transition;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border-color: rgba(255, 140, 42, 0.15);
+  border-color: rgba(255, 141, 58, 0.15);
 }
 
 .plan-card:hover {
-  border-color: rgba(255, 140, 42, 0.25);
+  border-color: rgba(255, 141, 58, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 140, 42, 0.1), 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.1), 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Shared button variant for plan section */
@@ -969,14 +968,14 @@ a:hover {
 }
 
 .btn-secondary {
-  border-color: rgba(255, 140, 42, 0.3);
-  color: var(--color-orange);
+  border-color: rgba(255, 141, 58, 0.3);
+  color: var(--color-accent);
   background: transparent;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 140, 42, 0.08);
-  border-color: rgba(255, 140, 42, 0.5);
+  background-color: rgba(255, 141, 58, 0.08);
+  border-color: rgba(255, 141, 58, 0.5);
   transform: translateY(-1px);
 }
 
@@ -986,16 +985,16 @@ a:hover {
 }
 
 .btn-secondary-outline:hover {
-  border-color: rgba(255, 140, 42, 0.3);
+  border-color: rgba(255, 141, 58, 0.3);
   color: white;
   transform: translateY(-1px);
 }
 
 .plan-step-badge {
   @apply inline-flex items-center justify-center h-10 w-10 rounded-full border text-sm font-semibold;
-  background-color: rgba(255, 140, 42, 0.08);
-  border-color: rgba(255, 140, 42, 0.25);
-  color: var(--color-orange);
+  background-color: rgba(255, 141, 58, 0.08);
+  border-color: rgba(255, 141, 58, 0.25);
+  color: var(--color-accent);
 }
 
 .plan-step-label {
@@ -1013,13 +1012,13 @@ a:hover {
 
 .plan-step-dot {
   @apply h-2 w-2 rounded-full;
-  background-color: var(--color-orange);
+  background-color: var(--color-accent);
   opacity: 0.5;
 }
 
 .plan-bullet {
   @apply mt-2 h-1.5 w-1.5 rounded-full shrink-0;
-  background-color: rgba(255, 140, 42, 0.5);
+  background-color: rgba(255, 141, 58, 0.5);
 }
 
 .plan-disclaimer {
@@ -1056,9 +1055,9 @@ a:hover {
 }
 
 .teach-card:hover {
-  border-color: rgba(255, 140, 42, 0.22);
+  border-color: rgba(255, 141, 58, 0.22);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,140,42,0.12), 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(255,141,58,0.12), 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .teach-card-image {
@@ -1075,7 +1074,7 @@ a:hover {
   width: 3px;
   opacity: 0;
   transition: opacity 0.15s ease;
-  background-color: var(--color-orange);
+  background-color: var(--color-accent);
 }
 
 .teach-card:hover .teach-card-image::before {
@@ -1096,9 +1095,9 @@ a:hover {
 
 .teach-card-tag {
   @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold relative z-10;
-  border-color: rgba(255, 140, 42, 0.25);
-  background-color: rgba(255, 140, 42, 0.12);
-  color: var(--color-orange);
+  border-color: rgba(255, 141, 58, 0.25);
+  background-color: rgba(255, 141, 58, 0.12);
+  color: var(--color-accent);
 }
 
 .teach-card-title {
@@ -1146,9 +1145,9 @@ a:hover {
 }
 
 .interview-card:hover {
-  border-color: rgba(255, 140, 42, 0.22);
+  border-color: rgba(255, 141, 58, 0.22);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,140,42,0.12), 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(255,141,58,0.12), 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .interview-member-name {
@@ -1209,11 +1208,11 @@ a:hover {
 
 .footer-link {
   @apply transition;
-  color: var(--color-orange);
+  color: var(--color-accent);
 }
 
 .footer-link:hover {
-  color: var(--color-orange-dark);
+  color: var(--color-accent-hover);
 }
 
 .footer-bottom {
@@ -1232,7 +1231,7 @@ a:hover {
 }
 
 .footer-legal-link:hover {
-  color: var(--color-orange);
+  color: var(--color-accent);
 }
 
 .footer-disclaimer {

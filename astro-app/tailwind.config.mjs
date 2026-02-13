@@ -6,27 +6,21 @@ export default {
 
   theme: {
     extend: {
+
       /* -------------------------
-         COLOR SYSTEM
+         COLOR SYSTEM (Tokens)
       ------------------------- */
       colors: {
-        // Brand accents - Premium Gold → Orange Gradient
-        'brand-gold': '#FFCF23',
-        'brand-orange': '#FF8D3A',
+        accent: '#FF8D3A',
+        'accent-hover': '#FFCF23',
 
-        // Legacy accents (maintained for compatibility)
-        'brand-orange-dark': '#c46a0a',
+        bg: '#070d18',
+        'bg-soft': '#0b1220',
+        panel: '#141c2b',
 
-        // Background / surfaces (navy-black premium)
-        'brand-bg': '#070d18',
-        'brand-bg-soft': '#0b1220',
-        'brand-panel': '#141c2b',
+        text: '#e5e7eb',
+        muted: '#9ca3af',
 
-        // Text
-        'brand-text': '#e5e7eb',
-        'brand-muted': '#9ca3af',
-
-        // System
         success: '#22c55e',
         error: '#ef4444',
         warning: '#f59e0b',
@@ -34,13 +28,14 @@ export default {
       },
 
       /* -------------------------
-         SHADOWS
+         SHADOW SYSTEM
       ------------------------- */
       boxShadow: {
         soft: '0 4px 14px rgba(0,0,0,0.35)',
         strong: '0 12px 40px rgba(0,0,0,0.55)',
-        glow: '0 0 18px rgba(255,140,42,0.35)',
-        glowSoft: '0 0 10px rgba(255,140,42,0.22)',
+
+        glow: '0 0 18px rgba(255,141,58,0.35)',
+        glowSoft: '0 0 10px rgba(255,141,58,0.22)',
       },
 
       /* -------------------------
@@ -49,45 +44,34 @@ export default {
       borderRadius: {
         base: '8px',
         pill: '9999px',
+        card: '20px',
       },
 
       /* -------------------------
          FONT SYSTEM
       ------------------------- */
       fontFamily: {
-        // Main body + headings
         body: ['"General Sans"', 'ui-sans-serif', 'system-ui'],
         heading: ['"General Sans"', 'ui-sans-serif', 'system-ui'],
-
-        // Unified font system - all using General Sans
-        accent: ['"General Sans"', 'ui-sans-serif', 'system-ui'],
-
-        // Navbar + buttons
         ui: ['Montserrat', 'ui-sans-serif', 'system-ui'],
       },
 
       /* -------------------------
-         SPACING / MAX WIDTH
+         LAYOUT
       ------------------------- */
       maxWidth: {
-        'app': '1200px',
-        'content': '1100px',
+        app: '1200px',
+        content: '1100px',
       },
 
-      /* -------------------------
-         LETTER SPACING
-      ------------------------- */
       letterSpacing: {
         tightest: '-0.02em',
         widePlus: '0.08em',
       },
 
-      /* -------------------------
-         BACKGROUND GRADIENTS
-      ------------------------- */
       backgroundImage: {
         'radial-soft':
-          'radial-gradient(circle at 50% 0%, rgba(255,140,42,0.08), transparent 60%)',
+          'radial-gradient(circle at 50% 0%, rgba(255,141,58,0.08), transparent 60%)',
 
         'navy-depth':
           'linear-gradient(180deg, #070d18 0%, #0b1220 100%)',
