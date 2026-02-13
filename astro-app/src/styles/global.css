@@ -423,15 +423,34 @@ a:not(.btn):hover {
 
 .navbar-links,
 .navbar-link {
+  position: relative;
   font-family: "Montserrat";
   font-weight: 400;
-  color: var(--color-text-muted);
-  @apply transition-colors;
   font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
+/* underline pseudo element */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-accent);
+  transition: width 0.25s ease;
+}
+
+/* hover state */
 .navbar-link:hover {
   color: var(--color-accent);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
 }
 
 .navbar-menu-btn {
