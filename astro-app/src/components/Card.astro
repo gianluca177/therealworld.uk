@@ -7,18 +7,21 @@
  * Usage:
  *   <Card>content</Card>
  *   <Card hover>hoverable content</Card>
- *   <Card glow>content with always-visible glow</Card>
- *   <Card hover glow class="p-8">custom padding</Card>
+ *   <Card hover class="p-8">custom padding</Card>
+ *
+ * For glow effects, pair with <AccentGlow /> as a sibling:
+ *   <div class="relative">
+ *     <AccentGlow intensity="medium" />
+ *     <Card class="relative z-10">content</Card>
+ *   </div>
  */
 
 interface Props {
-  glow?: boolean;
   hover?: boolean;
   class?: string;
 }
 
 const {
-  glow = false,
   hover = false,
   class: className = '',
 } = Astro.props;
@@ -31,7 +34,6 @@ const {
     className,
   ]}
 >
-  {glow && <div class="card-glow"></div>}
   <div class="relative z-10">
     <slot />
   </div>

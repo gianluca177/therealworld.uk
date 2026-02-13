@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout-plans.astro";
 import Card from "../../components/Card.astro";
+import AccentGlow from "../../components/AccentGlow.astro";
 
 const plans = [
   {
@@ -91,12 +92,14 @@ const plans = [
         <!-- Top row: Conquer + Vanguard-like (Conquer + Champion here) -->
         <div class="grid gap-8 md:grid-cols-2 md:max-w-4xl md:mx-auto">
           {plans.slice(0, 2).map((p) => (
+            <div class="relative">
+            {p.featured && <AccentGlow intensity="medium" class="-inset-3" />}
             <Card
               hover={!p.featured}
               class={[
-                "rounded-3xl p-7 md:p-8",
+                "relative z-10 rounded-3xl p-7 md:p-8",
                 p.featured
-                  ? "!border-accent/40 !shadow-glow"
+                  ? "!border-accent/40"
                   : "",
               ].join(" ")}
             >
@@ -173,6 +176,7 @@ const plans = [
                 )}
               </div>
             </Card>
+            </div>
           ))}
         </div>
 

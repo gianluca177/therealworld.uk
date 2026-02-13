@@ -1,0 +1,40 @@
+---
+/**
+ * AccentGlow.astro — Reusable accent glow overlay
+ *
+ * Provides a soft, medium, or strong orange radial glow behind content.
+ * Used for: hero video glow, highlighted sections, premium feature cards.
+ *
+ * Usage:
+ *   <div class="relative">
+ *     <AccentGlow intensity="medium" />
+ *     <div class="relative z-10">content</div>
+ *   </div>
+ */
+
+interface Props {
+  intensity?: 'soft' | 'medium' | 'strong';
+  class?: string;
+}
+
+const {
+  intensity = 'medium',
+  class: className = '',
+} = Astro.props;
+
+const intensityMap = {
+  soft: 'bg-accent/10',
+  medium: 'bg-accent/20',
+  strong: 'bg-accent/30',
+} as const;
+---
+
+<div
+  class:list={[
+    'absolute inset-0 pointer-events-none blur-2xl mix-blend-screen',
+    intensityMap[intensity],
+    className,
+  ]}
+  style="border-radius: 20px;"
+  aria-hidden="true"
+/>
