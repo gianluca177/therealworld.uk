@@ -52,12 +52,6 @@
   --btn-font-weight: 600;
   --btn-transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease, border-color 0.25s ease;
 
-  /* Card Base */
-  --card-bg: rgba(15, 22, 33, 0.6);
-  --card-radius: 12px;
-  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  --card-padding: 1.5rem;
-  --card-border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* =======================
@@ -352,85 +346,14 @@ a:hover {
 }
 
 /* =======================
-   CARD SYSTEM (Unified)
+   CARD GLOW
    ======================= */
-/* Base card - matte gradient with thin border, soft shadow */
-.ui-card {
-  position: relative;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: var(--card-border);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  padding: var(--card-padding);
-  transition: all 0.3s ease;
-}
-
-/* Glow wrapper - positioned behind card content */
-.ui-card-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--card-radius);
-  pointer-events: none;
+.card-glow {
+  @apply absolute -inset-3 pointer-events-none;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 0%, rgba(255,141,58,0.25), transparent 65%);
+  filter: blur(20px);
   z-index: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Card with hover effect - slight lift + border brightening + shadow increase */
-.ui-card--hover:hover {
-  border-color: rgba(255, 141, 58, 0.22);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-/* Card with glow effect on hover */
-.ui-card--glow:hover .ui-card-glow {
-  opacity: 1;
-  background: radial-gradient(circle at center, rgba(255, 141, 58, 0.15) 0%, transparent 70%);
-}
-
-/* Featured card - stronger presence */
-.ui-card--featured {
-  border: 1px solid rgba(255, 207, 35, 0.3);
-  background: linear-gradient(180deg, rgba(255, 207, 35, 0.08) 0%, rgba(255, 207, 35, 0.04) 100%);
-  box-shadow: 0 0 0 1px rgba(255, 141, 58, 0.16), 0 0 42px rgba(255, 141, 58, 0.20);
-}
-
-.ui-card--featured:hover {
-  border-color: rgba(255, 207, 35, 0.45);
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(255, 141, 58, 0.22), 0 0 50px rgba(255, 141, 58, 0.28);
-}
-
-/* Backwards-compatible aliases - map old classes to new system */
-.card,
-.plan-card,
-.teach-card,
-.interview-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: var(--card-border);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  padding: var(--card-padding);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.card:hover,
-.plan-card:hover,
-.teach-card:hover,
-.interview-card:hover {
-  border-color: rgba(255, 141, 58, 0.22);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.panel {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--card-padding);
-  transition: all 0.3s ease;
-  position: relative;
 }
 
 /* Card title - General Sans weight and style */
@@ -440,8 +363,6 @@ a:hover {
   font-size: 1.125rem;
   color: var(--color-text-light);
   margin: 0 0 0.75rem 0;
-  position: relative;
-  z-index: 1;
 }
 
 /* Card body text */
@@ -449,66 +370,12 @@ a:hover {
   color: var(--color-text-muted);
   font-size: 0.9375rem;
   line-height: 1.6;
-  position: relative;
-  z-index: 1;
 }
 
 /* Header strip with gradient */
 .header-strip {
   background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
   opacity: 0.15;
-}
-
-/* =======================
-   CARD GLOW SYSTEM
-   ======================= */
-/* Wrapper for cards with glow effect - maintains relative positioning and visible overflow */
-.card-wrapper {
-  position: relative;
-  overflow: visible;
-}
-
-/* Glow layer - sits behind content, never blocks clicks */
-.card-glow {
-  position: absolute;
-  inset: -12px;
-  border-radius: 20px;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(
-    circle at 50% 10%,
-    rgba(255, 141, 58, 0.35),
-    rgba(255, 141, 58, 0) 65%
-  );
-  filter: blur(16px);
-  box-shadow:
-    0 0 20px rgba(255, 141, 58, 0.45),
-    0 0 60px rgba(255, 141, 58, 0.22),
-    0 0 140px rgba(255, 141, 58, 0.12);
-}
-
-/* Backwards compatibility aliases for existing conquer/plan styles */
-.conquer-card-wrapper {
-  position: relative;
-  overflow: visible;
-}
-
-.plan-glow-conquer {
-  position: absolute;
-  inset: -12px;
-  border-radius: 20px;
-  pointer-events: none;
-  z-index: 0;
-  background: radial-gradient(
-    circle at 50% 10%,
-    rgba(255, 141, 58, 0.35),
-    rgba(255, 141, 58, 0) 65%
-  );
-  filter: blur(16px);
-  box-shadow:
-    0 0 20px rgba(255, 141, 58, 0.45),
-    0 0 60px rgba(255, 141, 58, 0.22),
-    0 0 140px rgba(255, 141, 58, 0.12);
 }
 
 /* =======================
@@ -941,17 +808,7 @@ a:hover {
   margin-bottom: 3rem;
 }
 
-.plan-card {
-  @apply h-full rounded-xl border p-6 md:p-7 transition;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border-color: rgba(255, 141, 58, 0.15);
-}
-
-.plan-card:hover {
-  border-color: rgba(255, 141, 58, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.1), 0 4px 12px rgba(0, 0, 0, 0.25);
-}
+/* plan-card base styles now handled by <Card> component */
 
 /* Shared button variant for plan section */
 .btn-secondary,
@@ -1047,18 +904,7 @@ a:hover {
   font-size: 1.0625rem;
 }
 
-.teach-card {
-  @apply h-full overflow-hidden transition;
-  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-}
-
-.teach-card:hover {
-  border-color: rgba(255, 141, 58, 0.22);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,141,58,0.12), 0 4px 12px rgba(0,0,0,0.25);
-}
+/* teach-card base styles now handled by <Card> component */
 
 .teach-card-image {
   @apply relative h-40 overflow-hidden;
@@ -1137,18 +983,7 @@ a:hover {
   font-size: 1.0625rem;
 }
 
-.interview-card {
-  @apply p-6 md:p-10 transition;
-  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.02) 100%);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-}
-
-.interview-card:hover {
-  border-color: rgba(255, 141, 58, 0.22);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,141,58,0.12), 0 4px 12px rgba(0,0,0,0.25);
-}
+/* interview-card base styles now handled by <Card> component */
 
 .interview-member-name {
   @apply text-2xl font-bold;

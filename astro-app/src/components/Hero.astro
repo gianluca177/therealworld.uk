@@ -1,5 +1,6 @@
 ---
 import NavBar from "./NavBar.astro";
+import Card from "./Card.astro";
 ---
 
 <section
@@ -33,18 +34,8 @@ import NavBar from "./NavBar.astro";
 
     <!-- Hero Video (Cloudflare Stream) -->
     <div class="w-full max-w-5xl mx-auto mb-10">
-      <div class="card-wrapper">
-        <div class="card-glow"></div>
-        <div
-          class="
-            relative z-10
-            aspect-video
-            rounded-2xl overflow-hidden
-            bg-black
-            border border-accent/30
-            shadow-glow
-          "
-        >
+      <Card glow class="overflow-visible !border-accent/30 !shadow-glow !rounded-2xl !p-0">
+        <div class="aspect-video rounded-2xl overflow-hidden bg-black">
     <iframe
       src="https://customer-2tp30j9wazosgmgv.cloudflarestream.com/893a87f9dd7d8a6de34978eb3fc3a655/iframe?preload=true&poster=https%3A%2F%2Fcustomer-2tp30j9wazosgmgv.cloudflarestream.com%2F893a87f9dd7d8a6de34978eb3fc3a655%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
       loading="lazy"
@@ -53,7 +44,7 @@ import NavBar from "./NavBar.astro";
       allowfullscreen="true"
     ></iframe>
         </div>
-      </div>
+      </Card>
     </div>
 
     <!-- CTAs -->

@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout-plans.astro";
+import Card from "../../components/Card.astro";
 
 const plans = [
   {
@@ -90,12 +91,13 @@ const plans = [
         <!-- Top row: Conquer + Vanguard-like (Conquer + Champion here) -->
         <div class="grid gap-8 md:grid-cols-2 md:max-w-4xl md:mx-auto">
           {plans.slice(0, 2).map((p) => (
-            <div
+            <Card
+              hover={!p.featured}
               class={[
-                "relative rounded-3xl bg-panel border p-7 md:p-8 transition",
+                "rounded-3xl p-7 md:p-8",
                 p.featured
-                  ? "border-accent/40 shadow-glow"
-                  : "border-white/10 hover:border-accent/20",
+                  ? "!border-accent/40 !shadow-glow"
+                  : "",
               ].join(" ")}
             >
               {/* Placeholder icon area (top-right) - replace with real SVG/icon later */}
@@ -170,14 +172,14 @@ const plans = [
                   </a>
                 )}
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
         <!-- Bottom: Vanguard -->
         <div class="md:max-w-4xl md:mx-auto">
           {plans.slice(2, 3).map((p) => (
-            <div class="relative rounded-3xl bg-panel border border-white/10 p-7 md:p-8 transition hover:border-accent/20">
+            <Card hover class="rounded-3xl p-7 md:p-8">
               {/* Placeholder icon area */}
               <div class="absolute top-6 right-6 h-12 w-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-white/30 text-xs">
                 ICON
@@ -234,7 +236,7 @@ const plans = [
                   Note: This card is informational. Availability is shown on the official checkout.
                 </p>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

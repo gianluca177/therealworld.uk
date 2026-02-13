@@ -1,4 +1,5 @@
 ---
+import Card from './Card.astro';
 /* SECTION: OUR PLAN -- Premium dark + orange accents */
 const steps = [
   {
@@ -50,7 +51,7 @@ const steps = [
 
     <div class="mt-12 grid gap-8 md:grid-cols-3">
       {steps.map((s) => (
-        <div class="plan-card">
+        <Card hover class="h-full p-6 md:p-7">
           <div class="flex h-full flex-col">
             {/* Header */}
             <div class="flex items-center justify-between">
@@ -89,7 +90,7 @@ const steps = [
 
             <div class="mt-auto"></div>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
 

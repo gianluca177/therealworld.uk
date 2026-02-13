@@ -1,4 +1,5 @@
 ---
+import Card from './Card.astro';
 /* SECTION: WHAT DO WE TEACH? -- 3x3 Skill Tracks (Premium dark + orange accents) */
 const tracks = [
   {
@@ -70,7 +71,7 @@ const tracks = [
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {tracks.map((t) => (
-        <div class="teach-card">
+        <Card hover class="teach-card h-full overflow-hidden !p-0">
 
           {/* Image */}
           <div class="teach-card-image">
@@ -105,7 +106,7 @@ const tracks = [
               Step-by-step lessons + community execution.
             </p>
           </div>
-        </div>
+        </Card>
       ))}
     </div>
 

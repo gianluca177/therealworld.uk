@@ -1,56 +1,38 @@
 ---
-// Card.astro - Unified Card Component
-// Purpose: Reusable card wrapper with variants and glow effects
-// Props:
-//   as: 'div' | 'article' | 'section' (default: 'div')
-//   href?: string (makes it a clickable link wrapper)
-//   variant?: 'base' | 'hover' | 'featured' (default: 'hover')
-//   glow?: boolean (adds glow effect layer on hover)
-//   class?: string (additional classes to apply)
+/**
+ * Card.astro — Unified reusable card component
+ *
+ * Replaces: plan-card, teach-card, interview-card, card, panel, card-wrapper
+ *
+ * Usage:
+ *   <Card>content</Card>
+ *   <Card hover>hoverable content</Card>
+ *   <Card glow>content with always-visible glow</Card>
+ *   <Card hover glow class="p-8">custom padding</Card>
+ */
 
 interface Props {
-  as?: 'div' | 'article' | 'section' | 'a';
-  href?: string;
-  variant?: 'base' | 'hover' | 'featured';
   glow?: boolean;
+  hover?: boolean;
   class?: string;
 }
 
 const {
-  as: Element = 'div',
-  href,
-  variant = 'hover',
   glow = false,
+  hover = false,
   class: className = '',
 } = Astro.props;
-
-// Build class list based on variant
-let cardClasses = 'ui-card';
-if (variant === 'hover') {
-  cardClasses += ' ui-card--hover';
-} else if (variant === 'featured') {
-  cardClasses += ' ui-card--featured';
-}
-if (glow) {
-  cardClasses += ' ui-card--glow';
-}
-if (className) {
-  cardClasses += ` ${className}`;
-}
-
-// Determine if we're rendering a link or regular element
-const isLink = Element === 'a' || href;
-const FinalElement = isLink ? 'a' : Element;
 ---
 
-{isLink ? (
-  <a href={href} class={cardClasses}>
-    {glow && <div class="ui-card-glow"></div>}
+<div
+  class:list={[
+    'relative bg-panel rounded-card border border-white/10 shadow-soft transition-all duration-300',
+    hover && 'hover:border-accent/40 hover:shadow-strong hover:-translate-y-0.5',
+    className,
+  ]}
+>
+  {glow && <div class="card-glow"></div>}
+  <div class="relative z-10">
     <slot />
-  </a>
-) : (
-  <Element class={cardClasses}>
-    {glow && <div class="ui-card-glow"></div>}
-    <slot />
-  </Element>
-)}
+  </div>
+</div>
