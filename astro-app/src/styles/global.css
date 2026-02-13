@@ -233,40 +233,7 @@ a:not(.btn):hover {
 
 /* Secondary & secondary-outline variants — defined once in the plan section below */
 
-/* Navbar button - compact pill button with premium styling */
-.btn-navbar {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  background-color: var(--color-accent);
-  color: #000;
-  box-shadow: 0 6px 16px rgba(255, 141, 58, 0.14), 0 1px 6px rgba(0, 0, 0, 0.3);
-}
 
-.btn-navbar:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-0.5px);
-  box-shadow: 0 8px 20px rgba(255, 141, 58, 0.18), 0 2px 8px rgba(0, 0, 0, 0.35);
-}
-
-.btn-navbar:active {
-  background-color: var(--color-accent);
-  transform: translateY(0);
-}
-
-/* Responsive navbar button sizing */
-@media (max-width: 768px) {
-  .btn-navbar {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .btn-navbar {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.875rem;
-  }
-}
 
 /* Large hero CTA button */
 .btn-lg {
@@ -421,32 +388,29 @@ a:not(.btn):hover {
   border: none !important;
 }
 
-.navbar-links,
-.navbar-link {
-  font-family: "Montserrat";
-  font-weight: 400;
+.nav-link {
+  position: relative;
   color: var(--color-text-muted);
-  @apply transition-colors;
-  font-size: 0.9375rem;
+  transition: color 0.2s ease;
 }
 
-.navbar-link:hover {
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: var(--color-accent);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
   color: var(--color-accent);
 }
 
-.navbar-menu-btn {
-  @apply transition-colors;
-  color: var(--color-accent);
-}
-
-.navbar-menu-btn:hover {
-  @apply opacity-80;
-}
-
-.btn-navbar {
-  @apply !px-4 !py-2 !text-xs !leading-none md:!px-6 md:!py-3 md:!text-sm md:!leading-none;
-  font-family: "Montserrat";
-  font-weight: 600;
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* =======================
