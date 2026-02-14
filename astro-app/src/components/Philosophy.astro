@@ -3,75 +3,147 @@
 ---
 
 <section id="philosophy" class="philosophy-section">
-  <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+  <div class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
 
-    <!-- LEFT COLUMN: Visual + caption -->
-    <div class="space-y-2">
-      <div class="philosophy-image">
+    <!-- LEFT COLUMN -->
+    <div class="space-y-3 group">
+
+      <div class="relative philosophy-image">
+
+        <!-- Outer Glow -->
+        <div
+          class="absolute inset-0 rounded-xl pointer-events-none
+                 opacity-50 transition duration-300
+                 group-hover:opacity-100"
+          style="
+            box-shadow:
+              0 0 10px rgba(255,160,35,1),
+              0 0 20px rgba(255,160,35,.45);
+          "
+        ></div>
+
+        <!-- Image -->
         <img
           src="https://imagedelivery.net/9edOa1L0-BTOSE7VU0bkNg/d7bbcb14-c112-4486-fcd6-e174f32b3400/public"
           alt="Teaching dashboard preview"
-          class="w-full h-full object-cover scale-[1.08] -translate-x-[6%]"
           loading="lazy"
+          class="w-full h-full object-cover
+                 transition duration-500
+                 scale-[1.05]
+                 group-hover:scale-[1.12]"
         />
+
       </div>
 
       <p class="philosophy-caption">
         Member dashboard preview. Interface shown for illustration.
       </p>
+
     </div>
 
-    <!-- RIGHT COLUMN: Copy -->
-    <div class="space-y-5">
-      <p class="about-label">
+    <!-- RIGHT COLUMN -->
+    <div class="space-y-6">
+
+      <p class="text-sm tracking-widest uppercase text-[#ffaa30]">
         Teaching Philosophy
       </p>
 
-      <h2 class="about-title">
-        Practical. Structured. Action-first.
+      <h2 class="text-3xl md:text-4xl font-semibold leading-tight">
+        <span class="bg-gradient-to-r from-[#e9b20a] to-[#ffaa30] bg-clip-text text-transparent">
+          Practical. Structured. Action-first.
+        </span>
       </h2>
 
-      <p class="about-text">
+      <p class="text-gray-400 leading-relaxed">
         We keep it simple: guided orientation, clear best practices, then immediate execution.
         You apply what you learn on small real tasks so skills compound through repetition and feedback.
       </p>
 
-      <ul class="about-features">
-        <li class="about-feature-item">
-          <span class="about-feature-dot"></span>
-          <span><strong class="text-white">Fast start:</strong> a simple onboarding path that gets you executing on day one.</span>
+      <ul class="space-y-4 text-gray-300">
+
+        <li class="flex items-start gap-3">
+          <svg class="mt-1 w-4 h-4 text-emerald-400 shrink-0"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 13l4 4L19 7" />
+          </svg>
+          <span>
+            <strong class="text-white">Fast start:</strong>
+            a simple onboarding path that gets you executing on day one.
+          </span>
         </li>
-        <li class="about-feature-item">
-          <span class="about-feature-dot"></span>
-          <span><strong class="text-white">Best practices:</strong> step-by-step checklists and templates you can copy and adapt.</span>
+
+        <li class="flex items-start gap-3">
+          <svg class="mt-1 w-4 h-4 text-emerald-400 shrink-0"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 13l4 4L19 7" />
+          </svg>
+          <span>
+            <strong class="text-white">Best practices:</strong>
+            step-by-step checklists and templates you can copy and adapt.
+          </span>
         </li>
-        <li class="about-feature-item">
-          <span class="about-feature-dot"></span>
-          <span><strong class="text-white">Searchable library:</strong> lessons and resources you can search and bookmark.</span>
+
+        <li class="flex items-start gap-3">
+          <svg class="mt-1 w-4 h-4 text-emerald-400 shrink-0"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 13l4 4L19 7" />
+          </svg>
+          <span>
+            <strong class="text-white">Searchable library:</strong>
+            lessons and resources you can search and bookmark.
+          </span>
         </li>
-        <li class="about-feature-item">
-          <span class="about-feature-dot"></span>
-          <span><strong class="text-white">Mentor guidance:</strong> learn from experienced operators and a global community.</span>
+
+        <li class="flex items-start gap-3">
+          <svg class="mt-1 w-4 h-4 text-emerald-400 shrink-0"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 13l4 4L19 7" />
+          </svg>
+          <span>
+            <strong class="text-white">Mentor guidance:</strong>
+            learn from experienced operators and a global community.
+          </span>
         </li>
-        <li class="about-feature-item">
-          <span class="about-feature-dot"></span>
-          <span><strong class="text-white">Modern workflows + AI:</strong> updated modules on current online business execution.</span>
+
+        <li class="flex items-start gap-3">
+          <svg class="mt-1 w-4 h-4 text-emerald-400 shrink-0"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M5 13l4 4L19 7" />
+          </svg>
+          <span>
+            <strong class="text-white">Modern workflows + AI:</strong>
+            updated modules on current online business execution.
+          </span>
         </li>
+
       </ul>
 
-      <div class="pt-2 flex flex-wrap gap-4">
+      <div class="pt-4">
         <a href="https://jointherealworld.com/checkout?a=7nrnndpb" class="btn">
-          Start Now
-        </a>
-
-        <a href="#interviews" class="btn btn-secondary">
-          See Proof (Interviews)
+          Join Hustlers University
         </a>
       </div>
 
-      <p class="philosophy-disclaimer">
-        Educational platform. No earnings are promised. Outcomes depend on effort and circumstances.
-      </p>
     </div>
 
   </div>

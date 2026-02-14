@@ -685,17 +685,27 @@ a:not(.btn):hover {
 
 /* =======================
    PHILOSOPHY SECTION
-   ======================= */
+======================= */
+
 .philosophy-section {
   @apply bg-black text-white scroll-mt-24;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--color-bg) 0%,
+    var(--color-bg-secondary) 100%
+  );
   padding: 6rem 0;
 }
 
 .philosophy-image {
-  @apply aspect-video rounded-xl overflow-hidden border md:-ml-4;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  @apply aspect-video rounded-xl overflow-hidden border md:-ml-4 relative;
   border-color: rgba(255, 141, 58, 0.2);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  transition: all 0.3s ease;
 }
 
 .philosophy-caption {
@@ -703,10 +713,6 @@ a:not(.btn):hover {
   color: rgba(255, 255, 255, 0.35);
 }
 
-.philosophy-disclaimer {
-  @apply text-xs;
-  color: rgba(255, 255, 255, 0.35);
-}
 
 /* =======================
    PLAN SECTION
