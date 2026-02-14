@@ -1,6 +1,6 @@
 ---
 import Card from './Card.astro';
-/* SECTION: OUR PLAN -- Premium dark + orange accents */
+
 const steps = [
   {
     n: 1,
@@ -39,46 +39,46 @@ const steps = [
 ---
 
 <section id="plans" class="plan-section">
-  <div class="max-w-6xl mx-auto px-4 py-20">
-    <h2 class="plan-title">
-      What is our plan?
+  <div class="max-w-6xl mx-auto px-4 py-24">
+
+    <h2 class="plan-title uppercase tracking-wide">
+      HUSTLERS UNIVERSITY'S PLAN
     </h2>
 
-    <p class="plan-subtitle">
-      The Real World follows a simple execution loop: choose a skill, apply it in the real world,
-      then improve through feedback and accountability. No shortcuts -- just a clear system for progress.
+    <p class="plan-subtitle mt-4">
+      The Real World follows a simple <strong>EXECUTION LOOP</strong>:
+      <strong>CHOOSE</strong> a skill,
+      <strong>APPLY</strong> it in the real world,
+      then <strong>IMPROVE</strong> through feedback and accountability.
+      <strong>NO SHORTCUTS.</strong> Just a clear system for progress.
     </p>
 
-    <div class="mt-12 grid gap-8 md:grid-cols-3">
-      {steps.map((s) => (
-        <Card hover class="h-full p-6 md:p-7">
+    <div class="mt-16 grid gap-8 md:grid-cols-3 plan-grid">
+      {steps.map((s, i) => (
+        <Card class={`h-full p-7 plan-card plan-card-${i + 1}`}>
           <div class="flex h-full flex-col">
-            {/* Header */}
+
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
                 <span class="plan-step-badge">
                   {s.n}
                 </span>
-                <div class="leading-tight">
-                  <p class="plan-step-label">Step {s.n}</p>
+                <div>
+                  <p class="plan-step-label">STEP {s.n}</p>
                   <h3 class="plan-step-title">
                     {s.title}
                   </h3>
                 </div>
               </div>
-
               <span class="plan-step-dot"></span>
             </div>
 
-            {/* Copy */}
             <p class="mt-5 text-sm leading-relaxed text-muted">
               {s.copy}
             </p>
 
-            {/* Separator */}
             <div class="mt-6 h-px bg-white/10"></div>
 
-            {/* Bullets */}
             <ul class="mt-6 space-y-3 text-sm text-muted">
               {s.bullets.map((b) => (
                 <li class="flex items-start gap-3">
@@ -89,29 +89,20 @@ const steps = [
             </ul>
 
             <div class="mt-auto"></div>
+
           </div>
         </Card>
       ))}
     </div>
 
-   <div class="flex flex-wrap justify-center gap-4">
+    <div class="mt-20 flex justify-center">
       <a
         href="https://jointherealworld.com/checkout?a=7nrnndpb"
-        class="btn"
+        class="btn px-10 py-4 text-base"
       >
-        Join Hustlers University
-      </a>
-
-      <a
-        href="#about"
-        class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-accent/30 text-accent font-semibold hover:bg-accent/5 transition"
-      >
-        Learn More
+        JOIN HUSTLERS UNIVERSITY
       </a>
     </div>
 
-    <p class="plan-disclaimer">
-      Educational platform -- results depend on effort, consistency, and execution.
-    </p>
   </div>
 </section>

@@ -711,71 +711,39 @@ a:not(.btn):hover {
 /* =======================
    PLAN SECTION
    ======================= */
+
 .plan-section {
-  @apply bg-black text-white scroll-mt-28;
-  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+  @apply text-white scroll-mt-28;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg) 100%
+  );
   padding: 6rem 0;
 }
 
 .plan-title {
-  @apply text-3xl md:text-4xl font-bold text-center tracking-tight;
+  @apply text-3xl md:text-4xl font-bold text-center tracking-tight uppercase;
   font-family: "General Sans";
   color: var(--color-text-light);
   margin-bottom: 1rem;
+  letter-spacing: 0.04em;
 }
 
 .plan-subtitle {
-  @apply mt-2 text-center max-w-3xl mx-auto leading-relaxed;
+  @apply text-center max-w-3xl mx-auto leading-relaxed;
   color: var(--color-text-muted);
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 3rem;
 }
 
-/* plan-card base styles now handled by <Card> component */
-
-/* Shared button variant for plan section */
-.btn-secondary,
-.btn-secondary-outline {
-  border: 1px solid;
-  font-family: "Montserrat";
-  font-weight: 600;
-  transition: var(--btn-transition);
-  border-radius: 9999px;
-  padding: 0.75rem 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-secondary {
-  border-color: rgba(255, 141, 58, 0.3);
-  color: var(--color-accent);
-  background: transparent;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 141, 58, 0.08);
-  border-color: rgba(255, 141, 58, 0.5);
-  transform: translateY(-1px);
-}
-
-.btn-secondary-outline {
-  border-color: rgba(255, 255, 255, 0.15);
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.btn-secondary-outline:hover {
-  border-color: rgba(255, 141, 58, 0.3);
-  color: white;
-  transform: translateY(-1px);
-}
-
 .plan-step-badge {
-  @apply inline-flex items-center justify-center h-10 w-10 rounded-full border text-sm font-semibold;
+  @apply inline-flex items-center justify-center h-10 w-10 rounded-full text-sm font-semibold;
   background-color: rgba(255, 141, 58, 0.08);
-  border-color: rgba(255, 141, 58, 0.25);
+  border: 1px solid rgba(255, 141, 58, 0.25);
   color: var(--color-accent);
+  transition: all 0.3s ease;
 }
 
 .plan-step-label {
@@ -788,7 +756,6 @@ a:not(.btn):hover {
   @apply text-lg font-semibold;
   font-family: "General Sans";
   color: var(--color-text-light);
-  font-weight: 600;
 }
 
 .plan-step-dot {
@@ -802,9 +769,43 @@ a:not(.btn):hover {
   background-color: rgba(255, 141, 58, 0.5);
 }
 
-.plan-disclaimer {
-  @apply mt-5 text-center text-xs;
-  color: rgba(255, 255, 255, 0.25);
+/* =======================
+   PLAN CARD ANIMATION
+   ======================= */
+
+.plan-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Keyframe: subtle premium glow */
+@keyframes planGlow {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: translateY(-6px);
+    box-shadow:
+      0 0 25px rgba(255, 141, 58, 0.45),
+      0 0 60px rgba(255, 207, 35, 0.25);
+  }
+}
+
+/* 15 second cycle, staggered 5 seconds each */
+
+.plan-card-1 {
+  animation: planGlow 15s ease-in-out infinite;
+}
+
+.plan-card-2 {
+  animation: planGlow 15s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+.plan-card-3 {
+  animation: planGlow 15s ease-in-out infinite;
+  animation-delay: 10s;
 }
 
 /* =======================
