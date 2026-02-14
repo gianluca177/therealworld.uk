@@ -1,5 +1,4 @@
 ---
-import Card from './Card.astro';
 
 const steps = [
   {
@@ -38,139 +37,162 @@ const steps = [
 ];
 ---
 
-<section id="plans" class="plan-section">
-  <div class="max-w-6xl mx-auto px-6 py-28">
+<section id="plans" class="bg-[#050b16] py-28">
+  <div class="max-w-6xl mx-auto px-6">
 
-    <!-- Title -->
-    <h2 class="plan-title uppercase tracking-wider text-center">
-      HUSTLERS UNIVERSITY'S PLAN
-    </h2>
+    <!-- TITLE -->
+    <div class="plan-title-wrapper text-center group cursor-pointer">
 
-    <!-- Subtitle -->
-    <p class="plan-subtitle mt-6">
-      The Real World follows a simple <strong>EXECUTION LOOP</strong> —
-      <strong>CHOOSE</strong> a skill,
-      <strong>APPLY</strong> it in the real world,
-      then <strong>IMPROVE</strong> through feedback and accountability.
-      <strong>NO SHORTCUTS.</strong>
-      Just a clear system for progress.
-    </p>
+      <h2 class="text-3xl md:text-4xl font-semibold tracking-wide">
+        <span
+          class="plan-gradient-text
+                 bg-gradient-to-r from-[#e9b20a] to-[#ffaa30]
+                 bg-clip-text text-transparent
+                 opacity-50
+                 transition duration-300
+                 group-hover:opacity-100"
+        >
+          Hustlers University’s Plan
+        </span>
+      </h2>
 
-    <!-- Cards -->
-<div class="mt-20 grid gap-10 md:grid-cols-3">
-  {steps.map((s) => (
-    <div class="relative group">
+      <!-- SUBTITLE -->
+      <p class="mt-6 text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        The Real World follows a simple
+        <span class="plan-gradient-text opacity-50 transition duration-300 group-hover:opacity-100
+                     bg-gradient-to-r from-[#e9b20a] to-[#ffaa30]
+                     bg-clip-text text-transparent">
+          execution loop
+        </span>
+        —
+        <span class="plan-gradient-text opacity-50 transition duration-300 group-hover:opacity-100
+                     bg-gradient-to-r from-[#e9b20a] to-[#ffaa30]
+                     bg-clip-text text-transparent">
+          choose
+        </span>
+        a skill,
+        <span class="plan-gradient-text opacity-50 transition duration-300 group-hover:opacity-100
+                     bg-gradient-to-r from-[#e9b20a] to-[#ffaa30]
+                     bg-clip-text text-transparent">
+          apply
+        </span>
+        it in the real world,
+        then
+        <span class="plan-gradient-text opacity-50 transition duration-300 group-hover:opacity-100
+                     bg-gradient-to-r from-[#e9b20a] to-[#ffaa30]
+                     bg-clip-text text-transparent">
+          improve
+        </span>
+        through feedback and accountability.
+        <span class="plan-gradient-text opacity-50 transition duration-300 group-hover:opacity-100
+                     bg-gradient-to-r from-[#e9b20a] to-[#ffaa30]
+                     bg-clip-text text-transparent">
+          No shortcuts.
+        </span>
+        Just a clear system for progress.
+      </p>
 
-      <!-- Refined Glow -->
-      <div
-        class="absolute inset-0 rounded-2xl pointer-events-none transition duration-300 group-hover:opacity-100"
-        style="
-          box-shadow:
-            0 0 10px rgba(255,160,35,1),
-            0 0 20px rgba(255,160,35,.45);
-        "
-      ></div>
+    </div>
 
-      <!-- Card -->
-      <div
-        class="relative rounded-2xl p-8 h-full overflow-hidden bg-[#0B0F1A]"
-        style="
-          border:1px solid #ffa023;
-        "
-      >
+    <!-- CARDS -->
+    <div class="mt-20 grid gap-10 md:grid-cols-3">
+      {steps.map((s) => (
+        <div class="relative group">
 
-        <!-- Subtle Inner Highlight -->
-        <div
-          class="absolute inset-0 rounded-2xl pointer-events-none"
-          style="
-            box-shadow: inset 0 0 12px rgba(255,170,48,.25);
-          "
-        ></div>
+          <!-- Refined Glow -->
+          <div
+            class="absolute inset-0 rounded-2xl pointer-events-none
+                   opacity-50 transition duration-300
+                   group-hover:opacity-100"
+            style="
+              box-shadow:
+                0 0 10px rgba(255,160,35,1),
+                0 0 20px rgba(255,160,35,.45);
+            "
+          ></div>
 
-        <!-- Subtle Grid -->
-        <div
-          class="absolute inset-0 opacity-[0.035] pointer-events-none"
-          style="
-            background-image:
-            linear-gradient(to right, white 1px, transparent 1px),
-            linear-gradient(to bottom, white 1px, transparent 1px);
-            background-size: 52px 52px;
-          "
-        ></div>
+          <!-- Card -->
+          <div
+            class="relative rounded-2xl p-8 h-full overflow-hidden
+                   bg-[#0B0F1A]
+                   border border-[rgba(255,160,35,.6)]
+                   transition duration-300
+                   group-hover:border-[#ffa023]
+                   group-hover:bg-[#111827]"
+          >
 
-        <!-- Warm Center Glow -->
-        <div
-          class="absolute inset-0 pointer-events-none"
-          style="
-            background: radial-gradient(circle at center,
-            rgba(255,170,48,.22),
-            transparent 65%);
-          "
-        ></div>
+            <!-- Subtle Inner Highlight -->
+            <div
+              class="absolute inset-0 rounded-2xl pointer-events-none
+                     opacity-50 transition duration-300
+                     group-hover:opacity-100"
+              style="box-shadow: inset 0 0 12px rgba(255,170,48,.25);"
+            ></div>
 
-        <!-- Content -->
-        <div class="relative z-10 flex h-full flex-col">
+            <!-- Subtle Grid -->
+            <div
+              class="absolute inset-0 opacity-[0.035] pointer-events-none"
+              style="
+                background-image:
+                linear-gradient(to right, white 1px, transparent 1px),
+                linear-gradient(to bottom, white 1px, transparent 1px);
+                background-size: 52px 52px;
+              "
+            ></div>
 
-          <!-- HEADER (tightened) -->
-          <div class="flex items-start gap-4">
+            <div class="relative z-10 flex h-full flex-col">
 
-            <!-- Number Badge -->
-            <span
-              class="flex items-center justify-center w-9 h-9 text-sm font-semibold text-black rounded-full shrink-0"
-              style="background: linear-gradient(99.43deg, #ffbc39 10.06%, #ff8d3a 104.9%);"
-            >
-              {s.n}
-            </span>
+              <div class="flex items-start gap-4">
 
-            <div class="leading-tight">
-              <p class="text-[11px] tracking-widest text-[#ffaa30] uppercase mb-1">
-                STEP {s.n}
+                <span
+                  class="flex items-center justify-center w-9 h-9 text-sm font-semibold text-black rounded-full shrink-0"
+                  style="background: linear-gradient(99.43deg, #ffbc39 10.06%, #ff8d3a 104.9%);"
+                >
+                  {s.n}
+                </span>
+
+                <div class="leading-tight">
+                  <p class="text-[11px] tracking-widest text-[#ffaa30] uppercase mb-1">
+                    STEP {s.n}
+                  </p>
+
+                  <h3 class="text-base font-semibold text-white">
+                    {s.title}
+                  </h3>
+                </div>
+
+              </div>
+
+              <p class="mt-5 text-sm leading-relaxed text-gray-400">
+                {s.copy}
               </p>
 
-              <h3 class="text-base font-semibold text-white">
-                {s.title}
-              </h3>
+              <div class="mt-6 h-px bg-white/10"></div>
+
+              <ul class="mt-6 space-y-4 text-sm text-gray-300">
+                {s.bullets.map((b) => (
+                  <li class="flex items-start gap-3">
+                    <svg
+                      class="mt-1 w-4 h-4 text-emerald-400 shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-auto"></div>
             </div>
-
           </div>
-
-          <!-- Copy -->
-          <p class="mt-5 text-sm leading-relaxed text-gray-400">
-            {s.copy}
-          </p>
-
-          <!-- Divider -->
-          <div class="mt-6 h-px bg-white/10"></div>
-
-          <!-- Features -->
-          <ul class="mt-6 space-y-4 text-sm text-gray-300">
-            {s.bullets.map((b) => (
-              <li class="flex items-start gap-3">
-
-                <!-- Check Icon -->
-                <svg
-                  class="mt-1 w-4 h-4 text-emerald-400 shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M5 13l4 4L19 7" />
-                </svg>
-
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div class="mt-auto"></div>
         </div>
-      </div>
+      ))}
     </div>
-  ))}
-</div>
-
 
     <!-- CTA -->
     <div class="mt-24 flex justify-center">
@@ -184,3 +206,21 @@ const steps = [
 
   </div>
 </section>
+
+<!-- MOBILE CLICK TO ACTIVATE TITLE -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.querySelector(".plan-title-wrapper");
+
+    if (!wrapper) return;
+
+    wrapper.addEventListener("click", (e) => {
+      e.stopPropagation();
+      wrapper.classList.add("is-active");
+    });
+
+    document.addEventListener("click", () => {
+      wrapper.classList.remove("is-active");
+    });
+  });
+</script>
