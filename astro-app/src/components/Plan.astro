@@ -61,10 +61,14 @@ const steps = [
   {steps.map((s) => (
     <div class="relative group">
 
-      <!-- Tight Outer Glow -->
+      <!-- Refined Glow -->
       <div
-        class="absolute inset-0 rounded-2xl opacity-80 transition duration-300 group-hover:opacity-100"
-        style="box-shadow: 0 0 32px rgba(241,187,20,.45);"
+        class="absolute inset-0 rounded-2xl pointer-events-none transition duration-300 group-hover:opacity-100"
+        style="
+          box-shadow:
+            0 0 10px rgba(255,160,35,1),
+            0 0 20px rgba(255,160,35,.45);
+        "
       ></div>
 
       <!-- Card -->
