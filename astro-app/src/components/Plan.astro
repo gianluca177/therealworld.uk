@@ -8,8 +8,8 @@ const steps = [
     copy:
       "Once inside The Real World, you choose a single skill to focus on. Members get full access to all courses, but progress is fastest when you commit to one clear path.",
     bullets: [
-      "Access 10+ modern skill tracks, including AI, e-commerce, marketing, and copywriting.",
-      "1,000+ professionally produced lessons, updated as strategies evolve.",
+      "Access 10+ modern skill tracks including AI, e-commerce, marketing, and copywriting.",
+      "1,000+ professionally produced lessons updated as strategies evolve.",
       "Direct access to community chats and mentors inside each skill campus.",
     ],
   },
@@ -17,7 +17,7 @@ const steps = [
     n: 2,
     title: "Learn & Apply",
     copy:
-      "You don’t just watch videos. You apply what you learn immediately, using proven frameworks, examples from other members, and real-time feedback.",
+      "You don’t just watch videos. You apply what you learn immediately using proven frameworks, examples from other members, and real-time feedback.",
     bullets: [
       "Step-by-step learning paths designed for execution, not theory.",
       "See how other members build, test, and improve real projects.",
@@ -39,66 +39,83 @@ const steps = [
 ---
 
 <section id="plans" class="plan-section">
-  <div class="max-w-6xl mx-auto px-4 py-24">
+  <div class="max-w-6xl mx-auto px-6 py-28">
 
-    <h2 class="plan-title uppercase tracking-wide">
+    <!-- Title -->
+    <h2 class="plan-title uppercase tracking-wider text-center">
       HUSTLERS UNIVERSITY'S PLAN
     </h2>
 
-    <p class="plan-subtitle mt-4">
-      The Real World follows a simple <strong>EXECUTION LOOP</strong>:
+    <!-- Subtitle -->
+    <p class="plan-subtitle mt-6">
+      The Real World follows a simple <strong>EXECUTION LOOP</strong> —
       <strong>CHOOSE</strong> a skill,
       <strong>APPLY</strong> it in the real world,
       then <strong>IMPROVE</strong> through feedback and accountability.
-      <strong>NO SHORTCUTS.</strong> Just a clear system for progress.
+      <strong>NO SHORTCUTS.</strong>
+      Just a clear system for progress.
     </p>
 
-    <div class="mt-16 grid gap-8 md:grid-cols-3 plan-grid">
-      {steps.map((s, i) => (
-        <Card class={`h-full p-7 plan-card plan-card-${i + 1}`}>
-          <div class="flex h-full flex-col">
+    <!-- Cards -->
+    <div class="mt-20 grid gap-10 md:grid-cols-3">
+      {steps.map((s) => (
+        <div class="plan-card-wrapper">
+          <div class="plan-glow"></div>
 
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <span class="plan-step-badge">
-                  {s.n}
-                </span>
-                <div>
-                  <p class="plan-step-label">STEP {s.n}</p>
-                  <h3 class="plan-step-title">
-                    {s.title}
-                  </h3>
+          <Card class="relative z-10 h-full p-8 plan-card">
+            <div class="flex h-full flex-col">
+
+              <!-- Header -->
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                  <span class="plan-step-badge">
+                    {s.n}
+                  </span>
+
+                  <div>
+                    <p class="plan-step-label">
+                      STEP {s.n}
+                    </p>
+
+                    <h3 class="plan-step-title">
+                      {s.title}
+                    </h3>
+                  </div>
                 </div>
+
+                <span class="plan-step-dot"></span>
               </div>
-              <span class="plan-step-dot"></span>
+
+              <!-- Copy -->
+              <p class="mt-6 text-sm leading-relaxed text-muted">
+                {s.copy}
+              </p>
+
+              <!-- Divider -->
+              <div class="mt-8 h-px bg-white/10"></div>
+
+              <!-- Bullets -->
+              <ul class="mt-8 space-y-4 text-sm text-muted">
+                {s.bullets.map((b) => (
+                  <li class="flex items-start gap-3">
+                    <span class="plan-bullet"></span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-auto"></div>
             </div>
-
-            <p class="mt-5 text-sm leading-relaxed text-muted">
-              {s.copy}
-            </p>
-
-            <div class="mt-6 h-px bg-white/10"></div>
-
-            <ul class="mt-6 space-y-3 text-sm text-muted">
-              {s.bullets.map((b) => (
-                <li class="flex items-start gap-3">
-                  <span class="plan-bullet"></span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mt-auto"></div>
-
-          </div>
-        </Card>
+          </Card>
+        </div>
       ))}
     </div>
 
-    <div class="mt-20 flex justify-center">
+    <!-- CTA -->
+    <div class="mt-24 flex justify-center">
       <a
         href="https://jointherealworld.com/checkout?a=7nrnndpb"
-        class="btn px-10 py-4 text-base"
+        class="btn px-12 py-4 text-base tracking-wide"
       >
         JOIN HUSTLERS UNIVERSITY
       </a>

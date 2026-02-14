@@ -2,18 +2,8 @@
 /**
  * Card.astro — Unified reusable card component
  *
- * Replaces: plan-card, teach-card, interview-card, card, panel, card-wrapper
- *
- * Usage:
- *   <Card>content</Card>
- *   <Card hover>hoverable content</Card>
- *   <Card hover class="p-8">custom padding</Card>
- *
- * For glow effects, pair with <AccentGlow /> as a sibling:
- *   <div class="relative">
- *     <AccentGlow intensity="medium" />
- *     <Card class="relative z-10">content</Card>
- *   </div>
+ * Clean base surface card.
+ * No glow logic inside — glow handled externally via .plan-glow wrapper.
  */
 
 interface Props {
@@ -29,8 +19,9 @@ const {
 
 <div
   class:list={[
-    'relative bg-panel rounded-card border border-white/10 shadow-soft transition-all duration-300',
-    hover && 'hover:border-accent/40 hover:shadow-strong hover:-translate-y-0.5',
+    'relative rounded-2xl border transition-all duration-300',
+    'bg-[var(--color-bg-secondary)] border-white/10 shadow-soft',
+    hover && 'hover:border-[rgba(255,141,58,0.35)] hover:-translate-y-[2px] hover:shadow-strong',
     className,
   ]}
 >
