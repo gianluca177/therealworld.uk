@@ -1,6 +1,5 @@
 ---
-import Card from './Card.astro';
-/* SECTION: INTERVIEWS -- Premium dark + orange accents */
+/* SECTION: INTERVIEWS -- */
 const interviews = [
   {
     name: "Nox",
@@ -38,61 +37,119 @@ const interviews = [
 ];
 ---
 
-<section id="interviews" class="interviews-section">
-  <div class="max-w-6xl mx-auto px-4 py-20">
-    <h2 class="interviews-title">
-      Interviews with Real Members
+<section id="interviews" class="bg-[#050b16] py-24">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-3xl md:text-4xl font-semibold text-center text-white tracking-wide">
+      Interviews with <span class="text-[#ffa023]">Real Members</span>
     </h2>
 
-    <p class="interviews-subtitle">
-      Members of The Real World sharing their experiences, lessons learned, and personal development inside the platform.
+    <p class="mt-6 text-center text-gray-400 max-w-2xl mx-auto leading-relaxed">
+      Members of <span class="text-[#ffa023]">The Real World</span> sharing their experiences,
+      lessons learned, and personal development inside the platform.
     </p>
 
-    <div class="mt-14 space-y-14">
+    <div class="mt-16 space-y-16">
       {interviews.map((s) => (
-        <Card hover class="p-6 md:p-10">
-          <div class="grid md:grid-cols-2 gap-10 items-center">
-            {/* Member Details */}
-            <div class="space-y-4">
-              <div>
-                <h3 class="interview-member-name">
-                  {s.name}
-                </h3>
-                <p class="interview-member-meta">
-                  Age {s.age} • {s.location} • {s.note}
+        <div class="relative group">
+
+          <!-- Tight Glow -->
+          <div
+            class="absolute inset-0 rounded-2xl pointer-events-none"
+            style="
+              box-shadow:
+                0 0 10px rgba(255,160,35,1),
+                0 0 20px rgba(255,160,35,.45);
+            "
+          ></div>
+
+          <!-- Card -->
+          <div
+            class="relative rounded-2xl border bg-[#0B0F1A] p-8 md:p-12 overflow-hidden"
+            style="border:1px solid #ffa023;"
+          >
+
+            <!-- Inner Glow -->
+            <div
+              class="absolute inset-0 rounded-2xl pointer-events-none"
+              style="box-shadow: inset 0 0 12px rgba(255,170,48,.25);"
+            ></div>
+
+            <!-- Grid -->
+            <div
+              class="absolute inset-0 opacity-[0.035] pointer-events-none"
+              style="
+                background-image:
+                linear-gradient(to right, white 1px, transparent 1px),
+                linear-gradient(to bottom, white 1px, transparent 1px);
+                background-size: 52px 52px;
+              "
+            ></div>
+
+            <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+
+              <!-- LEFT -->
+              <div class="space-y-5">
+
+                <div>
+                  <h3 class="text-2xl font-semibold text-white">
+                    {s.name}
+                  </h3>
+
+                  <p class="text-sm text-gray-400 mt-1">
+                    Age <span class="text-[#ffa023]">{s.age}</span> •
+                    <span class="text-[#ffa023]"> {s.location}</span> •
+                    {s.note}
+                  </p>
+                </div>
+
+                <p class="text-gray-300 leading-relaxed">
+                  {s.summary
+                    .replace("The Real World", "<span class='text-[#ffa023]'>The Real World</span>")
+                    .replace("execution", "<span class='text-[#ffa023]'>execution</span>")
+                  }
+                </p>
+
+                <p class="text-xs text-gray-500">
+                  Educational discussion only. Individual experiences vary and no financial outcomes are guaranteed.
                 </p>
               </div>
 
-              <p class="interview-summary">
-                {s.summary}
-              </p>
+              <!-- RIGHT -->
+              <div class="space-y-4">
 
-              <p class="interview-disclaimer">
-                Educational discussion only. Individual experiences vary and no financial outcomes are guaranteed.
-              </p>
-            </div>
+                <!-- Video Frame -->
+                <div class="relative rounded-xl overflow-hidden"
+                     style="
+                       border:1px solid #ffa023;
+                       box-shadow:
+                         0 0 8px rgba(255,160,35,.8),
+                         0 0 16px rgba(255,160,35,.4);
+                     "
+                >
+                  <div class="relative pt-[56.25%]">
+                    <iframe
+                      id={s.iframeId}
+                      src={s.video}
+                      title={`Interview with ${s.name}`}
+                      class="absolute inset-0 w-full h-full"
+                      style="border:none;"
+                      allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                      allowfullscreen
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+                </div>
 
-            {/* Video */}
-            <div class="space-y-3">
-              <div class="interview-video-container">
-                <iframe
-                  id={s.iframeId}
-                  src={s.video}
-                  title={`Interview with ${s.name}`}
-                  class="absolute inset-0 h-full w-full"
-                  style="border:none;"
-                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                  allowfullscreen
-                  loading="lazy"
-                ></iframe>
+                <p class="text-xs text-gray-500">
+                  Member interview — shown for informational purposes.
+                </p>
+
               </div>
 
-              <p class="interview-video-caption">
-                Member interview -- shown for informational purposes.
-              </p>
             </div>
           </div>
-        </Card>
+        </div>
       ))}
     </div>
   </div>
