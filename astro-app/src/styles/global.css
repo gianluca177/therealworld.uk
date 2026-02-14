@@ -946,6 +946,24 @@ a:not(.btn):hover {
   color: rgba(255, 255, 255, 0.35);
 }
 
+.interview-card.is-active .glow-layer {
+  opacity: 1 !important;
+}
+
+.interview-card.is-active .inner-glow {
+  opacity: 1 !important;
+}
+
+.interview-card.is-active .card-main {
+  border-color: #ffa023 !important;
+  background-color: #111827 !important;
+}
+
+.interview-card.is-active .warm-glow {
+  opacity: 1 !important;
+}
+
+
 /* =======================
    FOOTER
    ======================= */
