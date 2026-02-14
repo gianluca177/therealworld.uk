@@ -37,8 +37,8 @@ const interviews = [
 ];
 ---
 
-<section id="interviews" class="bg-[#050b16] py-24">
-  <div class="max-w-6xl mx-auto px-6">
+<section id="interviews" class="bg-[#050b16] py-20 md:py-24">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
 
     <h2 class="text-3xl md:text-4xl font-semibold text-center text-white tracking-wide">
       Interviews with <span class="text-[#ffa023]">Real Members</span>
@@ -49,13 +49,13 @@ const interviews = [
       lessons learned, and personal development inside the platform.
     </p>
 
-    <div class="mt-16 space-y-16">
+    <div class="mt-14 md:mt-16 space-y-14 md:space-y-16">
       {interviews.map((s) => (
         <div class="relative group">
 
-          <!-- Tight Glow -->
+          <!-- DESKTOP GLOW ONLY -->
           <div
-            class="absolute inset-0 rounded-2xl pointer-events-none"
+            class="hidden md:block absolute inset-0 rounded-2xl pointer-events-none"
             style="
               box-shadow:
                 0 0 10px rgba(255,160,35,1),
@@ -63,21 +63,21 @@ const interviews = [
             "
           ></div>
 
-          <!-- Card -->
+          <!-- MAIN CARD -->
           <div
-            class="relative rounded-2xl border bg-[#0B0F1A] p-8 md:p-12 overflow-hidden"
+            class="relative rounded-2xl border bg-[#0B0F1A] overflow-hidden
+                   p-5 md:p-10"
             style="border:1px solid #ffa023;"
           >
 
-            <!-- Inner Glow -->
+            <!-- DESKTOP INNER EFFECTS -->
             <div
-              class="absolute inset-0 rounded-2xl pointer-events-none"
+              class="hidden md:block absolute inset-0 rounded-2xl pointer-events-none"
               style="box-shadow: inset 0 0 12px rgba(255,170,48,.25);"
             ></div>
 
-            <!-- Grid -->
             <div
-              class="absolute inset-0 opacity-[0.035] pointer-events-none"
+              class="hidden md:block absolute inset-0 opacity-[0.035] pointer-events-none"
               style="
                 background-image:
                 linear-gradient(to right, white 1px, transparent 1px),
@@ -86,13 +86,14 @@ const interviews = [
               "
             ></div>
 
-            <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <!-- CONTENT -->
+            <div class="relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
-              <!-- LEFT -->
-              <div class="space-y-5">
+              <!-- LEFT (TEXT) -->
+              <div class="space-y-4 md:space-y-5">
 
                 <div>
-                  <h3 class="text-2xl font-semibold text-white">
+                  <h3 class="text-xl md:text-2xl font-semibold text-white">
                     {s.name}
                   </h3>
 
@@ -103,31 +104,26 @@ const interviews = [
                   </p>
                 </div>
 
-                <p class="text-gray-300 leading-relaxed">
-                  {s.summary
-                    .replace("The Real World", "<span class='text-[#ffa023]'>The Real World</span>")
-                    .replace("execution", "<span class='text-[#ffa023]'>execution</span>")
-                  }
+                <!-- HIDDEN ON MOBILE -->
+                <p class="hidden md:block text-gray-300 leading-relaxed">
+                  {s.summary}
                 </p>
 
-                <p class="text-xs text-gray-500">
+                <!-- HIDDEN ON MOBILE -->
+                <p class="hidden md:block text-xs text-gray-500">
                   Educational discussion only. Individual experiences vary and no financial outcomes are guaranteed.
                 </p>
+
               </div>
 
-              <!-- RIGHT -->
-              <div class="space-y-4">
+              <!-- RIGHT (VIDEO) -->
+              <div class="space-y-3">
 
-                <!-- Video Frame -->
-                <div class="relative rounded-xl overflow-hidden"
-                     style="
-                       border:1px solid #ffa023;
-                       box-shadow:
-                         0 0 8px rgba(255,160,35,.8),
-                         0 0 16px rgba(255,160,35,.4);
-                     "
-                >
+                <!-- MOBILE: FULL WIDTH, NO FRAME -->
+                <div class="relative overflow-hidden rounded-lg md:rounded-xl">
+
                   <div class="relative pt-[56.25%]">
+
                     <iframe
                       id={s.iframeId}
                       src={s.video}
@@ -138,6 +134,7 @@ const interviews = [
                       allowfullscreen
                       loading="lazy"
                     ></iframe>
+
                   </div>
                 </div>
 
