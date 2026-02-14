@@ -763,80 +763,23 @@ a:not(.btn):hover {
 /* =======================
    TEACH SECTION
    ======================= */
-.teach-section {
-  @apply py-24 text-white scroll-mt-28;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
+.teach-card {
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.teach-title {
-  @apply text-center tracking-tight font-bold;
-  font-size: clamp(2rem, 5vw, 2.5rem);
-  color: var(--color-text-light);
-  letter-spacing: -0.01em;
+/* Active state (mobile tap toggle) */
+.teach-card.is-active .glow-layer {
+  opacity: 1 !important;
 }
 
-.teach-subtitle {
-  @apply mt-4 text-center max-w-3xl mx-auto leading-relaxed;
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 1.0625rem;
+.teach-card.is-active .inner-glow {
+  opacity: 1 !important;
 }
 
-/* teach-card base styles now handled by <Card> component */
-
-.teach-card-image {
-  @apply relative h-40 overflow-hidden;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.1) 100%);
-}
-
-.teach-card-image::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 3px;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  background-color: var(--color-accent);
-}
-
-.teach-card:hover .teach-card-image::before {
-  opacity: 0.8;
-}
-
-.teach-card-image img {
-  @apply absolute inset-0;
-}
-
-.teach-card-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
-  z-index: 1;
-}
-
-.teach-card-tag {
-  @apply inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold relative z-10;
-  border-color: rgba(255, 141, 58, 0.25);
-  background-color: rgba(255, 141, 58, 0.12);
-  color: var(--color-accent);
-}
-
-.teach-card-title {
-  @apply text-lg font-semibold transition;
-  font-family: "General Sans";
-  font-weight: 700;
-  color: var(--color-text-light);
-}
-
-.teach-card:hover .teach-card-title {
-  color: white;
-}
-
-.teach-card-caption {
-  @apply mt-4 text-xs;
-  color: rgba(255, 255, 255, 0.45);
+.teach-card.is-active > div:nth-child(2) {
+  border-color: #ffa023 !important;
+  background-color: #111827 !important;
 }
 
 /* =======================
