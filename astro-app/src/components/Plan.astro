@@ -58,58 +58,102 @@ const steps = [
 
     <!-- Cards -->
     <div class="mt-20 grid gap-10 md:grid-cols-3">
-      {steps.map((s) => (
-        <div class="plan-card-wrapper">
-          <div></div>
+  {steps.map((s) => (
+    <div class="relative group">
 
-          <Card class="relative z-10 h-full p-8 plan-card">
-            <div class="flex h-full flex-col">
+      <!-- Outer Glow -->
+      <div
+        class="absolute -inset-1 rounded-2xl opacity-70 group-hover:opacity-100 transition duration-300"
+        style="box-shadow: 0px 4px 50px rgba(241,187,20,.39);"
+      ></div>
 
-              <!-- Header -->
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-4">
-                  <span class="plan-step-badge">
-                    {s.n}
-                  </span>
+      <!-- Card -->
+      <div
+        class="relative rounded-2xl border p-8 h-full overflow-hidden bg-[#0B0F1A]"
+        style="border-color:#ffa023ff;"
+      >
 
-                  <div>
-                    <p class="plan-step-label">
-                      STEP {s.n}
-                    </p>
+        <!-- Grid Overlay -->
+        <div
+          class="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style="
+            background-image:
+            linear-gradient(to right, white 1px, transparent 1px),
+            linear-gradient(to bottom, white 1px, transparent 1px);
+            background-size: 48px 48px;
+          "
+        ></div>
 
-                    <h3 class="plan-step-title">
-                      {s.title}
-                    </h3>
-                  </div>
-                </div>
+        <!-- Warm Gradient Wash -->
+        <div
+          class="absolute inset-0 pointer-events-none"
+          style="
+            background: linear-gradient(90.55deg,#e9b20a 0%,#ffaa30 98.28%);
+            opacity:0.05;
+          "
+        ></div>
 
-                <span class="plan-step-dot"></span>
+        <!-- Radial Center Glow -->
+        <div
+          class="absolute inset-0 pointer-events-none"
+          style="
+            background: radial-gradient(circle at center,
+            rgba(241,187,20,.25),
+            transparent 60%);
+            opacity:0.4;
+          "
+        ></div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex h-full flex-col">
+
+          <!-- Header -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded-full text-sm font-semibold text-black"
+                style="background: linear-gradient(99.43deg, #ffbc39 10.06%, #ff8d3a 104.9%);"
+              >
+                {s.n}
+              </span>
+
+              <div>
+                <p class="text-xs tracking-widest text-[#ffaa30] uppercase">
+                  STEP {s.n}
+                </p>
+
+                <h3 class="text-lg font-semibold text-white">
+                  {s.title}
+                </h3>
               </div>
-
-              <!-- Copy -->
-              <p class="mt-6 text-sm leading-relaxed text-muted">
-                {s.copy}
-              </p>
-
-              <!-- Divider -->
-              <div class="mt-8 h-px bg-white/10"></div>
-
-              <!-- Bullets -->
-              <ul class="mt-8 space-y-4 text-sm text-muted">
-                {s.bullets.map((b) => (
-                  <li class="flex items-start gap-3">
-                    <span class="plan-bullet"></span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div class="mt-auto"></div>
             </div>
-          </Card>
+
+            <span class="w-2 h-2 rounded-full bg-[#ffaa30]/70"></span>
+          </div>
+
+          <!-- Copy -->
+          <p class="mt-6 text-sm leading-relaxed text-gray-400">
+            {s.copy}
+          </p>
+
+          <!-- Divider -->
+          <div class="mt-8 h-px bg-white/10"></div>
+
+          <!-- Bullets -->
+          <ul class="mt-8 space-y-4 text-sm text-gray-400">
+            {s.bullets.map((b) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-2 w-2 h-2 rounded-full bg-[#ffaa30]"></span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="mt-auto"></div>
         </div>
-      ))}
+      </div>
     </div>
+  ))}
+</div>
 
     <!-- CTA -->
     <div class="mt-24 flex justify-center">
