@@ -80,7 +80,7 @@ const steps = [
     <!-- CARDS -->
     <div class="mt-20 grid gap-10 md:grid-cols-3">
       {steps.map((s) => (
-        <div class="relative group">
+        <div class="relative group plan-card">
 
           <!-- Refined Glow -->
           <div
@@ -122,6 +122,14 @@ const steps = [
                 background-size: 52px 52px;
               "
             ></div>
+            
+            <!-- Warm Center Glow --> 
+            <div class="absolute inset-0 pointer-events-none"
+                style=" background: radial-gradient(circle at center, 
+                rgba(255,170,48,.22), 
+                transparent 65%); " >
+
+                </div>
 
             <div class="relative z-10 flex h-full flex-col">
 
@@ -190,20 +198,23 @@ const steps = [
   </div>
 </section>
 
-<!-- MOBILE CLICK TO ACTIVATE TITLE -->
+<!-- MOBILE CLICK TO ACTIVATE CARD -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const wrapper = document.querySelector(".plan-title-wrapper");
+    const cards = document.querySelectorAll(".plan-card");
 
-    if (!wrapper) return;
+    cards.forEach(card => {
+      card.addEventListener("click", (e) => {
+        e.stopPropagation();
 
-    wrapper.addEventListener("click", (e) => {
-      e.stopPropagation();
-      wrapper.classList.add("is-active");
+        cards.forEach(c => c.classList.remove("is-active"));
+
+        card.classList.add("is-active");
+      });
     });
 
     document.addEventListener("click", () => {
-      wrapper.classList.remove("is-active");
+      cards.forEach(c => c.classList.remove("is-active"));
     });
   });
 </script>

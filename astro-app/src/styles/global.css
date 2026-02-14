@@ -746,38 +746,17 @@ a:not(.btn):hover {
    PLAN CARD (STATIC)
    ======================= */
 
-.plan-card {
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.plan-card.is-active > div:first-child {
+  opacity: 1 !important;
 }
 
-/* Conquer-style static glow wrapper */
-.plan-card-wrapper {
-  position: relative;
-  overflow: visible;
+.plan-card.is-active > div:nth-child(2) {
+  border-color: #ffa023 !important;
+  background-color: #111827 !important;
 }
 
-/* Premium static glow (no animation) */
-.plan-glow {
-  position: absolute;
-  inset: -12px;
-  border-radius: 20px;
-  pointer-events: none;
-  z-index: 0;
-
-  background: radial-gradient(
-    circle at 50% 0%,
-    rgba(255, 207, 35, 0.18),
-    rgba(255, 141, 58, 0.12),
-    rgba(255, 141, 58, 0.0) 65%
-  );
-
-  filter: blur(18px);
-
-  box-shadow:
-    0 0 18px rgba(255, 141, 58, 0.35),
-    0 0 45px rgba(255, 141, 58, 0.18),
-    0 0 90px rgba(255, 207, 35, 0.12);
+.plan-card.is-active > div:nth-child(2) > div:first-child {
+  opacity: 1 !important;
 }
 
 
