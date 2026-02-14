@@ -742,11 +742,6 @@ a:not(.btn):hover {
   color: var(--color-text-light);
 }
 
-.plan-title-wrapper.is-active .plan-gradient-text {
-  opacity: 1 !important;
-}
-
-
 /* =======================
    PLAN CARD (STATIC)
    ======================= */
