@@ -426,9 +426,11 @@ a:not(.btn):hover {
 @media (max-width: 680px) {
   .hero {
     font-size: 1.7rem;
-    line-height: 1.2;
+    letter-spacing: 0.7px;
+    word-spacing: 0.1rem;
   }
 }
+
 
 
 .layers {
