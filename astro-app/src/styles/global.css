@@ -425,9 +425,11 @@ a:not(.btn):hover {
 
 @media (max-width: 680px) {
   .hero {
-    font-size: 2.6rem !important;
+    font-size: 1.7rem;
+    line-height: 1.2;
   }
 }
+
 
 .layers {
   position: relative;
