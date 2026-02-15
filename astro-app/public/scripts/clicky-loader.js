@@ -77,11 +77,19 @@
 
   // Capture gclid → custom_data
   (function gclidCapture() {
-    const m = location.search.match(/[?&]gclid=([^&]+)/);
-    if (m) {
+    const paramMatch = location.search.match(/[?&]gclid=([^&]+)/);
+
+    if (paramMatch) {
+      const gclid = decodeURIComponent(paramMatch[1]);
+      localStorage.setItem("gclid", gclid);
+    }
+
+    const stored = localStorage.getItem("gclid");
+
+    if (stored) {
       window.clicky_custom = window.clicky_custom || {};
-      clicky_custom.custom_data = clicky_custom.custom_data || {};
-      clicky_custom.custom_data.gclid = decodeURIComponent(m[1]);
+      window.clicky_custom.custom_data = window.clicky_custom.custom_data || {};
+      window.clicky_custom.custom_data.gclid = stored;
     }
   })();
 
