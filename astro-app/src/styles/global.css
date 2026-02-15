@@ -420,7 +420,35 @@ a:not(.btn):hover {
   color: #fff;
   z-index: 2;
   font-size: 4rem;
+  line-height: 1.05;
   filter: drop-shadow(0 1px 3px);
+}
+
+/* Intro thinner */
+.hero-intro {
+  font-weight: 300;
+  display: block;
+}
+
+/* Brand bold */
+.hero-brand {
+  font-weight: 800;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 680px) {
+  .hero {
+    font-size: 1.7rem !important;
+    letter-spacing: 0.7px;
+    word-spacing: 0.1rem;
+    line-height: 1.15;
+  }
+
+  .hero-brand {
+    margin-top: 0.1rem;
+  }
 }
 
 .top {
@@ -429,16 +457,6 @@ a:not(.btn):hover {
   z-index: 2;
   font-size: 3.2rem;
 }
-
-@media (max-width: 680px) {
-  .hero {
-    font-size: 1.7rem!important;
-    letter-spacing: 0.7px;
-    word-spacing: 0.1rem;
-  }
-}
-
-
 
 .layers {
   position: relative;

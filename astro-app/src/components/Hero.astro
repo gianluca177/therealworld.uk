@@ -6,14 +6,12 @@ import AccentGlow from "./AccentGlow.astro";
 
 <section
   id="hero"
-  class="relative bg-bg text-white min-h-screen flex flex-col"
+  class="relative bg-bg text-white flex flex-col min-h-screen"
 >
-  <!-- Navigation -->
   <NavBar />
 
-  <!-- Hero Content -->
-  <div class="relative z-10 flex flex-col items-center justify-center text-center flex-grow px-4 pt-28 pb-20">
-    
+  <div class="relative z-10 flex flex-col items-center justify-center text-center flex-grow px-4 pt-24 pb-16">
+
     <!-- Logo (hidden on mobile) -->
     <img
       src="/Hustlers-University-therealworld-logo.png"
@@ -23,23 +21,20 @@ import AccentGlow from "./AccentGlow.astro";
     />
 
     <!-- Glitch Headline -->
-    <div class="hero-container mb-10">
+    <div class="hero-container mb-6">
       <h1
         class="hero glitch layers"
         data-text="WELCOME TO THE REAL WORLD"
       >
         <span class="paths">
 
-          <!-- Thinner intro -->
-          <span class="block md:inline">
+          <span class="hero-intro">
             WELCOME TO
           </span>
 
-          <!-- Mobile line break -->
           <br class="block md:hidden" />
 
-          <!-- Main Brand -->
-          <span class="block md:inline font-extrabold text-accent">
+          <span class="hero-brand text-accent">
             HUSTLERS UNIVERSITY
           </span>
 
@@ -63,7 +58,7 @@ import AccentGlow from "./AccentGlow.astro";
       </Card>
     </div>
 
-    <!-- Subtitle moved below video -->
+    <!-- Subtitle -->
     <p class="max-w-2xl mx-auto text-muted text-lg mb-10 leading-relaxed">
       A modern education platform and community focused on practical online business skills.
       Learn step by step, apply in real time, and grow alongside other driven members.
@@ -86,14 +81,12 @@ import AccentGlow from "./AccentGlow.astro";
       </a>
     </div>
 
-    <!-- Compliance Line -->
     <p class="mt-6 text-xs text-white/45">
       Educational platform. No earnings are promised. Results depend on individual effort.
     </p>
 
   </div>
 
-  <!-- Scroll Indicator -->
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
     <a
       href="#about"
