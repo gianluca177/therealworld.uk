@@ -6,7 +6,7 @@ import AccentGlow from "./AccentGlow.astro";
 
 <section
   id="hero"
-  class="relative bg-bg text-white min-h-screen flex flex-col overflow-hidden"
+  class="relative bg-bg text-white min-h-screen flex flex-col"
 >
   <!-- Navigation -->
   <NavBar />
@@ -22,15 +22,16 @@ import AccentGlow from "./AccentGlow.astro";
       loading="eager"
     />
 
-    <h1
-      class="hero glitch-layers font-extrabold tracking-tight"
-      data-text="WELCOME TO THE REAL WORLD"
-    >
-      <span>
-    WELCOME TO <span class="text-accent">HUSTLERS UNIVERSITY</span>
-      </span>
-    </h1>
-
+    <div class="hero-container">
+      <h1
+        class="hero glitch layers"
+        data-text="WELCOME TO THE REAL WORLD"
+      >
+        <span class="paths">
+          WELCOME TO <span class="text-accent">HUSTLERS UNIVERSITY</span>
+        </span>
+      </h1>
+    </div>
 
     <!-- Subheading -->
     <p class="max-w-2xl mx-auto text-muted text-lg mt-4 mb-10 leading-relaxed">
