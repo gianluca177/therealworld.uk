@@ -405,6 +405,72 @@ a:not(.btn):hover {
 }
 .animate-bounceSlow { animation: bounceSlow 2s infinite; }
 
+/* ===== GLITCH HERO ===== */
+
+.glitch-hero {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  z-index: 2;
+  font-size: 3.2rem;
+  line-height: 1.1;
+}
+
+@media (max-width: 680px) {
+  .glitch-hero {
+    font-size: 2rem;
+  }
+}
+
+/* Layer container */
+.glitch-layers {
+  position: relative;
+}
+
+/* Pseudo duplicate layers */
+.glitch-layers::before,
+.glitch-layers::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glitch-layers::before {
+  left: 8px;
+  top: 6px;
+  color: #e0287d;
+}
+
+.glitch-layers::after {
+  left: -8px;
+  top: 4px;
+  color: #1bc7fb;
+}
+
+/* Glitch animation */
+.glitch-layers::before,
+.glitch-layers::after {
+  animation: glitchShift 4s infinite step-end;
+}
+
+@keyframes glitchShift {
+  0% { transform: translate(0); opacity: 0.4; }
+  10% { transform: translate(-2px, 2px); opacity: 0.8; }
+  20% { transform: translate(2px, -2px); opacity: 0.5; }
+  30% { transform: translate(-1px, 1px); opacity: 0.7; }
+  40% { transform: translate(1px, -1px); opacity: 0.4; }
+  50% { transform: translate(0); opacity: 0.8; }
+  60% { transform: translate(-2px, 0); opacity: 0.5; }
+  70% { transform: translate(2px, 0); opacity: 0.7; }
+  80% { transform: translate(-1px, -1px); opacity: 0.4; }
+  90% { transform: translate(1px, 1px); opacity: 0.8; }
+  100% { transform: translate(0); opacity: 0.4; }
+}
+
 /* =======================
    NAVBAR (Premium translucent navy)
    ======================= */
