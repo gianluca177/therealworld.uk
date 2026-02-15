@@ -76,22 +76,22 @@
   }, 100);
 
   // Capture gclid → custom_data
-  (function gclidCapture() {
-    const paramMatch = location.search.match(/[?&]gclid=([^&]+)/);
+(function gclidCapture() {
+  window.clicky_custom = window.clicky_custom || {};
+  window.clicky_custom.custom_data = window.clicky_custom.custom_data || {};
 
-    if (paramMatch) {
-      const gclid = decodeURIComponent(paramMatch[1]);
-      localStorage.setItem("gclid", gclid);
-    }
+  const urlMatch = location.search.match(/[?&]gclid=([^&]+)/);
 
-    const stored = localStorage.getItem("gclid");
+  if (urlMatch) {
+    const gclid = decodeURIComponent(urlMatch[1]);
+    localStorage.setItem("gclid", gclid);
+  }
 
-    if (stored) {
-      window.clicky_custom = window.clicky_custom || {};
-      window.clicky_custom.custom_data = window.clicky_custom.custom_data || {};
-      window.clicky_custom.custom_data.gclid = stored;
-    }
-  })();
+  const stored = localStorage.getItem("gclid");
+  if (stored) {
+    window.clicky_custom.custom_data.gclid = stored;
+  }
+})();
 
   // Outbound logging (covers external domains AND internal redirector paths)
   (function outbound() {
