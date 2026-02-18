@@ -1,20 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
+function attachWistiaTracking() {
   const player = document.querySelector("wistia-player");
-
   if (!player) return;
 
   player.addEventListener("click", function (event) {
-    const target = event.target;
-    if (!target) return;
+    const path = event.composedPath ? event.composedPath() : [];
+    const linkEl = path.find(el => el?.href);
 
-    const link = target.href;
-    if (!link) return;
+    if (!linkEl) return;
 
+    const link = linkEl.href;
     const title =
-      (target.textContent || target.title || link).trim();
+      (linkEl.textContent || linkEl.title || link).trim();
 
     if (window.clicky && window.clicky.log) {
       window.clicky.log(link, title, "outbound");
     }
   });
+}
+
+// Wait for Wistia to fully load
+window.addEventListener("load", function () {
+  attachWistiaTracking();
 });
