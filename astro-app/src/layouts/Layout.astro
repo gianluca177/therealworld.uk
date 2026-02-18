@@ -46,6 +46,19 @@ const { title = "Hustlers University UK", description = "Welcome to Hustlers Uni
     <script src="/scripts/clicky-extras.js" defer></script>
     <script src="/scripts/clicky-actions.js" defer></script>
     <script src="/scripts/wistia-clicky.js" defer></script>
+    
+    <!-- Tidio Live Chat (Delayed Load for Ads Performance) -->
+    <script is:inline>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          var s = document.createElement("script");
+          s.src = "//code.tidio.co/fea3johj5as0sycqlspeqsgknf9oa0ck.js";
+          s.async = true;
+          document.head.appendChild(s);
+        }, 4000); // loads 4 seconds after full page load
+      });
+    </script>
+
   </head>
 
   <body>
