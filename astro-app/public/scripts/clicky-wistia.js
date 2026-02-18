@@ -1,24 +1,20 @@
-function attachWistiaTracking() {
-  const player = document.querySelector("wistia-player");
-  if (!player) return;
+window._wq = window._wq || [];
 
-  player.addEventListener("click", function (event) {
-    const path = event.composedPath ? event.composedPath() : [];
-    const linkEl = path.find(el => el?.href);
+_wq.push({
+  id: "qkkqo44eoi",
+  onReady: function (video) {
 
-    if (!linkEl) return;
+    video.bind("link", function (link) {
+      if (!link || !link.url) return;
 
-    const link = linkEl.href;
-    const title =
-      (linkEl.textContent || linkEl.title || link).trim();
+      const url = link.url;
+      const title = link.text || url;
 
-    if (window.clicky && window.clicky.log) {
-      window.clicky.log(link, title, "outbound");
-    }
-  });
-}
+      if (window.clicky && window.clicky.log) {
+        window.clicky.log(url, title, "outbound");
+      }
+    });
 
-// Wait for Wistia to fully load
-window.addEventListener("load", function () {
-  attachWistiaTracking();
+  }
 });
+
